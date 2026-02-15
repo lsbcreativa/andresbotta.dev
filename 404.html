@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página no encontrada | Andrés Botta</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="imagenes/favicon-andres-botta.png">
+    <meta name="theme-color" content="#06080f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <style>
+        .error-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+        .error-code {
+            font-family: var(--font-display);
+            font-size: clamp(6rem, 20vw, 12rem);
+            font-weight: 700;
+            line-height: 1;
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .error-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            color: var(--color-text);
+            margin-bottom: 1rem;
+        }
+        .error-description {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        .error-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="header" role="banner">
+        <a href="/" class="header-logo" aria-label="Andrés Botta - Inicio">
+            <picture>
+                <source srcset="imagenes/logo-andres-botta.webp" type="image/webp">
+                <img src="imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+            </picture>
+        </a>
+    </header>
+
+    <main>
+        <section class="error-page">
+            <div class="error-code">404</div>
+            <h1 class="error-title">Esta página no existe</h1>
+            <p class="error-description">
+                La página que buscas fue movida, eliminada o nunca existió. Pero no te preocupes, puedo ayudarte a encontrar lo que necesitas.
+            </p>
+            <div class="error-links">
+                <a href="/" class="magnetic-btn btn-primary-fill"><span>Volver al inicio</span></a>
+                <a href="/#servicios" class="magnetic-btn"><span>Ver servicios</span></a>
+                <a href="/#contacto" class="magnetic-btn"><span>Contactar</span></a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
