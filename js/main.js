@@ -65,18 +65,21 @@
         const codeLines = document.querySelectorAll('.code-line');
         if (!codeLines.length) return;
 
+        const posEl = document.querySelector('.code-status-pos');
+
         if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            // Show all code immediately without animation
             const staticData = [
-                '// Tu proyecto web',
-                'const proyecto = {',
-                '  cliente: "Tu Empresa",',
-                '  tipo: "web profesional",',
-                '  velocidad: "<2 segundos",',
-                '  seo: true,',
-                '  responsive: true',
-                '};',
-                'iniciarProyecto(proyecto);'
+                '// Deploy web profesional',
+                'async function deploy(config) {',
+                '  const site = await build({',
+                '    nombre: "Tu Empresa",',
+                '    tipo: "web premium",',
+                '    rendimiento: "99/100",',
+                '  });',
+                '  await site.optimize("SEO");',
+                '  console.log("\u2713 Deploy exitoso");',
+                '  return site.url;',
+                '}'
             ];
             codeLines.forEach((line, i) => {
                 if (staticData[i]) {
@@ -85,20 +88,22 @@
                     if (textSpan) textSpan.textContent = staticData[i];
                 }
             });
+            if (posEl) posEl.textContent = 'Ln 11, Col 2';
             return;
         }
 
-        // Code to type with syntax highlighting (innerHTML needed for spans)
         const codeData = [
-            '<span class="cm">// Tu proyecto web</span>',
-            '<span class="kw">const</span> <span class="prop">proyecto</span> = {',
-            '  <span class="prop">cliente</span>: <span class="str">"Tu Empresa"</span>,',
-            '  <span class="prop">tipo</span>: <span class="str">"web profesional"</span>,',
-            '  <span class="prop">velocidad</span>: <span class="str">"&lt;2 segundos"</span>,',
-            '  <span class="prop">seo</span>: <span class="num">true</span>,',
-            '  <span class="prop">responsive</span>: <span class="num">true</span>',
-            '};',
-            '<span class="fn">iniciarProyecto</span>(proyecto);'
+            '<span class="cm">// Deploy web profesional</span>',
+            '<span class="kw">async function</span> <span class="fn">deploy</span>(config) {',
+            '  <span class="kw">const</span> <span class="prop">site</span> <span class="op">=</span> <span class="kw">await</span> <span class="fn">build</span>({',
+            '    <span class="prop">nombre</span>: <span class="str">"Tu Empresa"</span>,',
+            '    <span class="prop">tipo</span>: <span class="str">"web premium"</span>,',
+            '    <span class="prop">rendimiento</span>: <span class="str">"99/100"</span>,',
+            '  });',
+            '  <span class="kw">await</span> site.<span class="fn">optimize</span>(<span class="str">"SEO"</span>);',
+            '  <span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"\u2713 Deploy exitoso"</span>);',
+            '  <span class="kw">return</span> site.<span class="prop">url</span>;',
+            '}'
         ];
 
         let currentLine = 0;
@@ -107,22 +112,31 @@
         const cursor = document.createElement('span');
         cursor.className = 'code-cursor';
 
+        function updateStatusPos() {
+            if (posEl) posEl.textContent = 'Ln ' + (currentLine + 1) + ', Col ' + (currentChar + 1);
+        }
+
         function typeNextChar() {
             if (currentLine >= codeData.length) {
-                setTimeout(() => {
-                    resetTyping();
-                    startTyping();
-                }, 4000);
+                showTerminal(function() {
+                    setTimeout(function() {
+                        hideTerminal();
+                        setTimeout(function() {
+                            resetTyping();
+                            startTyping();
+                        }, 500);
+                    }, 3000);
+                });
                 return;
             }
 
             if (currentLine >= codeLines.length) return;
 
-            const line = codeLines[currentLine];
-            const textSpan = line.querySelector('.code-text');
+            var line = codeLines[currentLine];
+            var textSpan = line.querySelector('.code-text');
             if (!textSpan) return;
 
-            const fullText = codeData[currentLine];
+            var fullText = codeData[currentLine];
 
             if (!isTyping) {
                 isTyping = true;
@@ -132,7 +146,7 @@
 
             if (currentChar < fullText.length) {
                 if (fullText[currentChar] === '<') {
-                    const tagEnd = fullText.indexOf('>', currentChar);
+                    var tagEnd = fullText.indexOf('>', currentChar);
                     if (tagEnd !== -1) {
                         textSpan.innerHTML = fullText.substring(0, tagEnd + 1);
                         currentChar = tagEnd + 1;
@@ -142,34 +156,77 @@
                     currentChar++;
                 }
 
-                const speed = Math.random() * 30 + 20;
+                updateStatusPos();
+                var speed = Math.random() * 30 + 20;
                 setTimeout(typeNextChar, speed);
             } else {
                 line.classList.remove('typing');
                 currentLine++;
                 currentChar = 0;
                 isTyping = false;
+                updateStatusPos();
                 setTimeout(typeNextChar, 150);
             }
+        }
+
+        function showTerminal(onComplete) {
+            var terminal = document.querySelector('.code-terminal');
+            if (!terminal) { if (onComplete) onComplete(); return; }
+
+            terminal.style.display = '';
+            terminal.offsetHeight;
+            terminal.classList.add('visible');
+
+            var lines = terminal.querySelectorAll('.code-terminal-line');
+            var totalDelay = 400;
+
+            for (var i = 0; i < lines.length; i++) {
+                (function(line, delay) {
+                    totalDelay += delay;
+                    setTimeout(function() {
+                        line.classList.add('visible');
+                    }, totalDelay);
+                })(lines[i], parseInt(lines[i].getAttribute('data-delay')) || 400);
+            }
+
+            totalDelay += 500;
+            setTimeout(function() {
+                if (onComplete) onComplete();
+            }, totalDelay);
+        }
+
+        function hideTerminal() {
+            var terminal = document.querySelector('.code-terminal');
+            if (!terminal) return;
+            terminal.classList.remove('visible');
+            var lines = terminal.querySelectorAll('.code-terminal-line');
+            for (var i = 0; i < lines.length; i++) {
+                lines[i].classList.remove('visible');
+            }
+            setTimeout(function() {
+                terminal.style.display = 'none';
+            }, 400);
         }
 
         function resetTyping() {
             currentLine = 0;
             currentChar = 0;
             isTyping = false;
-            codeLines.forEach(line => {
+            codeLines.forEach(function(line) {
                 line.classList.remove('visible', 'typing');
-                const textSpan = line.querySelector('.code-text');
+                var textSpan = line.querySelector('.code-text');
                 if (textSpan) textSpan.textContent = '';
             });
             if (cursor.parentNode) cursor.remove();
+            if (posEl) posEl.textContent = 'Ln 1, Col 1';
+            hideTerminal();
         }
 
         function startTyping() {
             setTimeout(typeNextChar, 800);
         }
 
-        const heroCode = document.querySelector('.hero-code');
+        var heroCode = document.querySelector('.hero-code');
         if (heroCode) {
             setTimeout(startTyping, 2000);
         }
