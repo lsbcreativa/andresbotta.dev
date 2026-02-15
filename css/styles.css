@@ -2500,6 +2500,10 @@ section {
         padding: 2.5rem 1.25rem;
     }
 
+    section[id] {
+        scroll-margin-top: 5rem;
+    }
+
     .section-header {
         margin-bottom: 1.5rem;
     }
@@ -2544,6 +2548,10 @@ section {
     .about-container {
         grid-template-columns: 1fr;
         text-align: center;
+    }
+
+    .about-title {
+        font-size: 2.25rem;
     }
 
     .about-image-wrapper {
