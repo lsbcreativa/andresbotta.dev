@@ -45,6 +45,13 @@
                 loaderPercent.textContent = progress + '%';
             }
         })
+        .call(() => {
+            gsap.set('.hero-eyebrow', { opacity: 0, y: 30 });
+            gsap.set('.hero-title-line span', { yPercent: 100 });
+            gsap.set('.hero-description', { opacity: 0, y: 30 });
+            gsap.set('.hero-cta', { opacity: 0, y: 30 });
+            gsap.set('.hero-scroll', { opacity: 0 });
+        })
         .to(loader, {
             yPercent: -100,
             duration: 0.8,
@@ -373,11 +380,21 @@ function initScrollAnimations() {
     // — Hero entrance
     const heroTl = gsap.timeline();
     heroTl
-        .from('.hero-eyebrow',       { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out' })
-        .from('.hero-title-line span', { yPercent: 100, duration: 1, ease: 'power4.out', stagger: 0.1 }, '-=0.4')
-        .from('.hero-description',    { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out' }, '-=0.6')
-        .from('.hero-cta',            { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out' }, '-=0.5')
-        .from('.hero-scroll',         { opacity: 0, duration: 0.6 }, '-=0.3')
+        .fromTo('.hero-eyebrow',
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' })
+        .fromTo('.hero-title-line span',
+            { yPercent: 100 },
+            { yPercent: 0, duration: 1, ease: 'power4.out', stagger: 0.1 }, '-=0.4')
+        .fromTo('.hero-description',
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6')
+        .fromTo('.hero-cta',
+            { opacity: 0, y: 30 },
+            { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
+        .fromTo('.hero-scroll',
+            { opacity: 0 },
+            { opacity: 1, duration: 0.6 }, '-=0.3')
         .fromTo('.hero-code',
             { opacity: 0, y: window.innerWidth <= 1200 ? 30 : 0, x: window.innerWidth > 1200 ? 50 : 0, scale: 0.95 },
             { opacity: 1, y: 0, x: 0, scale: 1, duration: 1, ease: 'power3.out' },
