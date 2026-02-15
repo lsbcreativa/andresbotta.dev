@@ -479,9 +479,9 @@ function initScrollAnimations() {
             const targetEl = document.querySelector(this.getAttribute('href'));
             if (targetEl) {
                 gsap.to(window, {
-                    duration: 1,
+                    duration: 0.4,
                     scrollTo: { y: targetEl, offsetY: 80 },
-                    ease: 'power3.inOut'
+                    ease: 'power1.out'
                 });
             }
         });
@@ -560,7 +560,7 @@ function initScrollAnimations() {
 
     if (backToTopBtn) {
         backToTopBtn.addEventListener('click', function () {
-            gsap.to(window, { scrollTo: 0, duration: 1, ease: 'power3.inOut' });
+            gsap.to(window, { scrollTo: 0, duration: 0.4, ease: 'power1.out' });
         });
     }
 })();
