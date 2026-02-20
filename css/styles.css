@@ -1106,7 +1106,7 @@ img {
     align-items: center;
     gap: 0.75rem;
     font-size: 0.9rem;
-    color: var(--color-text-muted);
+    color: var(--color-text-secondary);
     font-weight: 500;
 }
 
@@ -2019,7 +2019,7 @@ section {
     font-size: 1rem;
 }
 
-.author-info h4 {
+.author-info h3 {
     font-size: 1rem;
     font-weight: 600;
     margin-bottom: 0.15rem;
