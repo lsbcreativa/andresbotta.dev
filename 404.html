@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página no encontrada | Andrés Botta</title>
+    <title>404 — Página no encontrada | Andrés Botta</title>
     <meta name="robots" content="noindex, nofollow">
-    <link rel="icon" type="image/png" href="imagenes/favicon-andres-botta.png">
+    <link rel="icon" type="image/png" href="/imagenes/favicon-andres-botta.png">
     <meta name="theme-color" content="#06080f">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.min.css">
     <style>
         .error-page {
             min-height: 100vh;
@@ -18,39 +18,201 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            padding: 2rem;
+            padding: 6rem 1.5rem 3rem;
             position: relative;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at 50% 40%, rgba(59, 130, 246, 0.06) 0%, transparent 60%),
+                radial-gradient(circle 1px at center, rgba(255, 255, 255, 0.12) 0%, transparent 1px);
+            background-size: 100% 100%, 24px 24px;
         }
+
+        /* Error code */
         .error-code {
-            font-family: var(--font-display);
-            font-size: clamp(6rem, 20vw, 12rem);
-            font-weight: 700;
-            line-height: 1;
-            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-secondary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 400;
+            color: #5c6370;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: 0.02em;
+        }
+        .error-code span {
+            color: #ef4444;
+            font-weight: 500;
+        }
+
+        /* Terminal window */
+        .terminal-wrapper {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 2.5rem;
+            padding: 1px;
+            border-radius: 13px;
+            overflow: hidden;
+        }
+        .terminal-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: conic-gradient(from 0deg, transparent 0%, #3b82f6 25%, #8b5cf6 50%, #3b82f6 75%, transparent 100%);
+            animation: rotateBorder 4s linear infinite;
+            z-index: 0;
+        }
+        .terminal {
+            position: relative;
+            z-index: 1;
+            width: min(520px, 90vw);
+            background: rgba(13, 13, 15, 0.95);
+            border-radius: 12px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 40px rgba(59, 130, 246, 0.06), 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        /* Terminal header */
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1rem;
+            background: rgba(30, 30, 35, 0.6);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .terminal-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .terminal-dot:nth-child(1) { background: #ff5f57; }
+        .terminal-dot:nth-child(2) { background: #febc2e; }
+        .terminal-dot:nth-child(3) { background: #28c840; }
+        .terminal-tab {
+            margin-left: 0.75rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.5);
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .terminal-tab svg {
+            width: 12px;
+            height: 12px;
+            opacity: 0.5;
+        }
+
+        /* Terminal body */
+        .terminal-body {
+            padding: 1.25rem 1.25rem 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            line-height: 1.8;
+        }
+        .t-line {
+            white-space: nowrap;
+            overflow: hidden;
+        }
+        .t-prompt {
+            color: #28c840;
+        }
+        .t-cmd {
+            color: #e4e4e7;
+        }
+        .t-url {
+            color: #8b5cf6;
+        }
+        .t-status {
+            color: #ef4444;
+            font-weight: 500;
+        }
+        .t-dim {
+            color: rgba(255, 255, 255, 0.25);
+        }
+        .t-key {
+            color: #60a5fa;
+        }
+        .t-val {
+            color: #fbbf24;
+        }
+        .t-string {
+            color: #98c379;
+        }
+        .t-empty {
+            height: 1.35em;
+        }
+        .t-cursor {
+            display: inline-block;
+            width: 8px;
+            height: 14px;
+            background: #28c840;
+            box-shadow: 0 0 8px rgba(40, 200, 64, 0.5);
+            vertical-align: middle;
+            margin-left: 2px;
+            animation: cursorBlink 1s step-end infinite;
+        }
+
+        /* Statusbar */
+        .terminal-statusbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.3rem 1rem;
+            background: rgba(30, 70, 160, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.55rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Text below terminal */
+        .error-text {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-bottom: 2rem;
         }
         .error-title {
-            font-family: var(--font-display);
-            font-size: clamp(1.5rem, 4vw, 2.5rem);
-            color: var(--color-text);
-            margin-bottom: 1rem;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(1.4rem, 3.5vw, 2rem);
+            font-weight: 600;
+            color: #fafafa;
+            margin-bottom: 0.5rem;
         }
         .error-description {
-            font-size: 1rem;
-            color: var(--color-text-secondary);
-            max-width: 480px;
-            margin-bottom: 2.5rem;
-            line-height: 1.7;
+            font-size: 0.95rem;
+            color: #a1a1aa;
+            line-height: 1.6;
         }
+
+        /* Buttons */
         .error-links {
+            position: relative;
+            z-index: 1;
             display: flex;
             gap: 1rem;
             flex-wrap: wrap;
             justify-content: center;
+        }
+
+        /* Animations */
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        @keyframes cursorBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        /* Responsive */
+        @media (max-width: 480px) {
+            .terminal-body { font-size: 0.6rem; padding: 1rem; }
+            .t-line { white-space: pre-wrap; word-break: break-all; }
+            .terminal-statusbar { font-size: 0.5rem; }
         }
     </style>
 <!-- Google tag (gtag.js) -->
@@ -66,19 +228,55 @@
     <header class="header" role="banner">
         <a href="/" class="header-logo" aria-label="Andrés Botta - Inicio">
             <picture>
-                <source srcset="imagenes/logo-andres-botta.webp" type="image/webp">
-                <img src="imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+                <source srcset="/imagenes/logo-andres-botta.webp" type="image/webp">
+                <img src="/imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
             </picture>
         </a>
     </header>
 
     <main>
         <section class="error-page">
-            <div class="error-code">404</div>
-            <h1 class="error-title">Esta página no existe</h1>
-            <p class="error-description">
-                La página que buscas fue movida, eliminada o nunca existió. Pero no te preocupes, puedo ayudarte a encontrar lo que necesitas.
-            </p>
+            <div class="error-code">// Error <span>404</span>: page not found</div>
+
+            <!-- Terminal window -->
+            <div class="terminal-wrapper">
+                <div class="terminal">
+                    <div class="terminal-header">
+                        <div class="terminal-dots">
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                            <span class="terminal-dot"></span>
+                        </div>
+                        <div class="terminal-tab">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+                            terminal
+                        </div>
+                    </div>
+                    <div class="terminal-body">
+                        <div class="t-line"><span class="t-prompt">$</span> <span class="t-cmd">curl -I</span> <span class="t-url">andresbotta.dev</span><span class="t-dim">/...</span></div>
+                        <div class="t-empty"></div>
+                        <div class="t-line"><span class="t-status">HTTP/1.1 404 Not Found</span></div>
+                        <div class="t-empty"></div>
+                        <div class="t-line"><span class="t-dim">{</span></div>
+                        <div class="t-line">&nbsp;&nbsp;<span class="t-key">"status"</span><span class="t-dim">:</span> <span class="t-val">404</span><span class="t-dim">,</span></div>
+                        <div class="t-line">&nbsp;&nbsp;<span class="t-key">"error"</span><span class="t-dim">:</span> <span class="t-string">"PAGE_NOT_FOUND"</span><span class="t-dim">,</span></div>
+                        <div class="t-line">&nbsp;&nbsp;<span class="t-key">"message"</span><span class="t-dim">:</span> <span class="t-string">"La ruta solicitada no existe"</span></div>
+                        <div class="t-line"><span class="t-dim">}</span></div>
+                        <div class="t-empty"></div>
+                        <div class="t-line"><span class="t-prompt">$</span> <span class="t-cursor"></span></div>
+                    </div>
+                    <div class="terminal-statusbar">
+                        <span>404 — andresbotta.dev</span>
+                        <span>UTF-8</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text + actions -->
+            <div class="error-text">
+                <h1 class="error-title">Esta ruta no existe</h1>
+                <p class="error-description">Pero tranquilo, acá hay opciones para volver.</p>
+            </div>
             <div class="error-links">
                 <a href="/" class="magnetic-btn btn-primary-fill"><span>Volver al inicio</span></a>
                 <a href="/#servicios" class="magnetic-btn"><span>Ver servicios</span></a>
