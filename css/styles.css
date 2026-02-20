@@ -2316,12 +2316,15 @@ section {
     }
 
     .about-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 3rem;
         text-align: center;
     }
 
     .about-content {
+        width: 100%;
         text-align: center;
     }
 
@@ -2332,6 +2335,7 @@ section {
     .about-image-wrapper {
         max-width: 350px;
         margin: 0 auto;
+        overflow: hidden;
     }
 
     .about-stats {
@@ -2339,6 +2343,14 @@ section {
     }
 
     .about-cta {
+        justify-content: center;
+    }
+
+    .about-tech {
+        text-align: center;
+    }
+
+    .about-tech-grid {
         justify-content: center;
     }
 
@@ -2558,7 +2570,9 @@ section {
 
     /* About mobile */
     .about-container {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
@@ -2569,6 +2583,7 @@ section {
     .about-image-wrapper {
         max-width: 240px;
         margin: 0 auto;
+        overflow: hidden;
     }
 
     .about-stats {
