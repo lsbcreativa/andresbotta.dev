@@ -2,6 +2,7 @@
   "name": "andresbotta-web",
   "private": true,
   "scripts": {
-    "deploy": "bash deploy.sh"
+    "deploy": "bash deploy.sh",
+    "rollback": "bash rollback.sh"
   }
 }
