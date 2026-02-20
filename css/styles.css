@@ -2588,6 +2588,10 @@ section {
         overflow: hidden;
     }
 
+    .about-image-decoration {
+        display: none;
+    }
+
     .about-stats {
         justify-content: center;
         gap: 1.5rem;
