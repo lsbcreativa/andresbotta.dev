@@ -373,6 +373,7 @@
 /* ========== GSAP SCROLL ANIMATIONS ========== */
 function initScrollAnimations() {
     gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.config({ ignoreMobileResize: true });
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) return;
