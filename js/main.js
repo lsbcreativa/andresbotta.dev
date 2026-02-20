@@ -27,18 +27,18 @@
     const loaderTl = gsap.timeline();
 
     loaderTl
-        .to(loaderWrapper, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' })
+        .to(loaderWrapper, { opacity: 1, y: 0, duration: 0.3, ease: 'power3.out' })
         .to(devLetters, {
             opacity: 1,
             y: 0,
-            duration: 0.4,
-            stagger: 0.15,
+            duration: 0.25,
+            stagger: 0.08,
             ease: 'back.out(1.7)'
-        }, '-=0.2')
-        .to(loaderPercent, { opacity: 1, y: 0, duration: 0.4, ease: 'power3.out' }, '-=0.3')
+        }, '-=0.1')
+        .to(loaderPercent, { opacity: 1, y: 0, duration: 0.2, ease: 'power3.out' }, '-=0.15')
         .to(loaderProgress, {
             width: '100%',
-            duration: 1.5,
+            duration: 0.8,
             ease: 'power2.inOut',
             onUpdate: function () {
                 const progress = Math.round(this.progress() * 100);
@@ -54,9 +54,9 @@
         })
         .to(loader, {
             yPercent: -100,
-            duration: 0.8,
+            duration: 0.5,
             ease: 'power4.inOut',
-            delay: 0.3
+            delay: 0.15
         })
         .call(() => {
             loader.style.display = 'none';
