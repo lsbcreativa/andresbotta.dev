@@ -1553,6 +1553,10 @@ section {
     background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
 }
 
+.project-image--dog::before {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+
 .project-info {
     padding: 2rem 0;
 }
