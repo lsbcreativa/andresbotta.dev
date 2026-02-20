@@ -1,0 +1,15 @@
+/* TEAM */
+Developer: Andrés Sánchez Botta
+Site: andresbotta.dev
+Contact: contacto [at] andresbotta.dev
+Location: Lima, Peru
+GitHub: github.com/lsbcreativa
+LinkedIn: linkedin.com/in/andressbotta
+
+/* SITE */
+Last update: 2026-02-20
+Language: Spanish (es-PE)
+Standards: HTML5, CSS3, ES6+
+Components: GSAP 3.12.5, ScrollTrigger, ScrollToPlugin
+Fonts: Space Grotesk, JetBrains Mono (Google Fonts)
+Software: VS Code, Git
