@@ -2321,10 +2321,12 @@ section {
         align-items: center;
         gap: 3rem;
         text-align: center;
+        overflow: hidden;
     }
 
     .about-content {
         width: 100%;
+        max-width: 100%;
         text-align: center;
     }
 
@@ -2588,6 +2590,15 @@ section {
 
     .about-stats {
         justify-content: center;
+        gap: 1.5rem;
+    }
+
+    .about-stat-number {
+        font-size: 1.75rem;
+    }
+
+    .about-stat-label {
+        font-size: 0.75rem;
     }
 
     .about-cta {
