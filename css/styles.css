@@ -2321,6 +2321,14 @@ section {
         text-align: center;
     }
 
+    .about-content {
+        text-align: center;
+    }
+
+    .about .section-label {
+        justify-content: center;
+    }
+
     .about-image-wrapper {
         max-width: 350px;
         margin: 0 auto;
