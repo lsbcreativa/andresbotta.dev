@@ -22,11 +22,15 @@
     a:hover{text-decoration:underline}
     .freq,.prio{color:#a1a1aa}
     .date{color:#a1a1aa;white-space:nowrap}
+    h2{font-size:1.1rem;font-weight:600;margin-top:2.5rem;margin-bottom:.5rem;padding-bottom:.5rem;border-bottom:1px solid #27272a}
+    h2 span{color:#a1a1aa;font-weight:400;font-size:.85rem}
   </style>
 </head>
 <body>
   <h1>Sitemap</h1>
   <p class="subtitle">andresbotta.dev — <span><xsl:value-of select="count(s:urlset/s:url)"/> URLs</span></p>
+
+  <h2>Páginas <span>(<xsl:value-of select="count(s:urlset/s:url[not(contains(s:loc, '/blog/')) or s:loc = 'https://andresbotta.dev/blog/'])"/>)</span></h2>
   <table>
     <thead>
       <tr>
@@ -37,8 +41,31 @@
       </tr>
     </thead>
     <tbody>
-      <xsl:for-each select="s:urlset/s:url">
+      <xsl:for-each select="s:urlset/s:url[not(contains(s:loc, '/blog/')) or s:loc = 'https://andresbotta.dev/blog/']">
         <xsl:sort select="s:priority" order="descending"/>
+        <tr>
+          <td><a href="{s:loc}"><xsl:value-of select="s:loc"/></a></td>
+          <td class="date"><xsl:value-of select="s:lastmod"/></td>
+          <td class="freq"><xsl:value-of select="s:changefreq"/></td>
+          <td class="prio"><xsl:value-of select="s:priority"/></td>
+        </tr>
+      </xsl:for-each>
+    </tbody>
+  </table>
+
+  <h2>Artículos <span>(<xsl:value-of select="count(s:urlset/s:url[contains(s:loc, '/blog/') and s:loc != 'https://andresbotta.dev/blog/'])"/>)</span></h2>
+  <table>
+    <thead>
+      <tr>
+        <th>URL</th>
+        <th>Última modificación</th>
+        <th>Frecuencia</th>
+        <th>Prioridad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <xsl:for-each select="s:urlset/s:url[contains(s:loc, '/blog/') and s:loc != 'https://andresbotta.dev/blog/']">
+        <xsl:sort select="s:lastmod" order="descending"/>
         <tr>
           <td><a href="{s:loc}"><xsl:value-of select="s:loc"/></a></td>
           <td class="date"><xsl:value-of select="s:lastmod"/></td>
