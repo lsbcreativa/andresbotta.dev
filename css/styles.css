@@ -1159,6 +1159,10 @@ section {
     padding: 8rem 3rem;
 }
 
+section[id] {
+    scroll-margin-top: 5rem;
+}
+
 .section-header {
     margin-bottom: 5rem;
 }
@@ -1386,20 +1390,6 @@ section {
     opacity: 0.1;
 }
 
-.project-mockup {
-    position: absolute;
-    inset: 1.5rem;
-    background: var(--color-bg);
-    border-radius: 8px;
-    border: 1px solid var(--color-border);
-    overflow: hidden;
-    transition: transform 0.6s var(--ease-out-expo);
-}
-
-.project-image:hover .project-mockup {
-    transform: scale(1.02);
-}
-
 .mockup-browser {
     height: 32px;
     background: var(--color-bg-secondary);
@@ -1437,82 +1427,6 @@ section {
     font-size: 0.5rem;
     color: var(--color-text-muted);
     opacity: 0.7;
-}
-
-.mockup-content {
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.mockup-header-block {
-    height: 12px;
-    width: 60%;
-    background: var(--color-border);
-    border-radius: 4px;
-}
-
-.mockup-nav-block {
-    display: flex;
-    gap: 0.5rem;
-}
-
-.mockup-nav-block span {
-    height: 8px;
-    width: 40px;
-    background: var(--color-border);
-    border-radius: 4px;
-}
-
-.mockup-hero-block {
-    height: 80px;
-    background: linear-gradient(135deg, var(--color-bg-tertiary) 0%, var(--color-border) 100%);
-    border-radius: 8px;
-    margin: 1rem 0;
-}
-
-.mockup-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-}
-
-.mockup-card {
-    height: 50px;
-    background: var(--color-bg-tertiary);
-    border-radius: 6px;
-    border: 1px solid var(--color-border);
-}
-
-.mockup-card--tall {
-    height: 70px;
-}
-
-.mockup-card--video {
-    height: 60px;
-    position: relative;
-}
-
-.mockup-card--video::after {
-    content: '▶';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 0.7rem;
-    color: var(--color-text-muted);
-    opacity: 0.4;
-}
-
-.mockup-grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-}
-
-.mockup-cards:has(.mockup-card:nth-child(4)) {
-    grid-template-columns: repeat(4, 1fr);
 }
 
 /* Per-project hero block color variations */
@@ -2431,8 +2345,8 @@ section {
     .back-to-top {
         bottom: 1.25rem;
         left: 1.25rem;
-        width: 40px;
-        height: 40px;
+        width: 44px;
+        height: 44px;
     }
 
     .hero-symbols {
@@ -2530,10 +2444,6 @@ section {
         padding: 2.5rem 1.25rem;
     }
 
-    section[id] {
-        scroll-margin-top: 5rem;
-    }
-
     .section-header {
         margin-bottom: 1.5rem;
     }
@@ -2547,7 +2457,7 @@ section {
     }
 
     .section-label {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
     }
 
     /* Services mobile */
@@ -2689,7 +2599,7 @@ section {
     }
 
     .footer-sitemap-title {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
         margin-bottom: 0.5rem;
     }
 
@@ -2718,7 +2628,7 @@ section {
     }
 
     .tech-badge {
-        font-size: 0.6rem;
+        font-size: 0.7rem;
         padding: 0.35rem 0.65rem;
     }
 
@@ -3363,11 +3273,13 @@ section {
     opacity: 1;
     visibility: visible;
     transform: scale(1);
+    animation: whatsappPulse 3s ease-in-out infinite;
 }
 
 .whatsapp-float:hover {
     box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
     transform: scale(1.1);
+    animation: none;
 }
 
 .whatsapp-float:focus-visible {
@@ -3401,14 +3313,6 @@ section {
 @keyframes whatsappPulse {
     0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
     50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 8px rgba(37, 211, 102, 0.1); }
-}
-
-.whatsapp-float.visible {
-    animation: whatsappPulse 3s ease-in-out infinite;
-}
-
-.whatsapp-float:hover {
-    animation: none;
 }
 
 /* ========== BACK TO TOP BUTTON ========== */

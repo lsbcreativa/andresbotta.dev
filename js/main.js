@@ -124,6 +124,7 @@
         }
 
         function typeNextChar() {
+            if (typingPaused) { needsResume = true; return; }
             if (currentLine >= codeData.length) {
                 showTerminal(function() {
                     setTimeout(function() {
@@ -234,7 +235,21 @@
         }
 
         var heroCode = document.querySelector('.hero-code');
-        if (heroCode) {
+        var typingPaused = false;
+        var needsResume = false;
+
+        if (heroCode && 'IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                var visible = entries[0].isIntersecting;
+                typingPaused = !visible;
+                if (visible && needsResume) {
+                    needsResume = false;
+                    typeNextChar();
+                }
+            }, { threshold: 0 });
+            observer.observe(heroCode);
+            setTimeout(startTyping, 2000);
+        } else if (heroCode) {
             setTimeout(startTyping, 2000);
         }
     };
@@ -507,32 +522,45 @@ function initScrollAnimations() {
 })();
 
 
-/* ========== STICKY HEADER ========== */
-(function initStickyHeader() {
-    const header = document.querySelector('.header');
-    if (!header) return;
+/* ========== STICKY HEADER + FLOATING BUTTONS ========== */
+(function initScrollUI() {
+    var header = document.querySelector('.header');
+    var whatsappBtn = document.querySelector('.whatsapp-float');
+    var backToTopBtn = document.querySelector('.back-to-top');
 
-    let ticking = false;
+    var ticking = false;
     window.addEventListener('scroll', function () {
         if (!ticking) {
             requestAnimationFrame(function () {
-                if (window.scrollY > 100) {
-                    header.classList.add('header-scrolled');
-                } else {
-                    header.classList.remove('header-scrolled');
+                var scrollY = window.scrollY;
+                if (header) {
+                    if (scrollY > 100) {
+                        header.classList.add('header-scrolled');
+                    } else {
+                        header.classList.remove('header-scrolled');
+                    }
                 }
+                var scrolled = scrollY > 500;
+                if (whatsappBtn) whatsappBtn.classList.toggle('visible', scrolled);
+                if (backToTopBtn) backToTopBtn.classList.toggle('visible', scrolled);
                 ticking = false;
             });
             ticking = true;
         }
     }, { passive: true });
+
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function () {
+            gsap.to(window, { scrollTo: 0, duration: 0.4, ease: 'power1.out' });
+        });
+    }
 })();
 
 
 /* ========== ACTIVE NAV HIGHLIGHT ========== */
 (function initActiveNav() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.header-nav .nav-link[href^="#"]');
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.header-nav .nav-link[href^="#"]');
     if (!sections.length || !navLinks.length) return;
 
     sections.forEach(function (section) {
@@ -552,33 +580,4 @@ function initScrollAnimations() {
             }
         });
     });
-})();
-
-
-/* ========== FLOATING BUTTONS (WhatsApp + Back to Top) ========== */
-(function initFloatingButtons() {
-    var whatsappBtn = document.querySelector('.whatsapp-float');
-    var backToTopBtn = document.querySelector('.back-to-top');
-    var scrollThreshold = 500;
-
-    if (!whatsappBtn && !backToTopBtn) return;
-
-    var ticking = false;
-    window.addEventListener('scroll', function () {
-        if (!ticking) {
-            requestAnimationFrame(function () {
-                var scrolled = window.scrollY > scrollThreshold;
-                if (whatsappBtn) whatsappBtn.classList.toggle('visible', scrolled);
-                if (backToTopBtn) backToTopBtn.classList.toggle('visible', scrolled);
-                ticking = false;
-            });
-            ticking = true;
-        }
-    }, { passive: true });
-
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', function () {
-            gsap.to(window, { scrollTo: 0, duration: 0.4, ease: 'power1.out' });
-        });
-    }
 })();
