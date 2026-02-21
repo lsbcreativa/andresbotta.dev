@@ -2306,6 +2306,10 @@ section {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .projects-grid {
+        gap: 4rem;
+    }
+
     .project-item {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -2562,8 +2566,16 @@ section {
     }
 
     /* Projects mobile */
+    .projects-grid {
+        gap: 3rem;
+    }
+
     .project-item {
         grid-template-columns: 1fr;
+    }
+
+    .project-info {
+        padding: 1rem 0;
     }
 
     .project-title {
