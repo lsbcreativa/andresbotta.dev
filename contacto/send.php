@@ -128,16 +128,91 @@ $proyecto = htmlspecialchars($proyecto, ENT_QUOTES, 'UTF-8');
 $mensaje = htmlspecialchars($mensaje, ENT_QUOTES, 'UTF-8');
 
 // ========== BUILD EMAIL BODY ==========
-$body = "Nueva consulta desde andresbotta.dev\n";
-$body .= "========================================\n\n";
-$body .= "Nombre: $nombre\n";
-$body .= "Email: $email\n";
-$body .= "Teléfono: $telefono\n";
-$body .= "Tipo de proyecto: $proyecto\n\n";
-$body .= "Mensaje:\n$mensaje\n";
-$body .= "\n========================================\n";
-$body .= "IP: $ip\n";
-$body .= "Fecha: " . date('Y-m-d H:i:s') . "\n";
+$fecha = date('d/m/Y H:i');
+
+$htmlBody = <<<HTML
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"></head>
+<body style="margin:0;padding:0;background-color:#06080f;font-family:Arial,Helvetica,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background-color:#06080f;padding:32px 16px;">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background-color:#0c0e18;border:1px solid #27272a;border-radius:8px;overflow:hidden;">
+
+<!-- Header -->
+<tr><td style="background:linear-gradient(135deg,#3b82f6,#60a5fa);padding:28px 32px;">
+<h1 style="margin:0;color:#ffffff;font-size:22px;font-weight:700;letter-spacing:-0.3px;">Nueva consulta web</h1>
+<p style="margin:6px 0 0;color:rgba(255,255,255,0.85);font-size:14px;">andresbotta.dev &middot; $fecha</p>
+</td></tr>
+
+<!-- Body -->
+<tr><td style="padding:28px 32px;">
+
+<!-- Fields -->
+<table width="100%" cellpadding="0" cellspacing="0">
+<tr>
+<td style="padding:10px 0;border-bottom:1px solid #1a1a2e;width:130px;vertical-align:top;">
+<span style="color:#a1a1aa;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Nombre</span>
+</td>
+<td style="padding:10px 0;border-bottom:1px solid #1a1a2e;">
+<span style="color:#fafafa;font-size:15px;">$nombre</span>
+</td>
+</tr>
+<tr>
+<td style="padding:10px 0;border-bottom:1px solid #1a1a2e;vertical-align:top;">
+<span style="color:#a1a1aa;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Email</span>
+</td>
+<td style="padding:10px 0;border-bottom:1px solid #1a1a2e;">
+<a href="mailto:$email" style="color:#60a5fa;font-size:15px;text-decoration:none;">$email</a>
+</td>
+</tr>
+<tr>
+<td style="padding:10px 0;border-bottom:1px solid #1a1a2e;vertical-align:top;">
+<span style="color:#a1a1aa;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Teléfono</span>
+</td>
+<td style="padding:10px 0;border-bottom:1px solid #1a1a2e;">
+<a href="tel:$telefono" style="color:#60a5fa;font-size:15px;text-decoration:none;">$telefono</a>
+</td>
+</tr>
+<tr>
+<td style="padding:10px 0;border-bottom:1px solid #1a1a2e;vertical-align:top;">
+<span style="color:#a1a1aa;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;">Proyecto</span>
+</td>
+<td style="padding:10px 0;border-bottom:1px solid #1a1a2e;">
+<span style="display:inline-block;background-color:rgba(59,130,246,0.15);color:#60a5fa;font-size:13px;font-weight:600;padding:4px 12px;border-radius:12px;">$proyecto</span>
+</td>
+</tr>
+</table>
+
+<!-- Message -->
+<div style="margin-top:24px;">
+<p style="color:#a1a1aa;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 10px;">Mensaje</p>
+<div style="background-color:#111827;border:1px solid #1f2937;border-radius:6px;padding:16px 20px;">
+<p style="color:#e4e4e7;font-size:15px;line-height:1.6;margin:0;white-space:pre-wrap;">$mensaje</p>
+</div>
+</div>
+
+</td></tr>
+
+<!-- Footer -->
+<tr><td style="padding:16px 32px;border-top:1px solid #27272a;">
+<p style="margin:0;color:#52525b;font-size:12px;">IP: $ip &middot; $fecha</p>
+</td></tr>
+
+</table>
+</td></tr>
+</table>
+</body>
+</html>
+HTML;
+
+$altBody = "Nueva consulta desde andresbotta.dev\n";
+$altBody .= "Nombre: $nombre\n";
+$altBody .= "Email: $email\n";
+$altBody .= "Teléfono: $telefono\n";
+$altBody .= "Proyecto: $proyecto\n\n";
+$altBody .= "Mensaje:\n$mensaje\n";
+$altBody .= "\nIP: $ip | Fecha: $fecha\n";
 
 // ========== SEND VIA PHPMAILER SMTP ==========
 $mail = new PHPMailer(true);
@@ -155,8 +230,10 @@ try {
     $mail->addAddress(SMTP_USER, 'Andrés Botta');
     $mail->addReplyTo($email, $nombre);
 
+    $mail->isHTML(true);
     $mail->Subject = "Nueva consulta web: $proyecto - $nombre";
-    $mail->Body    = $body;
+    $mail->Body    = $htmlBody;
+    $mail->AltBody = $altBody;
 
     $mail->send();
 
