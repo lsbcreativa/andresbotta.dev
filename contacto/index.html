@@ -391,6 +391,15 @@
             document.getElementById('submitBtn').removeAttribute('disabled');
         }, 1000);
 
+        // Submit animation
+        document.getElementById('contactForm').addEventListener('submit', function() {
+            var btn = document.getElementById('submitBtn');
+            var span = btn.querySelector('span');
+            btn.disabled = true;
+            btn.classList.add('is-sending');
+            span.innerHTML = '<span class="sending-prompt">&gt;</span> Enviando<span class="sending-dots"></span><span class="sending-cursor">_</span>';
+        });
+
         // Peru phone validation on blur
         function validatePeruPhone(phone) {
             var cleaned = phone.replace(/[\s\-\(\)\.]/g, '');

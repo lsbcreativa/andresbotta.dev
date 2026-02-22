@@ -3439,6 +3439,47 @@ section[id] {
 .contact-form-submit {
     align-self: flex-start;
     margin-top: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form-submit.is-sending {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 20px var(--color-accent-glow), 0 0 40px rgba(59, 130, 246, 0.08);
+    pointer-events: none;
+}
+
+.contact-form-submit.is-sending span {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+}
+
+.sending-prompt {
+    color: var(--color-accent);
+    font-weight: 700;
+}
+
+.sending-cursor {
+    color: var(--color-accent);
+    animation: blink-cursor 0.7s step-end infinite;
+}
+
+.sending-dots::after {
+    content: '';
+    animation: loading-dots 1.5s step-end infinite;
+}
+
+@keyframes blink-cursor {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+@keyframes loading-dots {
+    0%   { content: ''; }
+    25%  { content: '.'; }
+    50%  { content: '..'; }
+    75%  { content: '...'; }
 }
 
 .form-status {
