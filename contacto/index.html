@@ -234,6 +234,53 @@
             </div>
         </section>
 
+        <!-- ==================== CONTACT FORM ==================== -->
+        <section class="contact-form-section glow-divider" aria-labelledby="form-title">
+            <div class="section-header">
+                <div class="section-label">Formulario de contacto</div>
+                <h2 class="section-title" id="form-title">O si prefieres, déjame<br>tus datos aquí</h2>
+            </div>
+            <form action="send.php" method="POST" class="contact-form" id="contactForm">
+                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="_ts" id="formTs">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com" autocomplete="email">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefono">Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" required placeholder="+51 999 999 999" autocomplete="tel">
+                    </div>
+                    <div class="form-group">
+                        <label for="proyecto">Tipo de proyecto</label>
+                        <select id="proyecto" name="proyecto" required>
+                            <option value="" disabled selected>Selecciona una opción</option>
+                            <option value="Página web">Página web</option>
+                            <option value="Tienda online">Tienda online</option>
+                            <option value="Landing page">Landing page</option>
+                            <option value="Rediseño web">Rediseño web</option>
+                            <option value="Otro">Otro</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="magnetic-btn btn-primary-fill btn-large contact-form-submit">
+                    <span>Enviar consulta</span>
+                </button>
+            </form>
+            <div class="form-status" id="formStatus" role="alert"></div>
+        </section>
+
         <!-- ==================== CTA ==================== -->
         <section class="cta glow-divider" aria-labelledby="contacto-cta-title">
             <h2 class="cta-title" id="contacto-cta-title">¿Listo para crear tu<br>página web profesional?</h2>
@@ -273,9 +320,12 @@
                 <div class="footer-sitemap-col">
                     <div class="footer-sitemap-title">Servicios</div>
                     <ul class="footer-sitemap-links">
-                        <li><a href="../diseno-web-lima/">Diseño Web en Lima</a></li>
+                        <li><a href="../diseno-web-lima/">Diseño Web Lima</a></li>
+                        <li><a href="../diseno-web-peru/">Diseño Web Perú</a></li>
                         <li><a href="../crear-pagina-web-lima/">Crear Página Web</a></li>
                         <li><a href="../tienda-online-peru/">Tienda Online</a></li>
+                        <li><a href="../landing-page-lima/">Landing Pages</a></li>
+                        <li><a href="../seo-tecnico-peru/">SEO Técnico</a></li>
                     </ul>
                 </div>
                 <div class="footer-sitemap-col">
@@ -284,6 +334,9 @@
                         <li><a href="../diseno-web-lima/">Lima</a></li>
                         <li><a href="../diseno-web-cusco/">Cusco</a></li>
                         <li><a href="../diseno-web-arequipa/">Arequipa</a></li>
+                        <li><a href="../diseno-web-trujillo/">Trujillo</a></li>
+                        <li><a href="../diseno-web-chiclayo/">Chiclayo</a></li>
+                        <li><a href="../diseno-web-piura/">Piura</a></li>
                     </ul>
                 </div>
                 <div class="footer-sitemap-col">
@@ -309,6 +362,27 @@
         <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
         <span class="whatsapp-float-tooltip">Hablemos</span>
     </a>
+
+    <!-- Contact Form Scripts -->
+    <script>
+    document.getElementById('formTs').value = Math.floor(Date.now() / 1000);
+    (function() {
+        var params = new URLSearchParams(window.location.search);
+        var status = params.get('status');
+        var el = document.getElementById('formStatus');
+        if (status === 'ok') {
+            el.textContent = '¡Mensaje enviado! Te respondo en menos de 24 horas.';
+            el.className = 'form-status form-status--ok';
+            el.style.display = 'block';
+            history.replaceState(null, '', window.location.pathname);
+        } else if (status === 'error') {
+            el.textContent = 'Hubo un error al enviar. Intenta de nuevo o escríbeme por WhatsApp.';
+            el.className = 'form-status form-status--error';
+            el.style.display = 'block';
+            history.replaceState(null, '', window.location.pathname);
+        }
+    })();
+    </script>
 
     <!-- Back to Top Button -->
     <button class="back-to-top" aria-label="Volver arriba">

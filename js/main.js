@@ -256,10 +256,6 @@
 })();
 
 
-/* ========== CUSTOM CURSOR (dot + ring) ========== */
-/* Cursor desactivado — se usa cursor nativo del sistema */
-
-
 /* ========== MOBILE MENU ========== */
 (function initMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
