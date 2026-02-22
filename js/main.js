@@ -441,7 +441,9 @@ function initScrollAnimations() {
         { selector: '.faq-item', stagger: 0.1, y: 30 },
         { selector: '.about-image-wrapper', x: -80, y: 0 },
         { selector: '.about-content .section-label, .about-title, .about-subtitle, .about-description, .about-stats, .about-cta', stagger: 0.1, delay: 0.2, y: 40 },
-        { selector: '.cta-title, .cta-description, .cta-buttons', stagger: 0.15, y: 50 }
+        { selector: '.cta-title, .cta-description, .cta-buttons', stagger: 0.15, y: 50 },
+        { selector: '.coverage-subtitle', y: 30 },
+        { selector: '.coverage-card', stagger: 0.08, y: 30 }
     ];
 
     var observer = new IntersectionObserver(function(entries) {
