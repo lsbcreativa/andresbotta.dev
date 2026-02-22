@@ -1,0 +1,20 @@
+# Protect sensitive files from direct access
+<Files "config.php">
+    Deny from all
+</Files>
+
+<Files "get-token.php">
+    <LimitExcept GET>
+        Deny from all
+    </LimitExcept>
+</Files>
+
+<Files "disposable_email_blocklist.conf">
+    Deny from all
+</Files>
+
+# Protect rate limiting logs
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^rate_logs/ - [F,L]
+</IfModule>

@@ -241,8 +241,15 @@
                 <h2 class="section-title" id="form-title">O si prefieres, déjame<br>tus datos aquí</h2>
             </div>
             <form action="send.php" method="POST" class="contact-form" id="contactForm">
-                <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                <!-- Anti-spam: honeypot (invisible to humans) -->
+                <div class="form-trap" aria-hidden="true">
+                    <label for="website">No llenar</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
+                <!-- Anti-spam: hidden fields -->
                 <input type="hidden" name="_ts" id="formTs">
+                <input type="hidden" name="_csrf" id="formCsrf">
+                <input type="hidden" name="_js_challenge" id="formChallenge">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="nombre">Nombre completo</label>
@@ -274,7 +281,7 @@
                     <label for="mensaje">Mensaje</label>
                     <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Cuéntame sobre tu proyecto..."></textarea>
                 </div>
-                <button type="submit" class="magnetic-btn btn-primary-fill btn-large contact-form-submit">
+                <button type="submit" class="magnetic-btn btn-primary-fill btn-large contact-form-submit" id="submitBtn" disabled>
                     <span>Enviar consulta</span>
                 </button>
             </form>
@@ -365,19 +372,54 @@
 
     <!-- Contact Form Scripts -->
     <script>
-    document.getElementById('formTs').value = Math.floor(Date.now() / 1000);
     (function() {
+        // Timestamp anti-spam
+        document.getElementById('formTs').value = Math.floor(Date.now() / 1000);
+
+        // Fetch CSRF token
+        fetch('get-token.php')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                document.getElementById('formCsrf').value = data.token;
+            });
+
+        // JS challenge + enable submit button
+        setTimeout(function() {
+            var a = Math.floor(Math.random() * 90) + 10;
+            var b = Math.floor(Math.random() * 90) + 10;
+            document.getElementById('formChallenge').value = a + ':' + b + ':' + (a + b);
+            document.getElementById('submitBtn').removeAttribute('disabled');
+        }, 1000);
+
+        // Peru phone validation on blur
+        function validatePeruPhone(phone) {
+            var cleaned = phone.replace(/[\s\-\(\)\.]/g, '');
+            return /^(\+?51)?(9\d{8}|0?1\d{7}|0[2-9]\d{6,7})$/.test(cleaned);
+        }
+
+        document.getElementById('telefono').addEventListener('blur', function() {
+            if (this.value && !validatePeruPhone(this.value)) {
+                this.setCustomValidity('Ingresa un número peruano válido (ej: +51 999 999 999)');
+                this.reportValidity();
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+
+        // Status messages from redirect
         var params = new URLSearchParams(window.location.search);
         var status = params.get('status');
         var el = document.getElementById('formStatus');
-        if (status === 'ok') {
-            el.textContent = '¡Mensaje enviado! Te respondo en menos de 24 horas.';
-            el.className = 'form-status form-status--ok';
-            el.style.display = 'block';
-            history.replaceState(null, '', window.location.pathname);
-        } else if (status === 'error') {
-            el.textContent = 'Hubo un error al enviar. Intenta de nuevo o escríbeme por WhatsApp.';
-            el.className = 'form-status form-status--error';
+        var messages = {
+            'ok': ['¡Mensaje enviado! Te respondo en menos de 24 horas.', 'form-status--ok'],
+            'error': ['Hubo un error al enviar. Intenta de nuevo o escríbeme por WhatsApp.', 'form-status--error'],
+            'ratelimit': ['Demasiados envíos. Espera unos minutos e intenta de nuevo.', 'form-status--error'],
+            'invalid-email': ['Usa un email válido y permanente (no emails temporales).', 'form-status--error'],
+            'invalid-phone': ['Ingresa un número de teléfono peruano válido.', 'form-status--error']
+        };
+        if (status && messages[status]) {
+            el.textContent = messages[status][0];
+            el.className = 'form-status ' + messages[status][1];
             el.style.display = 'block';
             history.replaceState(null, '', window.location.pathname);
         }
