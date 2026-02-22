@@ -3,12 +3,6 @@
     Deny from all
 </Files>
 
-<Files "get-token.php">
-    <LimitExcept GET>
-        Deny from all
-    </LimitExcept>
-</Files>
-
 <Files "disposable_email_blocklist.conf">
     Deny from all
 </Files>
