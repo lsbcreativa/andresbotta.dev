@@ -19,7 +19,7 @@
     <link rel="alternate" hreflang="x-default" href="https://andresbotta.dev/diseno-web-arequipa/">
 
     <!-- ========== GEO TAGS ========== -->
-    <meta name="geo.region" content="PE-ARE">
+    <meta name="geo.region" content="PE-AQP">
     <meta name="geo.placename" content="Arequipa, Perú">
 
     <!-- ========== OPEN GRAPH ========== -->
@@ -63,10 +63,14 @@
                 "bestRating": "5"
             }
         },
-        "areaServed": [
-            { "@type": "City", "name": "Arequipa" },
-            { "@type": "Country", "name": "Perú" }
-        ],
+        "areaServed": {
+            "@type": "City",
+            "name": "Arequipa",
+            "containedInPlace": {
+                "@type": "Country",
+                "name": "Perú"
+            }
+        },
         "serviceType": "Diseño Web Profesional"
     }
     </script>
@@ -208,7 +212,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../">Inicio</a>

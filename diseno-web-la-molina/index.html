@@ -63,11 +63,18 @@
                 "bestRating": "5"
             }
         },
-        "areaServed": [
-            { "@type": "Place", "name": "La Molina, Lima" },
-            { "@type": "City", "name": "Lima" },
-            { "@type": "Country", "name": "Perú" }
-        ],
+        "areaServed": {
+            "@type": "City",
+            "name": "La Molina",
+            "containedInPlace": {
+                "@type": "City",
+                "name": "Lima",
+                "containedInPlace": {
+                    "@type": "Country",
+                    "name": "Perú"
+                }
+            }
+        },
         "serviceType": "Diseño Web Profesional"
     }
     </script>
@@ -202,7 +209,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../">Inicio</a>

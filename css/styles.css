@@ -1164,6 +1164,16 @@ section[id] {
 .section-header {
     margin-bottom: 5rem;
 }
+.section-header--elevated {
+    position: relative;
+    z-index: 1;
+}
+.section-header--center {
+    text-align: center;
+}
+.section-header--center .section-label {
+    justify-content: center;
+}
 
 .section-label {
     font-family: var(--font-mono);
@@ -2107,14 +2117,29 @@ section[id] {
     color: var(--color-text);
 }
 
-.footer-copy {
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
+.footer-trust {
     grid-column: 1 / -1;
     text-align: center;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--color-border);
     margin-top: 2rem;
+}
+.footer-trust svg {
+    color: var(--color-accent);
+    flex-shrink: 0;
+}
+.footer-copy {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    padding-top: 0.75rem;
 }
 
 /* ========== ABOUT TECH STACK ========== */
@@ -3104,6 +3129,31 @@ section[id] {
 
     .blog-cta {
         padding: 2rem 1.25rem 4rem;
+    }
+}
+
+/* ========== BLOG HOME SECTION ========== */
+.blog-home {
+    padding: 6rem 5% 3rem;
+}
+.blog-home .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+.blog-home-cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+@media (max-width: 1024px) {
+    .blog-home .blog-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width: 768px) {
+    .blog-home {
+        padding: 3rem 1.25rem 1rem;
+    }
+    .blog-home .blog-grid {
+        grid-template-columns: 1fr;
     }
 }
 

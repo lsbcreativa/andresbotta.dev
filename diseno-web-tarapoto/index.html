@@ -63,10 +63,14 @@
                 "bestRating": "5"
             }
         },
-        "areaServed": [
-            { "@type": "City", "name": "Tarapoto" },
-            { "@type": "Country", "name": "Perú" }
-        ],
+        "areaServed": {
+            "@type": "City",
+            "name": "Tarapoto",
+            "containedInPlace": {
+                "@type": "Country",
+                "name": "Perú"
+            }
+        },
         "serviceType": "Diseño Web Profesional"
     }
     </script>
@@ -209,7 +213,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-content">
         <!-- Breadcrumb -->
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../">Inicio</a>
