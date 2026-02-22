@@ -18,10 +18,6 @@
         return;
     }
 
-    // Hide hero elements until loader finishes
-    var heroHiddenEls = document.querySelectorAll('.hero-eyebrow, .hero-title-line span, .hero-description, .hero-cta, .hero-scroll, .hero-code');
-    heroHiddenEls.forEach(function(el) { el.style.opacity = '0'; });
-
     // Loader entrance
     loaderWrapper.classList.add('loader-enter');
     devLetters.forEach(function(letter, i) {
@@ -55,11 +51,9 @@
             setTimeout(function() {
                 loader.classList.add('loader-exit');
                 loader.addEventListener('animationend', function() {
-                    loader.style.display = 'none';
-                    // Reveal hero elements
-                    heroHiddenEls.forEach(function(el) { el.style.opacity = ''; });
                     initScrollAnimations();
                     initCodeTyping();
+                    loader.style.display = 'none';
                 }, { once: true });
             }, 150);
         }
