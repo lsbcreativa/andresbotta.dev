@@ -343,10 +343,12 @@ img {
     font-size: 2rem;
     font-weight: 600;
     color: var(--color-text-secondary);
-    transition: color 0.3s ease;
     letter-spacing: -0.01em;
     line-height: 1.1;
     text-decoration: none;
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: color 0.3s ease, opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-nav-links a:hover,
@@ -370,6 +372,9 @@ img {
     gap: 1.5rem;
     padding-top: 1.5rem;
     border-top: 1px solid var(--color-border);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .mobile-nav-cta {
@@ -3516,6 +3521,96 @@ section[id] {
     .contact-form-submit {
         align-self: stretch;
     }
+}
+
+/* ========== ANIMATION CLASSES (no GSAP) ========== */
+
+/* Loader animations */
+.loader-enter {
+    animation: fadeSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.loader-letter-enter {
+    animation: fadeSlideUp 0.25s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.loader-exit {
+    animation: slideUp 0.5s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-100%); }
+}
+
+/* Hero entrance animations */
+.hero-anim-fade {
+    animation: heroFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-anim-slide-up {
+    animation: heroSlideUp 1s cubic-bezier(0.08, 0.82, 0.17, 1) both;
+}
+
+.hero-anim-code-desktop {
+    animation: heroCodeDesktop 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-anim-code-mobile {
+    animation: heroCodeMobile 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes heroFade {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heroSlideUp {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+}
+
+@keyframes heroCodeDesktop {
+    from { opacity: 0; transform: translateX(50px) scale(0.95); }
+    to   { opacity: 1; transform: translateX(0) scale(1); }
+}
+
+@keyframes heroCodeMobile {
+    from { opacity: 0; transform: translateY(30px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Scroll-triggered reveal animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(var(--reveal-y, 50px));
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left {
+    transform: translateX(var(--reveal-x, -60px));
+}
+
+.reveal.in-view {
+    opacity: 1;
+    transform: none;
+}
+
+/* Mobile menu link transitions */
+.mobile-nav.open .mobile-nav-links a {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.mobile-nav.open .mobile-nav-footer {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ========== VISUALLY HIDDEN (SEO / A11Y) ========== */
