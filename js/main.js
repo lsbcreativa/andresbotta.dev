@@ -339,6 +339,7 @@
 /* ========== MAGNETIC BUTTONS ========== */
 (function initMagneticButtons() {
     if (window.matchMedia('(hover: none)').matches) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     var magneticBtns = document.querySelectorAll('.magnetic-btn');
     if (!magneticBtns.length) return;
