@@ -483,34 +483,52 @@ function initScrollAnimations() {
         });
     });
 
-    // — Hero parallax (scroll-linked)
+    // — Hero parallax (scroll-linked, desktop only)
     var heroGrad1 = document.querySelector('.hero-gradient-1');
     var heroGrad2 = document.querySelector('.hero-gradient-2');
     var heroSection = document.querySelector('.hero');
 
-    if (heroGrad1 && heroGrad2 && heroSection) {
+    if (heroGrad1 && heroGrad2 && heroSection && window.innerWidth > 768) {
         var grad1Y = 0, grad1Target = 0;
         var grad2Y = 0, grad2Target = 0;
         var parallaxRaf = null;
+        var cachedHeroH = heroSection.offsetHeight;
+        var scrollDirty = true;
+
+        window.addEventListener('resize', function() {
+            cachedHeroH = heroSection.offsetHeight;
+        }, { passive: true });
+
+        window.addEventListener('scroll', function() {
+            scrollDirty = true;
+            if (!parallaxRaf) parallaxRaf = requestAnimationFrame(updateParallax);
+        }, { passive: true });
 
         function updateParallax() {
             var rect = heroSection.getBoundingClientRect();
-            var heroH = heroSection.offsetHeight;
             if (rect.bottom <= 0 || rect.top >= window.innerHeight) {
-                parallaxRaf = requestAnimationFrame(updateParallax);
+                parallaxRaf = null;
                 return;
             }
-            var progress = Math.max(0, Math.min(1, -rect.top / heroH));
-            grad1Target = progress * 200;
-            grad2Target = progress * -150;
-
-            // Smooth lerp
+            if (scrollDirty) {
+                var progress = Math.max(0, Math.min(1, -rect.top / cachedHeroH));
+                grad1Target = progress * 200;
+                grad2Target = progress * -150;
+                scrollDirty = false;
+            }
             grad1Y += (grad1Target - grad1Y) * 0.1;
             grad2Y += (grad2Target - grad2Y) * 0.1;
 
+            if (Math.abs(grad1Target - grad1Y) < 0.1 && Math.abs(grad2Target - grad2Y) < 0.1) {
+                grad1Y = grad1Target;
+                grad2Y = grad2Target;
+                heroGrad1.style.transform = 'translateY(' + grad1Y.toFixed(1) + 'px)';
+                heroGrad2.style.transform = 'translateY(' + grad2Y.toFixed(1) + 'px)';
+                parallaxRaf = null;
+                return;
+            }
             heroGrad1.style.transform = 'translateY(' + grad1Y.toFixed(1) + 'px)';
             heroGrad2.style.transform = 'translateY(' + grad2Y.toFixed(1) + 'px)';
-
             parallaxRaf = requestAnimationFrame(updateParallax);
         }
 
