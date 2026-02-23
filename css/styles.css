@@ -2627,9 +2627,7 @@ section[id] {
         text-align: center;
         font-size: 0.7rem;
         color: var(--color-text-muted);
-        border-top: 1px solid var(--color-border);
-        padding-top: 1rem;
-        margin-top: 1.5rem;
+        padding-top: 0.5rem;
         line-height: 1.5;
         width: 100%;
     }
