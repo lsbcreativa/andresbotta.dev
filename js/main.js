@@ -610,3 +610,32 @@ function initScrollAnimations() {
         observer.observe(section);
     });
 })();
+
+
+/* ========== THEME TOGGLE ========== */
+(function initThemeToggle() {
+    var toggle = document.querySelector('.theme-toggle');
+    if (!toggle) return;
+
+    var meta = document.querySelector('meta[name="theme-color"]');
+
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#f8f9fc' : '#06080f');
+    }
+
+    // Read stored or OS preference (anti-FOUC script already set data-theme,
+    // but we re-apply here to sync meta theme-color)
+    var stored = localStorage.getItem('theme');
+    if (!stored) {
+        stored = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    }
+    applyTheme(stored);
+
+    toggle.addEventListener('click', function() {
+        var current = document.documentElement.getAttribute('data-theme') || 'dark';
+        var next = current === 'dark' ? 'light' : 'dark';
+        applyTheme(next);
+        localStorage.setItem('theme', next);
+    });
+})();

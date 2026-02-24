@@ -217,6 +217,7 @@ img {
     display: flex;
     gap: 3rem;
     align-items: center;
+    margin-left: auto;
     mix-blend-mode: difference;
 }
 
@@ -2206,6 +2207,11 @@ section[id] {
         display: none;
     }
 
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 0.5rem;
+    }
+
     .menu-toggle {
         display: flex;
     }
@@ -3659,6 +3665,268 @@ section[id] {
 .mobile-nav.open .mobile-nav-footer {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ========== LIGHT MODE ========== */
+
+/* Smooth transition when toggling themes */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+[data-theme="light"] {
+    --color-bg: #f8f9fc;
+    --color-bg-secondary: #f0f2f5;
+    --color-bg-tertiary: #ffffff;
+    --color-text: #1a1b2e;
+    --color-text-secondary: #4b4c5e;
+    --color-text-muted: #8b8c9e;
+    --color-accent: #2563eb;
+    --color-accent-secondary: #3b82f6;
+    --color-accent-glow: rgba(37, 99, 235, 0.08);
+    --color-border: #e2e4ea;
+    --color-border-light: #d0d3da;
+}
+
+/* Selection — white text on accent in both modes */
+[data-theme="light"] ::selection {
+    color: #fff;
+}
+
+/* Logo — darken white wordmark for light bg */
+[data-theme="light"] .header-logo-img,
+[data-theme="light"] .footer-logo-img {
+    filter: brightness(0);
+}
+
+/* Nav — disable difference blend in light mode */
+[data-theme="light"] .header-nav {
+    mix-blend-mode: normal;
+}
+
+/* Header scroll — light frosted glass */
+[data-theme="light"] .header-scrolled {
+    background: rgba(248, 249, 252, 0.85);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Noise overlay — invert for light backgrounds */
+[data-theme="light"] .noise {
+    filter: invert(1);
+    opacity: 0.025;
+}
+
+/* Loader bar bg */
+[data-theme="light"] .loader-bar {
+    background: var(--color-border);
+}
+
+/* Hero gradients — much softer in light mode */
+[data-theme="light"] .hero-gradient {
+    opacity: 0.08;
+}
+
+[data-theme="light"] .hero-gradient-2 {
+    background: #a78bfa;
+}
+
+/* Particles & symbols — subtler */
+[data-theme="light"] .particle {
+    opacity: 0.2;
+}
+
+[data-theme="light"] .symbol {
+    opacity: 0.08;
+}
+
+/* Glow dividers — softer */
+[data-theme="light"] .glow-divider::before {
+    opacity: 0.2;
+}
+
+[data-theme="light"] .glow-divider::after {
+    background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
+}
+
+/* Buttons with accent bg — force white text */
+[data-theme="light"] .magnetic-btn:hover {
+    color: #fff;
+}
+
+[data-theme="light"] .mobile-nav-cta {
+    color: #fff;
+}
+
+[data-theme="light"] .process-number {
+    color: #fff;
+}
+
+[data-theme="light"] .about-social:hover {
+    color: #fff;
+}
+
+[data-theme="light"] .author-avatar {
+    color: #fff;
+}
+
+/* Service cards — elevation via shadow */
+[data-theme="light"] .service-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .service-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Process steps — elevation */
+[data-theme="light"] .process-step {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .process-step:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Project mockups — subtle shadow */
+[data-theme="light"] .project-image {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Certification cards — light variant */
+[data-theme="light"] .certification-card {
+    background: linear-gradient(145deg, #ffffff, #f0f2f5);
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow:
+        0 0 30px rgba(37, 99, 235, 0.08),
+        0 10px 40px rgba(0, 0, 0, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="light"] .certification-card:hover {
+    border-color: rgba(37, 99, 235, 0.5);
+    box-shadow:
+        0 30px 60px rgba(37, 99, 235, 0.1),
+        0 0 40px rgba(37, 99, 235, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .certification-image {
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .certification-link {
+    background: rgba(37, 99, 235, 0.08);
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+[data-theme="light"] .certification-card:hover .certification-link {
+    color: #fff;
+}
+
+[data-theme="light"] .certification-year {
+    color: #fff;
+}
+
+/* Testimonial cards — elevation */
+[data-theme="light"] .testimonial-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .testimonial-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* Coverage cards — elevation */
+[data-theme="light"] .coverage-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .coverage-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Blog cards — elevation */
+[data-theme="light"] .blog-card {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .blog-card:hover {
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.06);
+}
+
+[data-theme="light"] .blog-card-tag {
+    background: rgba(37, 99, 235, 0.06);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
+/* Back to top — elevation */
+[data-theme="light"] .back-to-top {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+/* WhatsApp tooltip — shadow */
+[data-theme="light"] .whatsapp-float-tooltip {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Contact form — white text on send button animation */
+[data-theme="light"] .contact-form-submit.is-sending {
+    box-shadow: 0 0 20px var(--color-accent-glow), 0 0 40px rgba(37, 99, 235, 0.04);
+}
+
+/* Mobile hero overrides */
+@media (max-width: 768px) {
+    [data-theme="light"] .hero-gradient-1 {
+        background: radial-gradient(ellipse, rgba(37, 99, 235, 0.12) 0%, transparent 60%);
+    }
+
+    [data-theme="light"] .hero-gradient-2 {
+        background: radial-gradient(ellipse, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+    }
+
+    [data-theme="light"] .hero-title .outline {
+        text-shadow: none;
+    }
+
+    [data-theme="light"] .hero-cta .btn-primary-fill {
+        color: #fff;
+        box-shadow: 0 4px 20px rgba(37, 99, 235, 0.25);
+    }
+}
+
+/* ========== THEME TOGGLE ========== */
+.theme-toggle {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    color: var(--color-text-secondary);
+    transition: color 0.3s ease, border-color 0.3s ease;
+    padding: 0;
+}
+
+.theme-toggle:hover {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* Dark mode: show sun icon (switch to light), hide moon */
+.theme-icon-moon {
+    display: none;
+}
+
+[data-theme="light"] .theme-icon-sun {
+    display: none;
+}
+
+[data-theme="light"] .theme-icon-moon {
+    display: block;
 }
 
 /* ========== VISUALLY HIDDEN (SEO / A11Y) ========== */
