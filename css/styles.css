@@ -3436,8 +3436,8 @@ input, select, textarea {
 }
 
 .share-btn:hover {
+    color: #fff;
     border-color: var(--color-accent);
-    color: var(--color-accent);
     transform: scale(1.1);
 }
 
@@ -3459,8 +3459,8 @@ input, select, textarea {
 }
 
 .share-copy:hover {
+    color: #fff;
     border-color: var(--color-accent);
-    color: var(--color-accent);
     transform: scale(1.1);
 }
 
