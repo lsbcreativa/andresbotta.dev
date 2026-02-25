@@ -350,6 +350,7 @@
         var spanX = 0, spanY = 0, spanTargetX = 0, spanTargetY = 0;
         var isHovering = false;
         var rafId = null;
+        var cachedRect = null;
 
         function lerp(current, target, factor) {
             return current + (target - current) * factor;
@@ -362,7 +363,6 @@
                 spanX = lerp(spanX, spanTargetX, 0.15);
                 spanY = lerp(spanY, spanTargetY, 0.15);
             } else {
-                // Spring back with overshoot
                 btnX = lerp(btnX, 0, 0.12);
                 btnY = lerp(btnY, 0, 0.12);
                 spanX = lerp(spanX, 0, 0.12);
@@ -381,10 +381,14 @@
             }
         }
 
+        btn.addEventListener('mouseenter', function() {
+            cachedRect = btn.getBoundingClientRect();
+        });
+
         btn.addEventListener('mousemove', function(e) {
-            var rect = btn.getBoundingClientRect();
-            var x = e.clientX - rect.left - rect.width / 2;
-            var y = e.clientY - rect.top  - rect.height / 2;
+            if (!cachedRect) cachedRect = btn.getBoundingClientRect();
+            var x = e.clientX - cachedRect.left - cachedRect.width / 2;
+            var y = e.clientY - cachedRect.top  - cachedRect.height / 2;
 
             targetX = x * 0.3;
             targetY = y * 0.3;
@@ -397,6 +401,7 @@
 
         btn.addEventListener('mouseleave', function() {
             isHovering = false;
+            cachedRect = null;
             if (!rafId) rafId = requestAnimationFrame(animate);
         });
     });
@@ -548,17 +553,20 @@ function initScrollAnimations() {
                 e.preventDefault();
                 var top = targetEl.getBoundingClientRect().top + window.scrollY - 80;
                 window.scrollTo({ top: top, behavior: 'smooth' });
+                if (!targetEl.hasAttribute('tabindex')) targetEl.setAttribute('tabindex', '-1');
+                targetEl.focus({ preventScroll: true });
             }
         });
     });
 })();
 
 
-/* ========== STICKY HEADER + FLOATING BUTTONS ========== */
+/* ========== STICKY HEADER + FLOATING BUTTONS + SCROLL PROGRESS ========== */
 (function initScrollUI() {
     var header = document.querySelector('.header');
     var whatsappBtn = document.querySelector('.whatsapp-float');
     var backToTopBtn = document.querySelector('.back-to-top');
+    var progressBar = document.querySelector('.scroll-progress-bar');
 
     var ticking = false;
     window.addEventListener('scroll', function() {
@@ -575,6 +583,11 @@ function initScrollAnimations() {
                 var scrolled = scrollY > 500;
                 if (whatsappBtn) whatsappBtn.classList.toggle('visible', scrolled);
                 if (backToTopBtn) backToTopBtn.classList.toggle('visible', scrolled);
+                if (progressBar) {
+                    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    var progress = docHeight > 0 ? scrollY / docHeight : 0;
+                    progressBar.style.transform = 'scaleX(' + Math.min(progress, 1) + ')';
+                }
                 ticking = false;
             });
             ticking = true;
@@ -600,7 +613,13 @@ function initScrollAnimations() {
             if (entry.isIntersecting) {
                 var id = entry.target.id;
                 navLinks.forEach(function(link) {
-                    link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+                    var isActive = link.getAttribute('href') === '#' + id;
+                    link.classList.toggle('active', isActive);
+                    if (isActive) {
+                        link.setAttribute('aria-current', 'true');
+                    } else {
+                        link.removeAttribute('aria-current');
+                    }
                 });
             }
         });
@@ -648,4 +667,61 @@ function initScrollAnimations() {
             root.classList.remove('theme-transitioning');
         }, 500);
     });
+})();
+
+
+/* ========== ANIMATED COUNTERS ========== */
+(function initCounters() {
+    var statNumbers = document.querySelectorAll('.about-stat-number');
+    if (!statNumbers.length) return;
+
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (!entry.isIntersecting) return;
+            var el = entry.target;
+            observer.unobserve(el);
+
+            var text = el.textContent.trim();
+            var prefix = '';
+            var suffix = '';
+            var endValue = 0;
+
+            // Parse formats like "50+", "5+", "100%", "99/100"
+            if (text.indexOf('/') !== -1) {
+                var parts = text.split('/');
+                endValue = parseInt(parts[0]);
+                suffix = '/' + parts[1];
+            } else {
+                var match = text.match(/^([^\d]*)(\d+)(.*)$/);
+                if (match) {
+                    prefix = match[1];
+                    endValue = parseInt(match[2]);
+                    suffix = match[3];
+                } else {
+                    return;
+                }
+            }
+
+            if (prefersReducedMotion) return; // Keep original text
+
+            var duration = 1200;
+            var startTime = null;
+            el.textContent = prefix + '0' + suffix;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                // Ease out cubic
+                var eased = 1 - Math.pow(1 - progress, 3);
+                var current = Math.round(endValue * eased);
+                el.textContent = prefix + current + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        });
+    }, { threshold: 0.5 });
+
+    statNumbers.forEach(function(el) { observer.observe(el); });
 })();

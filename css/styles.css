@@ -85,6 +85,25 @@ a {
     pointer-events: none;
 }
 
+/* ========== SCROLL PROGRESS BAR ========== */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.scroll-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-accent), #8b5cf6);
+    transform-origin: left;
+    transform: scaleX(0);
+    will-change: transform;
+}
+
 /* ========== FOCUS VISIBLE (A11Y) ========== */
 a:focus-visible,
 button:focus-visible,
@@ -97,6 +116,7 @@ button:focus-visible,
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
     border-radius: 4px;
+    box-shadow: 0 0 12px var(--color-accent-glow);
 }
 
 img {
@@ -466,6 +486,11 @@ img {
 
 .magnetic-btn:hover::before {
     transform: translateY(0);
+}
+
+.magnetic-btn:active {
+    transform: scale(0.96);
+    transition: transform 0.1s ease;
 }
 
 .magnetic-btn span {
@@ -1225,7 +1250,7 @@ section[id] {
     padding: 3rem;
     position: relative;
     overflow: hidden;
-    transition: background 0.4s ease;
+    transition: background 0.4s ease, transform 0.4s var(--ease-out-expo), box-shadow 0.4s ease;
 }
 
 .service-card::before {
@@ -1243,6 +1268,8 @@ section[id] {
 
 .service-card:hover {
     background: var(--color-bg-tertiary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.08);
 }
 
 .service-card:hover::before {
@@ -2053,8 +2080,9 @@ section[id] {
 }
 
 .btn-primary-fill {
-    background: var(--color-accent);
+    background: linear-gradient(135deg, var(--color-accent) 0%, #8b5cf6 100%);
     border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.25);
 }
 
 .btn-primary-fill::before {
@@ -2063,6 +2091,12 @@ section[id] {
 
 .btn-primary-fill:hover {
     color: var(--color-bg);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.35);
+}
+
+/* ========== ACCENT COLOR FOR FORMS ========== */
+input, select, textarea {
+    accent-color: var(--color-accent);
 }
 
 /* ========== FOOTER ========== */
@@ -2112,10 +2146,26 @@ section[id] {
     font-size: 0.875rem;
     color: var(--color-text-secondary);
     transition: color 0.3s ease;
+    position: relative;
+}
+
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-accent);
+    transition: width 0.3s var(--ease-out-expo);
 }
 
 .footer-link:hover {
     color: var(--color-text);
+}
+
+.footer-link:hover::after {
+    width: 100%;
 }
 
 .footer-trust {
