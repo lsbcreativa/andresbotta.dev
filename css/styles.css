@@ -244,6 +244,7 @@ img {
 .header-logo {
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .header-logo-img {
@@ -2150,6 +2151,7 @@ input, select, textarea {
     display: flex;
     align-items: flex-start;
     grid-column: 1;
+    position: relative;
 }
 
 .footer-logo-img {
