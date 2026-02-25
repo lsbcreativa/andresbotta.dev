@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>Blog — Diseño Web, Precios y SEO en Perú | Andrés Botta</title>
@@ -53,8 +52,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -69,7 +66,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../css/styles.min.css?v=1.0.0">
@@ -96,7 +92,7 @@
         <a href="../" class="header-logo" aria-label="Andrés Botta - Inicio">
             <picture>
                 <source srcset="../imagenes/logo-andres-botta.webp" type="image/webp">
-                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
             </picture>
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
@@ -144,7 +140,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../">Inicio</a>
             <span class="breadcrumb-separator">›</span>
-            <span>Blog</span>
+            <span aria-current="page">Blog</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->

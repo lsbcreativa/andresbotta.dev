@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>Diseño Web en Arequipa | A Medida | Andrés Botta</title>
@@ -134,8 +133,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -150,7 +147,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../css/styles.min.css?v=1.0.0">
@@ -177,7 +173,7 @@
         <a href="../" class="header-logo" aria-label="Andrés Botta - Inicio">
             <picture>
                 <source srcset="../imagenes/logo-andres-botta.webp" type="image/webp">
-                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
             </picture>
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
@@ -225,7 +221,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../">Inicio</a>
             <span class="breadcrumb-separator">›</span>
-            <span>Diseño Web Arequipa</span>
+            <span aria-current="page">Diseño Web Arequipa</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -375,38 +371,38 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿Por qué mi negocio en Arequipa necesita una página web profesional?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>Arequipa es la segunda ciudad más grande del Perú con un mercado comercial en crecimiento. Tus potenciales clientes buscan en Google antes de comprar. Sin una web profesional, pierdes ventas frente a competidores que sí tienen presencia digital. Una web bien diseñada genera confianza y trabaja para ti las 24 horas.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿Cuánto tiempo tarda en estar lista una página web para mi empresa en Arequipa?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>Depende del tipo de proyecto: una landing page tarda 5-7 días hábiles, una web corporativa 2-3 semanas y una tienda online con catálogo completo 3-5 semanas. Recibes avances semanales durante todo el proceso para que veas cómo avanza tu proyecto.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿Necesito estar en Arequipa para trabajar contigo?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>No. Todo el proceso se maneja de forma remota por WhatsApp, email y videollamadas. He trabajado con clientes en distintas ciudades del Perú y el mundo. La comunicación es fluida y recibes avances semanales sin importar dónde estés.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿Mi web incluirá posicionamiento en Google para búsquedas en Arequipa?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>Sí. Cada web se desarrolla con SEO técnico desde la estructura: meta tags optimizados, velocidad de carga superior, estructura HTML semántica y contenido enfocado en tu ubicación. Esto te ayuda a aparecer en búsquedas como "tu servicio + Arequipa" desde el primer día.</p>
                     </div>
                 </div>

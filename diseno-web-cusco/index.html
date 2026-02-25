@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>Diseño Web en Cusco | Turismo y Negocios | Andrés Botta</title>
@@ -134,8 +133,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -150,7 +147,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../css/styles.min.css?v=1.0.0">
@@ -177,7 +173,7 @@
         <a href="../" class="header-logo" aria-label="Andrés Botta - Inicio">
             <picture>
                 <source srcset="../imagenes/logo-andres-botta.webp" type="image/webp">
-                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
             </picture>
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
@@ -225,7 +221,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../">Inicio</a>
             <span class="breadcrumb-separator">›</span>
-            <span>Diseño Web Cusco</span>
+            <span aria-current="page">Diseño Web Cusco</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -375,38 +371,38 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿Por qué mi hotel o tour en Cusco necesita una página web profesional?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>El 85% de los turistas investigan online antes de reservar. Si tu hotel, restaurante o tour en Cusco no tiene una web profesional, estás perdiendo reservas frente a la competencia. Una web rápida, con fotos de calidad y sistema de reservas genera confianza y convierte visitantes en huéspedes.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿Puedo tener mi web en varios idiomas para atraer turistas internacionales?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>Sí. Desarrollo webs multilingües (español, inglés, portugués y más) optimizadas para SEO en cada idioma. Cada versión tiene sus propias meta tags y URLs, lo que te permite posicionar tanto en Google Perú como en buscadores internacionales donde tus potenciales clientes buscan tours a Cusco.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿Incluye integración con plataformas de reservas y pagos?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>Sí. Integro tu web con sistemas de reservas online, WhatsApp Business para consultas directas, y pasarelas de pago como Mercado Pago o PayPal. Todo configurado para que tus clientes puedan reservar y pagar desde cualquier parte del mundo.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿Cuánto cuesta una página web profesional para un negocio en Cusco?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>Cada proyecto se cotiza según sus necesidades específicas. Una landing page parte desde un precio accesible, mientras que una web completa con sistema de reservas y múltiples idiomas tiene un alcance mayor. Escríbeme por WhatsApp y en 24 horas recibes una propuesta detallada con precio cerrado.</p>
                     </div>
                 </div>

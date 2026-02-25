@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>Diseño Web en Chiclayo | A Medida | Andrés Botta</title>
@@ -134,8 +133,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -150,7 +147,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../css/styles.min.css?v=1.0.0">
@@ -177,7 +173,7 @@
         <a href="../" class="header-logo" aria-label="Andrés Botta - Inicio">
             <picture>
                 <source srcset="../imagenes/logo-andres-botta.webp" type="image/webp">
-                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
             </picture>
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
@@ -225,7 +221,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../">Inicio</a>
             <span class="breadcrumb-separator">›</span>
-            <span>Diseño Web Chiclayo</span>
+            <span aria-current="page">Diseño Web Chiclayo</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -375,38 +371,38 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿Puedo contratar diseño web en Chiclayo de forma remota?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>Sí, el proceso es 100% online. Nos coordinamos por WhatsApp, videollamada o email. Recibes una consulta gratuita, propuesta en 24 horas y avances semanales hasta la entrega final. He trabajado con clientes en todo el Perú y Latinoamérica sin necesidad de reuniones presenciales. Tu web queda lista igual sin importar la distancia.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿Cuánto cuesta una página web para un negocio en Chiclayo?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>Los precios son los mismos a nivel nacional: una landing page desde S/. 497, una web corporativa desde S/. 997 y una tienda online con catálogo completo desde S/. 1,497. Cada proyecto incluye diseño personalizado, SEO técnico, hosting y dominio configurados, y 3 meses de soporte. Escríbeme por WhatsApp para una cotización exacta según tu necesidad.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿Hacen webs para comercios y distribuidoras?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>Sí. Desarrollo páginas web para comercios, distribuidoras, molinos de arroz, empresas agroindustriales y todo tipo de negocio en Chiclayo y Lambayeque. Incluyo catálogos de productos, sistemas de inventario visual, integración con WhatsApp Business y pasarelas de pago como Mercado Pago para vender online las 24 horas.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿Mi web se verá bien en celulares?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>Sí. Todas mis webs se diseñan con enfoque mobile-first, lo que significa que primero se optimizan para celulares y luego se adaptan a tablets y computadoras. El resultado es una web que se ve impecable y carga rápido en cualquier dispositivo, algo fundamental cuando la mayoría de tus clientes en Chiclayo navegan desde su smartphone.</p>
                     </div>
                 </div>

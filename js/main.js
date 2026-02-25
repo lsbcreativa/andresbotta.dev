@@ -33,8 +33,8 @@
 
     // Progress bar animation
     var startTime = performance.now();
-    var duration = 800;
-    var delay = 500; // Wait for letters to appear
+    var duration = 400;
+    var delay = 200; // Wait for letters to appear
 
     function animateProgress(now) {
         var elapsed = now - startTime - delay;
@@ -493,7 +493,8 @@ function initScrollAnimations() {
     var heroGrad2 = document.querySelector('.hero-gradient-2');
     var heroSection = document.querySelector('.hero');
 
-    if (heroGrad1 && heroGrad2 && heroSection && window.innerWidth > 768) {
+    if (heroGrad1 && heroGrad2 && heroSection && window.innerWidth > 768
+        && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
         var grad1Y = 0, grad1Target = 0;
         var grad2Y = 0, grad2Target = 0;
         var parallaxRaf = null;
@@ -725,3 +726,11 @@ function initScrollAnimations() {
 
     statNumbers.forEach(function(el) { observer.observe(el); });
 })();
+
+
+/* ========== SERVICE WORKER REGISTRATION ========== */
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js').catch(function() {});
+    });
+}

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>Contacto | Andrés Botta — Desarrollador Web en Lima, Perú</title>
@@ -82,8 +81,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -98,7 +95,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../css/styles.min.css?v=1.0.0">
@@ -125,7 +121,7 @@
         <a href="../" class="header-logo" aria-label="Andrés Botta - Inicio">
             <picture>
                 <source srcset="../imagenes/logo-andres-botta.webp" type="image/webp">
-                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+                <img src="../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
             </picture>
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
@@ -173,7 +169,7 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../">Inicio</a>
             <span class="breadcrumb-separator">›</span>
-            <span>Contacto</span>
+            <span aria-current="page">Contacto</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -396,13 +392,48 @@
             document.getElementById('submitBtn').removeAttribute('disabled');
         }, 1000);
 
-        // Submit animation
-        document.getElementById('contactForm').addEventListener('submit', function() {
+        // AJAX form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var form = this;
             var btn = document.getElementById('submitBtn');
             var span = btn.querySelector('span');
+            var el = document.getElementById('formStatus');
             btn.disabled = true;
             btn.classList.add('is-sending');
             span.innerHTML = '<span class="sending-prompt">&gt;</span> Enviando<span class="sending-dots"></span><span class="sending-cursor">_</span>';
+            el.style.display = 'none';
+
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            })
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                var messages = {
+                    'ok': ['¡Mensaje enviado! Te respondo en menos de 24 horas.', 'form-status--ok'],
+                    'error': ['Hubo un error al enviar. Intenta de nuevo o escríbeme por WhatsApp.', 'form-status--error'],
+                    'ratelimit': ['Demasiados envíos. Espera unos minutos e intenta de nuevo.', 'form-status--error'],
+                    'invalid-email': ['Usa un email válido y permanente (no emails temporales).', 'form-status--error'],
+                    'invalid-phone': ['Ingresa un número de teléfono peruano válido.', 'form-status--error']
+                };
+                var msg = messages[data.status] || messages['error'];
+                el.textContent = msg[0];
+                el.className = 'form-status ' + msg[1];
+                el.style.display = 'block';
+                if (data.status === 'ok') form.reset();
+            })
+            .catch(function() {
+                el.textContent = 'Error de conexión. Intenta de nuevo o escríbeme por WhatsApp.';
+                el.className = 'form-status form-status--error';
+                el.style.display = 'block';
+            })
+            .finally(function() {
+                btn.disabled = false;
+                btn.classList.remove('is-sending');
+                span.textContent = 'Enviar mensaje';
+            });
         });
 
         // Peru phone validation on blur

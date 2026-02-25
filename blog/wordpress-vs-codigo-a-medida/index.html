@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>WordPress vs Código a Medida: ¿Cuál Elegir? | Andrés Botta</title>
@@ -128,8 +127,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -144,7 +141,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../../css/styles.min.css?v=1.0.0">
@@ -169,7 +165,7 @@
     <!-- Header -->
     <header class="header" role="banner">
         <a href="../../" class="header-logo" aria-label="Andrés Botta - Inicio">
-            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
             <a href="../../#servicios" class="nav-link">Servicios</a>
@@ -218,7 +214,7 @@
             <span class="breadcrumb-separator">></span>
             <a href="../../blog/">Blog</a>
             <span class="breadcrumb-separator">></span>
-            <span>WordPress vs Código a Medida</span>
+            <span aria-current="page">WordPress vs Código a Medida</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -389,38 +385,38 @@
 
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿WordPress es gratis?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>El software en sí es gratuito, pero necesitas hosting, dominio, tema premium y plugins. El costo real de mantener un sitio WordPress funcional y seguro ronda los S/500 a S/2,000 al año entre hosting, renovación de plugins y actualizaciones de seguridad.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿Un sitio a medida es más rápido que WordPress?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>Generalmente sí, y por un margen significativo. Un sitio a medida bien optimizado obtiene puntuaciones de 90-100 en Google PageSpeed Insights. El promedio de WordPress con temas y plugins ronda los 40-60 puntos, lo que afecta directamente el posicionamiento en Google y la experiencia del usuario.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿Puedo migrar de WordPress a código a medida?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>Sí, el contenido se puede migrar sin problema. Es un pedido frecuente de negocios que empezaron con WordPress y buscan mejor rendimiento y menos dependencia de plugins. El proceso implica rediseñar la estructura y programar desde cero, manteniendo todo el contenido existente.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿Qué opción es mejor para SEO?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>El código a medida ofrece control total sobre cada elemento que afecta el SEO: estructura HTML, velocidad de carga, schema markup y Core Web Vitals. WordPress con buenos plugins como Yoast logra un SEO decente, pero carga con el overhead de código innecesario que afecta la velocidad y, por ende, el posicionamiento.</p>
                     </div>
                 </div>

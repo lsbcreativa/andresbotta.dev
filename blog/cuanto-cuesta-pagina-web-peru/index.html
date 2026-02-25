@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>¿Cuánto Cuesta una Página Web en Perú? | Andrés Botta</title>
@@ -128,8 +127,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -144,7 +141,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../../css/styles.min.css?v=1.0.0">
@@ -169,7 +165,7 @@
     <!-- Header -->
     <header class="header" role="banner">
         <a href="../../" class="header-logo" aria-label="Andrés Botta - Inicio">
-            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
             <a href="../../#servicios" class="nav-link">Servicios</a>
@@ -218,7 +214,7 @@
             <span class="breadcrumb-separator">›</span>
             <a href="../../blog/">Blog</a>
             <span class="breadcrumb-separator">›</span>
-            <span>Precios de páginas web en Perú</span>
+            <span aria-current="page">Precios de páginas web en Perú</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -354,38 +350,38 @@
 
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿Cuánto cobra un diseñador web freelance en Perú?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>Un freelance profesional en Lima cobra entre S/ 800 por una landing page sencilla y S/ 8,000 o más por una web corporativa completa con diseño a medida. El precio varía según la complejidad del proyecto, la cantidad de páginas y si incluye funcionalidades como tienda online o sistemas de reservas.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿Es mejor contratar una agencia o un freelance?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>Depende del tamaño del proyecto. Para webs de hasta 10 páginas, un freelance senior ofrece mejor relación calidad-precio porque trabajas directamente con quien diseña y programa. Las agencias convienen para proyectos grandes con equipos de contenido, SEO y publicidad integrados, pero sus costos arrancan más alto.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿El precio incluye hosting y dominio?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>Varía según el proveedor. Muchos desarrolladores profesionales incluyen la configuración inicial de hosting y dominio en el precio, pero el costo anual de renovación corre por cuenta del cliente. En Perú, un hosting confiable cuesta entre S/ 150 y S/ 500 al año, y un dominio .pe entre S/ 350 y S/ 500 al año (varía según el registrador).</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿Cuánto tarda el desarrollo de una página web profesional?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>Una landing page puede estar lista en 5-7 días. Una web corporativa de 5-8 páginas tarda entre 2 y 4 semanas. Una tienda online con catálogo completo puede tomar 4-8 semanas. Los tiempos dependen de la velocidad con que el cliente entrega contenido (textos, fotos, logos) y de las rondas de revisión.</p>
                     </div>
                 </div>

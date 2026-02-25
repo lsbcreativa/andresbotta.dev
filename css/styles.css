@@ -18,7 +18,24 @@
     --color-border-light: #3f3f46;
     --font-display: 'Space Grotesk', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 5rem;
+    --spacing-section: 8rem;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-pill: 100px;
+    --z-base: 0;
+    --z-above: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-overlay: 300;
+    --z-modal: 9000;
+    --z-top: 10000;
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
@@ -197,6 +214,9 @@ img {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
     will-change: auto;
     contain: strict;
+}
+@media (max-width: 768px) {
+    .noise { display: none; }
 }
 
 /* ========== HEADER ========== */
@@ -4126,6 +4146,36 @@ html.theme-transitioning *::after {
 [data-theme="light"] .theme-icon-moon {
     opacity: 1;
     transform: rotate(0deg) scale(1);
+}
+
+/* ========== HIGH CONTRAST (A11Y) ========== */
+@media (prefers-contrast: more) {
+    :root {
+        --color-text-secondary: #d4d4d8;
+        --color-text-muted: #a1a1aa;
+        --color-border: #52525b;
+    }
+    [data-theme="light"] {
+        --color-text-secondary: #27272a;
+        --color-text-muted: #52525b;
+    }
+    .nav-link, .breadcrumb a { text-decoration: underline; }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    body { background: #fff !important; color: #000 !important; }
+    .header, .mobile-nav, .noise, .scroll-progress,
+    .whatsapp-float, .back-to-top, .footer-bottom,
+    .hero-bg, .hero-gradient, .particle, .symbol,
+    .loader, .hero-scroll, .hero-code { display: none !important; }
+    .hero { min-height: auto !important; padding: 2rem 0 !important; }
+    main { padding-top: 0 !important; }
+    section { padding: 1.5rem 0 !important; break-inside: avoid; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+    a[href^="https://wa.me"]::after { content: none; }
+    .magnetic-btn { border: 1px solid #000 !important; background: transparent !important; color: #000 !important; }
+    img { max-width: 100% !important; }
 }
 
 /* ========== VISUALLY HIDDEN (SEO / A11Y) ========== */

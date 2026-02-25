@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>SEO para Negocios en Perú: Guía Completa — Andrés Botta</title>
@@ -128,8 +127,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -144,7 +141,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../../css/styles.min.css?v=1.0.0">
@@ -169,7 +165,7 @@
     <!-- Header -->
     <header class="header" role="banner">
         <a href="../../" class="header-logo" aria-label="Andrés Botta - Inicio">
-            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
             <a href="../../#servicios" class="nav-link">Servicios</a>
@@ -218,7 +214,7 @@
             <span class="breadcrumb-separator">&rsaquo;</span>
             <a href="../../blog/">Blog</a>
             <span class="breadcrumb-separator">&rsaquo;</span>
-            <span>SEO para Negocios en Perú</span>
+            <span aria-current="page">SEO para Negocios en Perú</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -346,38 +342,38 @@
 
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿Puedo hacer SEO yo mismo o necesito un profesional?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>El SEO básico como crear y optimizar tu perfil de Google My Business, pedir reseñas a clientes satisfechos y mantener tu información actualizada lo puedes hacer tú mismo. Sin embargo, el <a href="../../seo-tecnico-peru/">SEO técnico</a> (velocidad de carga, estructura del código, schema markup) y la estrategia de contenido se benefician mucho de un profesional con experiencia. La combinación ideal es hacer lo básico tú mismo y delegar lo técnico.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿Cuánto cuesta el SEO en Perú?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>El SEO on-page básico (títulos, meta descriptions, estructura de encabezados, velocidad) debería venir incluido con tu página web profesional. Las campañas de SEO continuas, que incluyen creación de contenido, link building y optimización mensual, van desde S/ 500 hasta S/ 3,000 al mes dependiendo de la competencia en tu sector y tus objetivos.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿Por qué mi web no aparece en Google?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>Las razones más comunes son: tu web es muy nueva y Google aún no la ha indexado, no tiene SEO básico implementado, carga lento (más de 3 segundos), tiene poco o ningún contenido original, no tiene backlinks de otros sitios, o tiene errores técnicos que impiden la indexación. Lo recomendable es hacer una auditoría técnica para identificar el problema específico.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿Las redes sociales ayudan al SEO?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>De forma indirecta, sí. Las señales sociales (likes, compartidos, menciones) no son un factor de posicionamiento directo en Google. Sin embargo, las redes sociales generan tráfico hacia tu web, aumentan la visibilidad de tu marca y pueden generar backlinks naturales cuando otros sitios descubren tu contenido a través de redes. Una buena estrategia digital combina SEO y redes sociales.</p>
                     </div>
                 </div>

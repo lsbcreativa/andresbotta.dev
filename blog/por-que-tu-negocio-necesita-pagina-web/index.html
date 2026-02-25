@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>¿Por Qué Tu Negocio Necesita una Web? | Andrés Botta</title>
@@ -128,8 +127,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -144,7 +141,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../../css/styles.min.css?v=1.0.0">
@@ -169,7 +165,7 @@
     <!-- Header -->
     <header class="header" role="banner">
         <a href="../../" class="header-logo" aria-label="Andrés Botta - Inicio">
-            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
             <a href="../../#servicios" class="nav-link">Servicios</a>
@@ -218,7 +214,7 @@
             <span class="breadcrumb-separator">›</span>
             <a href="../../blog/">Blog</a>
             <span class="breadcrumb-separator">›</span>
-            <span>Por qué tu negocio necesita una web</span>
+            <span aria-current="page">Por qué tu negocio necesita una web</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -330,38 +326,38 @@
 
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿Cuánto cuesta hacer una página web para mi negocio?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>El precio varía según el tipo de web. Una landing page cuesta entre S/ 800 y S/ 2,500. Una web corporativa de varias páginas, entre S/ 2,500 y S/ 8,000. Una tienda online con pasarelas de pago, entre S/ 5,000 y S/ 15,000 o más. Puedes ver el desglose completo en mi <a href="../cuanto-cuesta-pagina-web-peru/">guía de precios de páginas web en Perú</a>.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿Necesito una web si ya tengo redes sociales?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>Sí. Las redes sociales son un complemento excelente, pero no reemplazan una página web propia. Tú no eres dueño de Facebook ni de Instagram: pueden cambiar sus algoritmos, reducir tu alcance o cerrar tu cuenta. Una web es un activo digital que controlas al 100%, que aparece en Google y que trabaja para ti las 24 horas.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿Cuánto tiempo tarda crear una página web?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>Depende del tipo de proyecto. Una landing page puede estar lista en 1 semana. Una web corporativa de varias páginas tarda entre 2 y 4 semanas. Una tienda online completa puede tomar de 4 a 8 semanas. Los tiempos dependen también de la velocidad con que el cliente entrega su contenido (textos, fotos, logos) y aprueba las revisiones.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿Puedo administrar mi web yo mismo?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>Depende de cómo se construya. Muchos sitios se entregan con un panel de administración sencillo o con instrucciones claras para hacer cambios básicos como textos, imágenes y precios. Un buen desarrollador incluye capacitación para que puedas gestionar tu contenido sin depender de nadie para cada cambio menor.</p>
                     </div>
                 </div>

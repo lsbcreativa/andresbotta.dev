@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>Diseño Web Profesional en Perú | Andrés Botta</title>
@@ -46,223 +45,234 @@
     <meta name="twitter:description" content="Desarrollador web en Lima, Perú. Páginas web a medida para empresas: tiendas online, webs corporativas y landing pages. +50 proyectos. Cotiza gratis.">
     <meta name="twitter:image" content="https://andresbotta.dev/imagenes/logo-compartir.png">
 
-    <!-- ========== STRUCTURED DATA: LocalBusiness ========== -->
+    <!-- ========== STRUCTURED DATA (@graph) ========== -->
     <script type="application/ld+json">
     {
-        "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Andrés Botta — Desarrollo Web",
-        "alternateName": "andresbotta.dev",
-        "description": "Desarrollador web freelance en Lima, Perú. Creo páginas web profesionales a medida para empresas: diseño web, tiendas online, landing pages, sitios corporativos. Código personalizado, SEO optimizado, +50 proyectos entregados.",
-        "url": "https://andresbotta.dev/",
-        "telephone": "+51968672704",
-        "email": "contacto@andresbotta.dev",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lima",
-            "addressRegion": "Lima",
-            "addressCountry": "PE"
-        },
-        "geo": {
-            "@type": "GeoCoordinates",
-            "latitude": -12.046374,
-            "longitude": -77.042793
-        },
-        "priceRange": "$$",
-        "image": "https://andresbotta.dev/imagenes/logo-compartir.png",
-        "areaServed": [
-            { "@type": "City", "name": "Lima" },
-            { "@type": "Country", "name": "Perú" },
-            { "@type": "Place", "name": "Latinoamérica" }
-        ],
-        "serviceType": [
-            "Desarrollo Web a Medida",
-            "Diseño Web Profesional",
-            "Crear Página Web",
-            "Tienda Online",
-            "E-commerce Perú",
-            "WordPress Personalizado",
-            "SEO Técnico",
-            "Landing Pages",
-            "Páginas Web para Empresas",
-            "Diseño Web Responsive",
-            "Programación Web"
-        ],
-        "founder": {
-            "@type": "Person",
-            "name": "Andrés Sánchez Botta",
-            "jobTitle": "Desarrollador Web Freelance en Lima, Perú",
-            "url": "https://andresbotta.dev/",
-            "sameAs": [
-                "https://www.linkedin.com/in/andressbotta",
-                "https://github.com/lsbcreativa"
+            "@context": "https://schema.org",
+            "@graph": [
+                    {
+                            "@type": "ProfessionalService",
+                            "@id": "https://andresbotta.dev/#service",
+                            "name": "Andrés Botta — Desarrollo Web",
+                            "alternateName": "andresbotta.dev",
+                            "description": "Desarrollador web freelance en Lima, Perú. Creo páginas web profesionales a medida para empresas: diseño web, tiendas online, landing pages, sitios corporativos. Código personalizado, SEO optimizado, +50 proyectos entregados.",
+                            "url": "https://andresbotta.dev/",
+                            "telephone": "+51968672704",
+                            "email": "contacto@andresbotta.dev",
+                            "address": {
+                                    "@type": "PostalAddress",
+                                    "addressLocality": "Lima",
+                                    "addressRegion": "Lima",
+                                    "addressCountry": "PE"
+                            },
+                            "geo": {
+                                    "@type": "GeoCoordinates",
+                                    "latitude": -12.046374,
+                                    "longitude": -77.042793
+                            },
+                            "priceRange": "$$",
+                            "image": "https://andresbotta.dev/imagenes/logo-compartir.png",
+                            "areaServed": [
+                                    {
+                                            "@type": "City",
+                                            "name": "Lima"
+                                    },
+                                    {
+                                            "@type": "Country",
+                                            "name": "Perú"
+                                    },
+                                    {
+                                            "@type": "Place",
+                                            "name": "Latinoamérica"
+                                    }
+                            ],
+                            "serviceType": [
+                                    "Desarrollo Web a Medida",
+                                    "Diseño Web Profesional",
+                                    "Crear Página Web",
+                                    "Tienda Online",
+                                    "E-commerce Perú",
+                                    "WordPress Personalizado",
+                                    "SEO Técnico",
+                                    "Landing Pages",
+                                    "Páginas Web para Empresas",
+                                    "Diseño Web Responsive",
+                                    "Programación Web"
+                            ],
+                            "founder": {
+                                    "@id": "https://andresbotta.dev/#person"
+                            },
+                            "aggregateRating": {
+                                    "@type": "AggregateRating",
+                                    "ratingValue": "5",
+                                    "reviewCount": "38",
+                                    "bestRating": "5"
+                            }
+                    },
+                    {
+                            "@type": "FAQPage",
+                            "@id": "https://andresbotta.dev/#faq",
+                            "mainEntity": [
+                                    {
+                                            "@type": "Question",
+                                            "name": "¿Cuánto cuesta crear una página web profesional en Perú?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Los precios de una página web profesional en Perú varían según el proyecto. Una landing page parte desde S/1,500, una web corporativa desde S/3,000 y una tienda online desde S/5,000. A diferencia de agencias que cobran mensualidades, pagas una sola vez y la web es 100% tuya. Incluye diseño personalizado, código SEO optimizado, hosting configurado y 3 meses de soporte técnico."
+                                            }
+                                    },
+                                    {
+                                            "@type": "Question",
+                                            "name": "¿Cuánto tiempo toma desarrollar una página web?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Una landing page se entrega en 5-7 días hábiles. Una web corporativa toma entre 2-3 semanas. Una tienda online con catálogo completo se desarrolla en 3-5 semanas. Los tiempos pueden variar según la complejidad y el contenido proporcionado por el cliente."
+                                            }
+                                    },
+                                    {
+                                            "@type": "Question",
+                                            "name": "¿Por qué código a medida y no WordPress con plantillas?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Las plantillas cargan código innecesario que hace tu web lenta e insegura. El código a medida es más rápido, más seguro, 100% personalizado para tu negocio y optimizado para Google. Resultado: mejor posicionamiento y más conversiones."
+                                            }
+                                    },
+                                    {
+                                            "@type": "Question",
+                                            "name": "¿El precio incluye hosting y dominio?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Sí, todos los paquetes incluyen configuración de hosting optimizado y asesoría en la compra de dominio. También incluyo certificado SSL gratuito, correos corporativos y soporte técnico durante los primeros 3 meses."
+                                            }
+                                    },
+                                    {
+                                            "@type": "Question",
+                                            "name": "¿Qué tipo de páginas web desarrollas?",
+                                            "acceptedAnswer": {
+                                                    "@type": "Answer",
+                                                    "text": "Desarrollo páginas web corporativas, tiendas online (e-commerce), landing pages de conversión, portales inmobiliarios, blogs profesionales, sistemas de reservas, plataformas educativas y aplicaciones web personalizadas. Todo con código a medida optimizado para SEO y velocidad."
+                                            }
+                                    }
+                            ]
+                    },
+                    {
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                    {
+                                            "@type": "ListItem",
+                                            "position": 1,
+                                            "name": "Inicio",
+                                            "item": "https://andresbotta.dev/"
+                                    },
+                                    {
+                                            "@type": "ListItem",
+                                            "position": 2,
+                                            "name": "Servicios",
+                                            "item": "https://andresbotta.dev/#servicios"
+                                    },
+                                    {
+                                            "@type": "ListItem",
+                                            "position": 3,
+                                            "name": "Proyectos",
+                                            "item": "https://andresbotta.dev/#proyectos"
+                                    },
+                                    {
+                                            "@type": "ListItem",
+                                            "position": 4,
+                                            "name": "Sobre mí",
+                                            "item": "https://andresbotta.dev/#sobre-mi"
+                                    },
+                                    {
+                                            "@type": "ListItem",
+                                            "position": 5,
+                                            "name": "Contacto",
+                                            "item": "https://andresbotta.dev/contacto/"
+                                    }
+                            ]
+                    },
+                    {
+                            "@type": "Person",
+                            "@id": "https://andresbotta.dev/#person",
+                            "name": "Andrés Sánchez Botta",
+                            "alternateName": "Andrés Botta",
+                            "jobTitle": "Desarrollador Web Freelance",
+                            "description": "Programador web y diseñador web profesional en Lima, Perú. Especializado en crear páginas web a medida, tiendas online y landing pages para empresas.",
+                            "url": "https://andresbotta.dev/",
+                            "image": "https://andresbotta.dev/imagenes/andres-sanchez-botta.jpeg",
+                            "email": "contacto@andresbotta.dev",
+                            "address": {
+                                    "@type": "PostalAddress",
+                                    "addressLocality": "Lima",
+                                    "addressRegion": "Lima",
+                                    "addressCountry": "PE"
+                            },
+                            "sameAs": [
+                                    "https://www.linkedin.com/in/andressbotta",
+                                    "https://github.com/lsbcreativa"
+                            ],
+                            "knowsAbout": [
+                                    "Desarrollo Web",
+                                    "Diseño Web",
+                                    "HTML5",
+                                    "CSS3",
+                                    "JavaScript",
+                                    "PHP",
+                                    "WordPress",
+                                    "SEO",
+                                    "E-commerce",
+                                    "UX/UI Design"
+                            ],
+                            "worksFor": {
+                                    "@id": "https://andresbotta.dev/#org"
+                            }
+                    },
+                    {
+                            "@type": "WebSite",
+                            "@id": "https://andresbotta.dev/#website",
+                            "name": "Andrés Botta — Desarrollo Web",
+                            "url": "https://andresbotta.dev/",
+                            "description": "Desarrollo y diseño web profesional en Perú. Páginas web a medida, tiendas online y landing pages.",
+                            "inLanguage": "es",
+                            "publisher": {
+                                    "@id": "https://andresbotta.dev/#org"
+                            }
+                    },
+                    {
+                            "@type": "Organization",
+                            "@id": "https://andresbotta.dev/#org",
+                            "name": "Andrés Botta — Desarrollo Web",
+                            "alternateName": "andresbotta.dev",
+                            "url": "https://andresbotta.dev/",
+                            "logo": "https://andresbotta.dev/imagenes/logo-andres-botta.png",
+                            "image": "https://andresbotta.dev/imagenes/logo-compartir.png",
+                            "description": "Desarrollo web profesional en Lima, Perú. Páginas web a medida, tiendas online y landing pages para empresas y emprendedores.",
+                            "foundingDate": "2021",
+                            "numberOfEmployees": {
+                                    "@type": "QuantitativeValue",
+                                    "value": 1
+                            },
+                            "address": {
+                                    "@type": "PostalAddress",
+                                    "addressLocality": "Lima",
+                                    "addressRegion": "Lima",
+                                    "addressCountry": "PE"
+                            },
+                            "contactPoint": {
+                                    "@type": "ContactPoint",
+                                    "contactType": "customer service",
+                                    "telephone": "+51968672704",
+                                    "email": "contacto@andresbotta.dev",
+                                    "availableLanguage": [
+                                            "Spanish",
+                                            "English"
+                                    ]
+                            },
+                            "sameAs": [
+                                    "https://www.linkedin.com/in/andressbotta",
+                                    "https://github.com/lsbcreativa"
+                            ]
+                    }
             ]
-        },
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "5",
-            "reviewCount": "4",
-            "bestRating": "5"
-        }
-    }
-    </script>
-
-    <!-- ========== STRUCTURED DATA: FAQPage ========== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "¿Cuánto cuesta crear una página web profesional en Perú?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Los precios de una página web profesional en Perú varían según el proyecto. Una landing page parte desde S/1,500, una web corporativa desde S/3,000 y una tienda online desde S/5,000. A diferencia de agencias que cobran mensualidades, pagas una sola vez y la web es 100% tuya. Incluye diseño personalizado, código SEO optimizado, hosting configurado y 3 meses de soporte técnico."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Cuánto tiempo toma desarrollar una página web?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Una landing page se entrega en 5-7 días hábiles. Una web corporativa toma entre 2-3 semanas. Una tienda online con catálogo completo se desarrolla en 3-5 semanas. Los tiempos pueden variar según la complejidad y el contenido proporcionado por el cliente."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Por qué código a medida y no WordPress con plantillas?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Las plantillas cargan código innecesario que hace tu web lenta e insegura. El código a medida es más rápido, más seguro, 100% personalizado para tu negocio y optimizado para Google. Resultado: mejor posicionamiento y más conversiones."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿El precio incluye hosting y dominio?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Sí, todos los paquetes incluyen configuración de hosting optimizado y asesoría en la compra de dominio. También incluyo certificado SSL gratuito, correos corporativos y soporte técnico durante los primeros 3 meses."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "¿Qué tipo de páginas web desarrollas?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Desarrollo páginas web corporativas, tiendas online (e-commerce), landing pages de conversión, portales inmobiliarios, blogs profesionales, sistemas de reservas, plataformas educativas y aplicaciones web personalizadas. Todo con código a medida optimizado para SEO y velocidad."
-                }
-            }
-        ]
-    }
-    </script>
-
-    <!-- ========== STRUCTURED DATA: BreadcrumbList ========== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://andresbotta.dev/" },
-            { "@type": "ListItem", "position": 2, "name": "Servicios", "item": "https://andresbotta.dev/#servicios" },
-            { "@type": "ListItem", "position": 3, "name": "Proyectos", "item": "https://andresbotta.dev/#proyectos" },
-            { "@type": "ListItem", "position": 4, "name": "Sobre mí", "item": "https://andresbotta.dev/#sobre-mi" },
-            { "@type": "ListItem", "position": 5, "name": "Contacto", "item": "https://andresbotta.dev/contacto/" }
-        ]
-    }
-    </script>
-
-    <!-- ========== STRUCTURED DATA: Person (E-E-A-T) ========== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Andrés Sánchez Botta",
-        "alternateName": "Andrés Botta",
-        "jobTitle": "Desarrollador Web Freelance",
-        "description": "Programador web y diseñador web profesional en Lima, Perú. Especializado en crear páginas web a medida, tiendas online y landing pages para empresas.",
-        "url": "https://andresbotta.dev/",
-        "image": "https://andresbotta.dev/imagenes/andres-sanchez-botta.jpeg",
-        "email": "contacto@andresbotta.dev",
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lima",
-            "addressRegion": "Lima",
-            "addressCountry": "PE"
-        },
-        "sameAs": [
-            "https://www.linkedin.com/in/andressbotta",
-            "https://github.com/lsbcreativa"
-        ],
-        "knowsAbout": [
-            "Desarrollo Web",
-            "Diseño Web",
-            "HTML5",
-            "CSS3",
-            "JavaScript",
-            "PHP",
-            "WordPress",
-            "SEO",
-            "E-commerce",
-            "UX/UI Design"
-        ],
-        "worksFor": {
-            "@type": "Organization",
-            "name": "andresbotta.dev",
-            "url": "https://andresbotta.dev/"
-        }
-    }
-    </script>
-
-    <!-- ========== STRUCTURED DATA: WebSite ========== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Andrés Botta — Desarrollo Web",
-        "url": "https://andresbotta.dev/",
-        "description": "Desarrollo y diseño web profesional en Perú. Páginas web a medida, tiendas online y landing pages.",
-        "inLanguage": "es",
-        "publisher": {
-            "@type": "Organization",
-            "name": "Andrés Botta — Desarrollo Web"
-        }
-    }
-    </script>
-
-    <!-- ========== STRUCTURED DATA: Organization ========== -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Andrés Botta — Desarrollo Web",
-        "alternateName": "andresbotta.dev",
-        "url": "https://andresbotta.dev/",
-        "logo": "https://andresbotta.dev/imagenes/logo-andres-botta.png",
-        "image": "https://andresbotta.dev/imagenes/logo-compartir.png",
-        "description": "Desarrollo web profesional en Lima, Perú. Páginas web a medida, tiendas online y landing pages para empresas y emprendedores.",
-        "foundingDate": "2021",
-        "numberOfEmployees": {
-            "@type": "QuantitativeValue",
-            "value": 1
-        },
-        "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Lima",
-            "addressRegion": "Lima",
-            "addressCountry": "PE"
-        },
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "contactType": "customer service",
-            "telephone": "+51968672704",
-            "email": "contacto@andresbotta.dev",
-            "availableLanguage": ["Spanish", "English"]
-        },
-        "sameAs": [
-            "https://www.linkedin.com/in/andressbotta",
-            "https://github.com/lsbcreativa"
-        ]
     }
     </script>
 
@@ -271,8 +281,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -287,7 +295,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="css/styles.min.css?v=1.0.0">
@@ -328,7 +335,7 @@
         <a href="/" class="header-logo" aria-label="Andrés Botta - Inicio">
             <picture>
                 <source srcset="imagenes/logo-andres-botta.webp" type="image/webp">
-                <img src="imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60">
+                <img src="imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
             </picture>
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
@@ -436,7 +443,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="code-content">
+                    <div class="code-content" lang="en">
                         <div class="code-line">
                             <span class="code-line-number">1</span>
                             <span class="code-text"></span>
@@ -1188,47 +1195,47 @@
             </div>
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿Cuánto cuesta crear una página web profesional en Perú?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>Los precios de una página web profesional en Perú varían según el alcance del proyecto. Como referencia: una <strong>landing page</strong> parte desde <strong>S/1,500</strong>, una <strong>web corporativa</strong> desde <strong>S/3,000</strong> y una <strong>tienda online</strong> desde <strong>S/5,000</strong>. A diferencia de agencias que cobran mensualidades, aquí pagas una sola vez y la web es 100% tuya. Incluye diseño personalizado, código optimizado para SEO, hosting configurado y 3 meses de soporte. Cotiza gratis por WhatsApp.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿Cuánto tiempo toma desarrollar una página web?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>Una landing page se entrega en 5-7 días hábiles. Una web corporativa toma entre 2-3 semanas. Una tienda online con catálogo completo se desarrolla en 3-5 semanas. Los tiempos pueden variar según la complejidad y el contenido que proporciones.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿Por qué código a medida y no una plantilla de WordPress?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>Las plantillas genéricas cargan código innecesario que hace tu web lenta e insegura. El código a medida es más rápido, más seguro, 100% personalizado para tu negocio y optimizado para Google. Resultado: mejor posicionamiento en buscadores y más clientes.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿El precio incluye hosting, dominio y SSL?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>Sí, todos los paquetes incluyen configuración de hosting optimizado, asesoría en la compra de dominio, certificado SSL gratuito, correos corporativos y 3 meses de soporte técnico incluido tras el lanzamiento.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-5">
                         ¿Qué tipo de páginas web desarrollas?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-5" role="region">
                         <p>Desarrollo páginas web corporativas, tiendas online (e-commerce), landing pages de conversión, portales inmobiliarios, blogs profesionales, sistemas de reservas, plataformas educativas y aplicaciones web. Todo con código a medida optimizado para SEO, velocidad y conversión.</p>
                     </div>
                 </div>

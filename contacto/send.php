@@ -9,18 +9,32 @@ require __DIR__ . '/phpmailer/src/Exception.php';
 require __DIR__ . '/phpmailer/src/PHPMailer.php';
 require __DIR__ . '/phpmailer/src/SMTP.php';
 
+// ========== AJAX SUPPORT ==========
+$is_ajax = !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
+    && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+
+function respond($status) {
+    global $is_ajax;
+    if ($is_ajax) {
+        header('Content-Type: application/json');
+        echo json_encode(['status' => $status]);
+    } else {
+        header('Location: ./?status=' . $status);
+    }
+    exit;
+}
+
 // ========== ANTI-SPAM LAYER 1: Honeypot ==========
 if (!empty($_POST['website'])) {
-    header('Location: ./');
-    exit;
+    if ($is_ajax) { respond('ok'); }
+    respond('ok');
 }
 
 // ========== ANTI-SPAM LAYER 2: Timestamp check ==========
 if (isset($_POST['_ts'])) {
     $elapsed = time() - intval($_POST['_ts']);
     if ($elapsed < 3) {
-        header('Location: ./');
-        exit;
+        respond('ok');
     }
 }
 
@@ -30,8 +44,7 @@ if (empty($csrf)
     || !isset($_SESSION['csrf_token'])
     || !hash_equals($_SESSION['csrf_token'], $csrf)
     || (time() - ($_SESSION['csrf_time'] ?? 0)) > 3600) {
-    header('Location: ./?status=error');
-    exit;
+    respond('error');
 }
 unset($_SESSION['csrf_token']);
 
@@ -39,8 +52,7 @@ unset($_SESSION['csrf_token']);
 $challenge = $_POST['_js_challenge'] ?? '';
 $parts = explode(':', $challenge);
 if (count($parts) !== 3 || intval($parts[0]) + intval($parts[1]) !== intval($parts[2])) {
-    header('Location: ./?status=error');
-    exit;
+    respond('error');
 }
 
 // ========== ANTI-SPAM LAYER 5: Rate limiting ==========
@@ -48,8 +60,7 @@ $now = time();
 
 // Session-based: max 1 per minute
 if (isset($_SESSION['last_submit']) && ($now - $_SESSION['last_submit']) < 60) {
-    header('Location: ./?status=ratelimit');
-    exit;
+    respond('ratelimit');
 }
 
 // IP-based: max 5 per hour
@@ -69,8 +80,7 @@ if (file_exists($rate_file)) {
 }
 
 if ($rate_data['count'] >= 5) {
-    header('Location: ./?status=ratelimit');
-    exit;
+    respond('ratelimit');
 }
 
 // ========== VALIDATE REQUIRED FIELDS ==========
@@ -81,13 +91,11 @@ $proyecto = trim($_POST['proyecto'] ?? '');
 $mensaje = trim($_POST['mensaje'] ?? '');
 
 if (empty($nombre) || empty($email) || empty($telefono) || empty($mensaje)) {
-    header('Location: ./?status=error');
-    exit;
+    respond('error');
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header('Location: ./?status=error');
-    exit;
+    respond('error');
 }
 
 // ========== ANTI-SPAM LAYER 6: Disposable email check ==========
@@ -102,8 +110,7 @@ function is_disposable_email(string $email): bool {
 }
 
 if (is_disposable_email($email)) {
-    header('Location: ./?status=invalid-email');
-    exit;
+    respond('invalid-email');
 }
 
 // ========== VALIDATE PERU PHONE ==========
@@ -116,8 +123,7 @@ function validate_peru_phone(string $phone): bool {
 }
 
 if (!validate_peru_phone($telefono)) {
-    header('Location: ./?status=invalid-phone');
-    exit;
+    respond('invalid-phone');
 }
 
 // ========== SANITIZE ==========
@@ -242,8 +248,7 @@ try {
     $rate_data['count']++;
     file_put_contents($rate_file, json_encode($rate_data), LOCK_EX);
 
-    header('Location: ./?status=ok');
+    respond('ok');
 } catch (Exception $e) {
-    header('Location: ./?status=error');
+    respond('error');
 }
-exit;

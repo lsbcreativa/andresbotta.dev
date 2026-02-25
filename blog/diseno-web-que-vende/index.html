@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>(function(){var t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:light)").matches?"light":"dark");document.documentElement.setAttribute("data-theme",t)})()</script>
-    <link rel="preload" href="../../css/styles.min.css?v=1.0.0" as="style">
 
     <!-- ========== SEO PRIMARY ========== -->
     <title>Diseño Web que Vende: Visitantes a Clientes | Andrés Botta</title>
@@ -128,8 +127,6 @@
 
     <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -144,7 +141,6 @@
     <link rel="manifest" href="/manifest.json">
     <meta name="theme-color" content="#06080f">
 
-    <!-- ========== GSAP (CDN) ========== -->
 
     <!-- ========== STYLESHEET ========== -->
     <link rel="stylesheet" href="../../css/styles.min.css?v=1.0.0">
@@ -169,7 +165,7 @@
     <!-- Header -->
     <header class="header" role="banner">
         <a href="../../" class="header-logo" aria-label="Andrés Botta - Inicio">
-            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img">
+            <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
         </a>
         <nav class="header-nav" aria-label="Navegación principal">
             <a href="../../#servicios" class="nav-link">Servicios</a>
@@ -218,7 +214,7 @@
             <span class="breadcrumb-separator">&rsaquo;</span>
             <a href="../../blog/">Blog</a>
             <span class="breadcrumb-separator">&rsaquo;</span>
-            <span>Diseño web que vende</span>
+            <span aria-current="page">Diseño web que vende</span>
         </nav>
 
         <!-- ==================== HERO ==================== -->
@@ -347,38 +343,38 @@
 
             <div class="faq-container">
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
                         ¿Cuántas páginas necesita mi web para vender?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-1" role="region">
                         <p>Depende de tu negocio. Una <a href="../../landing-page-peru/">landing page</a> (1 página) puede superar a un sitio de 10 páginas si está bien hecha. Lo importante es la calidad del contenido, la claridad del mensaje y un CTA efectivo. Calidad siempre gana a cantidad.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
                         ¿El diseño bonito vende más?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-2" role="region">
                         <p>No necesariamente. Un diseño limpio y profesional genera confianza. Pero las conversiones vienen de la claridad del mensaje, la velocidad de carga y buenos CTAs — no de animaciones llamativas. Lo que vende es la facilidad con que el visitante encuentra lo que busca y toma acción.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
                         ¿Cuánto tarda en verse resultados de una web nueva?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-3" role="region">
                         <p>El tráfico orgánico tarda entre 1 y 3 meses en llegar. Con Google Ads puedes tener visitas desde el primer día. La mayoría de negocios empiezan a recibir los primeros leads entre 2 y 4 semanas después del lanzamiento, combinando tráfico directo y campañas pagadas.</p>
                     </div>
                 </div>
                 <div class="faq-item">
-                    <button class="faq-question" aria-expanded="false">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
                         ¿WhatsApp funciona mejor que un formulario de contacto?
                         <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
                     </button>
-                    <div class="faq-answer">
+                    <div class="faq-answer" id="faq-4" role="region">
                         <p>En Perú, sí. WhatsApp tiene más del 90% de penetración y genera menos fricción que un formulario. El usuario prefiere escribir un mensaje directo antes que llenar campos. La mejor estrategia es ofrecer ambas opciones, pero WhatsApp como CTA principal suele generar más conversiones.</p>
                     </div>
                 </div>
