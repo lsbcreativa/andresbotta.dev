@@ -250,9 +250,21 @@ img {
     height: 60px;
     width: auto;
     object-fit: contain;
-    mix-blend-mode: normal;
-    transition: opacity 0.15s ease;
 }
+
+/* Logo crossfade — both variants stacked, CSS toggles opacity */
+.logo-for-dark,
+.logo-for-light {
+    transition: opacity 0.3s ease;
+}
+.logo-for-light {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+[data-theme="light"] .logo-for-dark { opacity: 0; }
+[data-theme="light"] .logo-for-light { opacity: 1; }
 
 .header-nav {
     display: flex;
@@ -2144,7 +2156,6 @@ input, select, textarea {
     height: 50px;
     width: auto;
     object-fit: contain;
-    transition: opacity 0.15s ease;
 }
 
 .footer-tagline {
@@ -3778,7 +3789,7 @@ html.theme-transitioning *::after {
     color: #fff;
 }
 
-/* Logo — JS swaps to dark variant; no CSS filter needed */
+/* Logo crossfade handled by .logo-for-dark / .logo-for-light in base styles */
 
 /* Nav — disable difference blend in light mode */
 [data-theme="light"] .header-nav {

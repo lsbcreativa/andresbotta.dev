@@ -643,17 +643,6 @@ function initScrollAnimations() {
     function applyTheme(theme) {
         root.setAttribute('data-theme', theme);
         if (meta) meta.setAttribute('content', theme === 'light' ? '#ebedf2' : '#06080f');
-
-        // Swap logo images (dark version for light theme, original for dark)
-        var suffix = theme === 'light' ? '-dark' : '';
-        var logos = document.querySelectorAll('.header-logo-img, .footer-logo-img');
-        for (var i = 0; i < logos.length; i++) {
-            var img = logos[i];
-            var pic = img.closest('picture');
-            var src = pic ? pic.querySelector('source[type="image/webp"]') : null;
-            img.src = img.src.replace(/logo-andres-botta(-dark)?\.png/, 'logo-andres-botta' + suffix + '.png');
-            if (src) src.srcset = src.srcset.replace(/logo-andres-botta(-dark)?\.webp/, 'logo-andres-botta' + suffix + '.webp');
-        }
     }
 
     // Read stored or OS preference (anti-FOUC script already set data-theme,
@@ -671,15 +660,8 @@ function initScrollAnimations() {
         // Enable coordinated transition on ALL elements
         root.classList.add('theme-transitioning');
 
-        // Fade out logos before swap, then fade in after
-        var logos = document.querySelectorAll('.header-logo-img, .footer-logo-img');
-        for (var i = 0; i < logos.length; i++) logos[i].style.opacity = '0';
-
-        setTimeout(function() {
-            applyTheme(next);
-            localStorage.setItem('theme', next);
-            for (var i = 0; i < logos.length; i++) logos[i].style.opacity = '';
-        }, 150);
+        applyTheme(next);
+        localStorage.setItem('theme', next);
 
         // Remove transition class after animation completes
         setTimeout(function() {
