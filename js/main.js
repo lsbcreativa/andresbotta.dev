@@ -665,7 +665,7 @@ function initScrollAnimations() {
         // Remove transition class after animation completes
         setTimeout(function() {
             root.classList.remove('theme-transitioning');
-        }, 500);
+        }, 350);
     });
 })();
 
