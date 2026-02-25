@@ -3447,6 +3447,45 @@ input, select, textarea {
     fill: currentColor;
 }
 
+.share-copy {
+    position: relative;
+    cursor: pointer;
+}
+
+.share-copy svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.share-copy-tooltip {
+    position: absolute;
+    left: calc(100% + 8px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-accent);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.share-copy.copied .share-copy-tooltip {
+    opacity: 1;
+}
+
+.share-copy.copied {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+}
+
 @media (max-width: 1100px) {
     .share-bar {
         position: static;
@@ -3457,6 +3496,12 @@ input, select, textarea {
         margin-bottom: 2rem;
         padding-bottom: 1.5rem;
         border-bottom: 1px solid var(--color-border);
+    }
+    .share-copy-tooltip {
+        left: 50%;
+        top: auto;
+        bottom: calc(100% + 8px);
+        transform: translateX(-50%);
     }
 }
 

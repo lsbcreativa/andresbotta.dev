@@ -817,6 +817,18 @@ function initScrollAnimations() {
         bar.appendChild(a);
     });
 
+    // Copy link button
+    var copyBtn = document.createElement('button');
+    copyBtn.className = 'share-btn share-copy';
+    copyBtn.setAttribute('aria-label', 'Copiar enlace');
+    copyBtn.innerHTML = '<svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg><span class="share-copy-tooltip">Copiado</span>';
+    copyBtn.addEventListener('click', function() {
+        navigator.clipboard.writeText(window.location.href);
+        copyBtn.classList.add('copied');
+        setTimeout(function() { copyBtn.classList.remove('copied'); }, 2000);
+    });
+    bar.appendChild(copyBtn);
+
     article.insertBefore(bar, article.querySelector('.article-toc') ? article.querySelector('.article-toc').nextSibling : article.firstChild);
 })();
 
