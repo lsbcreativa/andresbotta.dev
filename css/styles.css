@@ -3452,6 +3452,8 @@ input, select, textarea {
     cursor: pointer;
     font: inherit;
     padding: 0;
+    color: inherit;
+    border-color: inherit;
     -webkit-appearance: none;
     appearance: none;
 }
