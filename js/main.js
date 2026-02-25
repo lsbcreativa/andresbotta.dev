@@ -618,10 +618,11 @@ function initScrollAnimations() {
     if (!toggle) return;
 
     var meta = document.querySelector('meta[name="theme-color"]');
+    var root = document.documentElement;
 
     function applyTheme(theme) {
-        document.documentElement.setAttribute('data-theme', theme);
-        if (meta) meta.setAttribute('content', theme === 'light' ? '#f8f9fc' : '#06080f');
+        root.setAttribute('data-theme', theme);
+        if (meta) meta.setAttribute('content', theme === 'light' ? '#ebedf2' : '#06080f');
     }
 
     // Read stored or OS preference (anti-FOUC script already set data-theme,
@@ -633,9 +634,18 @@ function initScrollAnimations() {
     applyTheme(stored);
 
     toggle.addEventListener('click', function() {
-        var current = document.documentElement.getAttribute('data-theme') || 'dark';
+        var current = root.getAttribute('data-theme') || 'dark';
         var next = current === 'dark' ? 'light' : 'dark';
+
+        // Enable coordinated transition on ALL elements
+        root.classList.add('theme-transitioning');
+
         applyTheme(next);
         localStorage.setItem('theme', next);
+
+        // Remove transition class after animation completes
+        setTimeout(function() {
+            root.classList.remove('theme-transitioning');
+        }, 500);
     });
 })();

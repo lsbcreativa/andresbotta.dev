@@ -3669,34 +3669,47 @@ section[id] {
 
 /* ========== LIGHT MODE ========== */
 
-/* Smooth transition when toggling themes */
-html {
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Coordinated theme transition — enabled only during toggle via JS class */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+    transition: background-color 0.45s ease, color 0.45s ease,
+                border-color 0.45s ease, box-shadow 0.45s ease,
+                background 0.45s ease, filter 0.45s ease !important;
 }
 
 [data-theme="light"] {
-    --color-bg: #f8f9fc;
-    --color-bg-secondary: #f0f2f5;
-    --color-bg-tertiary: #ffffff;
+    --color-bg: #ebedf2;
+    --color-bg-secondary: #e2e4e9;
+    --color-bg-tertiary: #f4f5f8;
     --color-text: #1a1b2e;
     --color-text-secondary: #4b4c5e;
     --color-text-muted: #8b8c9e;
     --color-accent: #2563eb;
     --color-accent-secondary: #3b82f6;
     --color-accent-glow: rgba(37, 99, 235, 0.08);
-    --color-border: #e2e4ea;
-    --color-border-light: #d0d3da;
+    --color-border: #d5d7de;
+    --color-border-light: #c5c8d0;
+
+    /* Elevation shadow system */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05), 0 2px 4px rgba(0, 0, 0, 0.03);
+    --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.06), 0 4px 8px rgba(0, 0, 0, 0.03);
+    --shadow-accent-sm: 0 2px 8px rgba(37, 99, 235, 0.06);
+    --shadow-accent-md: 0 8px 24px rgba(37, 99, 235, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03);
+    --shadow-accent-lg: 0 16px 48px rgba(37, 99, 235, 0.1), 0 8px 16px rgba(0, 0, 0, 0.04);
 }
 
-/* Selection — white text on accent in both modes */
+/* Selection — white text on accent */
 [data-theme="light"] ::selection {
     color: #fff;
 }
 
-/* Logo — darken white wordmark for light bg */
+/* Logo — invert white text to black, hue-rotate preserves icon colours */
 [data-theme="light"] .header-logo-img,
 [data-theme="light"] .footer-logo-img {
-    filter: brightness(0);
+    filter: invert(1) hue-rotate(180deg);
 }
 
 /* Nav — disable difference blend in light mode */
@@ -3706,7 +3719,7 @@ html {
 
 /* Header scroll — light frosted glass */
 [data-theme="light"] .header-scrolled {
-    background: rgba(248, 249, 252, 0.85);
+    background: rgba(235, 237, 242, 0.85);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
@@ -3716,9 +3729,26 @@ html {
     opacity: 0.025;
 }
 
-/* Loader bar bg */
+/* Loader — premium light mode */
 [data-theme="light"] .loader-bar {
-    background: var(--color-border);
+    background: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .loader-progress {
+    background: linear-gradient(90deg, var(--color-accent), #8b5cf6, var(--color-accent));
+    background-size: 200% 100%;
+    animation: loaderShimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes loaderShimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* Code editor — force dark text where CSS variables leak */
+[data-theme="light"] .code-text,
+[data-theme="light"] .code-tab.active {
+    color: #a1a1aa;
 }
 
 /* Hero gradients — much softer in light mode */
@@ -3739,9 +3769,9 @@ html {
     opacity: 0.08;
 }
 
-/* Glow dividers — softer */
+/* Glow dividers — refined */
 [data-theme="light"] .glow-divider::before {
-    opacity: 0.2;
+    opacity: 0.3;
 }
 
 [data-theme="light"] .glow-divider::after {
@@ -3769,45 +3799,104 @@ html {
     color: #fff;
 }
 
-/* Service cards — elevation via shadow */
+/* ---- Subtle section gradients for depth ---- */
+[data-theme="light"] .services {
+    background: linear-gradient(180deg, #ebedf2 0%, #e4e8f5 100%);
+}
+
+[data-theme="light"] .process {
+    background: linear-gradient(180deg, #e2e4e9 0%, #ebedf2 100%);
+}
+
+[data-theme="light"] .testimonials {
+    background: linear-gradient(180deg, #e2e4e9 0%, #e9e7f3 100%);
+}
+
+[data-theme="light"] .cta {
+    background: linear-gradient(135deg, #e2e6f3 0%, #e2e4e9 50%, #ede8f3 100%);
+}
+
+[data-theme="light"] .faq {
+    background: linear-gradient(180deg, #ebedf2 0%, #e4e8f5 100%);
+}
+
+[data-theme="light"] .coverage {
+    background: linear-gradient(180deg, #ebedf2 0%, #e2e4e9 100%);
+}
+
+/* ---- Services grid — softer gap-borders ---- */
+[data-theme="light"] .services-grid {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+/* ---- Level 1 shadows: utility cards ---- */
+[data-theme="light"] .coverage-card {
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .coverage-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* ---- Level 2 shadows: standard cards ---- */
 [data-theme="light"] .service-card {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    background: #f4f5f8;
+    box-shadow: var(--shadow-sm);
 }
 
 [data-theme="light"] .service-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    background: #f4f5f8;
+    box-shadow: var(--shadow-accent-md);
 }
 
-/* Process steps — elevation */
 [data-theme="light"] .process-step {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    background: linear-gradient(145deg, #f4f5f8 0%, #eef0f5 100%);
+    box-shadow: var(--shadow-sm);
 }
 
 [data-theme="light"] .process-step:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-accent-md);
 }
 
-/* Project mockups — subtle shadow */
-[data-theme="light"] .project-image {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+[data-theme="light"] .testimonial-card {
+    background: linear-gradient(145deg, #f4f5f8 0%, #eef0f5 100%);
+    box-shadow: var(--shadow-sm);
 }
 
-/* Certification cards — light variant */
+[data-theme="light"] .testimonial-card:hover {
+    box-shadow: var(--shadow-accent-md);
+}
+
+[data-theme="light"] .blog-card {
+    background: linear-gradient(145deg, #f4f5f8 0%, #eef0f5 100%);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .blog-card:hover {
+    box-shadow: var(--shadow-accent-md);
+}
+
+[data-theme="light"] .blog-card-tag {
+    background: rgba(37, 99, 235, 0.06);
+    border-color: rgba(37, 99, 235, 0.15);
+}
+
+/* ---- Level 3 shadows: featured cards ---- */
 [data-theme="light"] .certification-card {
-    background: linear-gradient(145deg, #ffffff, #f0f2f5);
-    border-color: rgba(37, 99, 235, 0.3);
+    background: linear-gradient(145deg, #f4f5f8, #ebedf2);
+    border-color: rgba(37, 99, 235, 0.25);
     box-shadow:
-        0 0 30px rgba(37, 99, 235, 0.08),
-        0 10px 40px rgba(0, 0, 0, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        var(--shadow-md),
+        0 0 0 1px rgba(37, 99, 235, 0.06),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 [data-theme="light"] .certification-card:hover {
     border-color: rgba(37, 99, 235, 0.5);
     box-shadow:
-        0 30px 60px rgba(37, 99, 235, 0.1),
-        0 0 40px rgba(37, 99, 235, 0.06),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+        var(--shadow-accent-lg),
+        0 0 0 1px rgba(37, 99, 235, 0.1),
+        inset 0 1px 0 #fff;
 }
 
 [data-theme="light"] .certification-image {
@@ -3829,51 +3918,89 @@ html {
     color: #fff;
 }
 
-/* Testimonial cards — elevation */
-[data-theme="light"] .testimonial-card {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+/* ---- Misc elevated elements ---- */
+[data-theme="light"] .project-image {
+    box-shadow: var(--shadow-md);
 }
 
-[data-theme="light"] .testimonial-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-
-/* Coverage cards — elevation */
-[data-theme="light"] .coverage-card {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-[data-theme="light"] .coverage-card:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-}
-
-/* Blog cards — elevation */
-[data-theme="light"] .blog-card {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
-}
-
-[data-theme="light"] .blog-card:hover {
-    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.06);
-}
-
-[data-theme="light"] .blog-card-tag {
-    background: rgba(37, 99, 235, 0.06);
-    border-color: rgba(37, 99, 235, 0.15);
-}
-
-/* Back to top — elevation */
 [data-theme="light"] .back-to-top {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-md);
 }
 
-/* WhatsApp tooltip — shadow */
 [data-theme="light"] .whatsapp-float-tooltip {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: var(--shadow-md);
 }
 
-/* Contact form — white text on send button animation */
+/* ---- FAQ — light mode refinements ---- */
+[data-theme="light"] .faq-item {
+    border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .faq-question:hover {
+    background: rgba(37, 99, 235, 0.03);
+    margin: 0 -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 8px;
+}
+
+[data-theme="light"] .faq-item.active .faq-question {
+    color: var(--color-accent);
+}
+
+/* ---- Contact form — crisp white inputs ---- */
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group select,
+[data-theme="light"] .form-group textarea {
+    background: #ffffff;
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .form-group input:focus,
+[data-theme="light"] .form-group select:focus,
+[data-theme="light"] .form-group textarea:focus {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Select dropdown arrow — visible on light bg */
+[data-theme="light"] .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234b4c5e' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+}
+
+[data-theme="light"] .form-group select option {
+    background: #ffffff;
+}
+
 [data-theme="light"] .contact-form-submit.is-sending {
     box-shadow: 0 0 20px var(--color-accent-glow), 0 0 40px rgba(37, 99, 235, 0.04);
+}
+
+/* ---- Mobile nav — frosted glass ---- */
+[data-theme="light"] .mobile-nav {
+    background: rgba(248, 249, 252, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+/* ---- Testimonials bg text — subtler ---- */
+[data-theme="light"] .testimonials-bg {
+    opacity: 0.15;
+}
+
+/* ---- Footer — softer border ---- */
+[data-theme="light"] .footer {
+    border-top-color: rgba(0, 0, 0, 0.06);
+}
+
+/* ---- Toggle visual — enhanced in light mode ---- */
+[data-theme="light"] .theme-toggle {
+    border-color: rgba(37, 99, 235, 0.2);
+    background: rgba(37, 99, 235, 0.04);
+}
+
+[data-theme="light"] .theme-toggle:hover {
+    background: rgba(37, 99, 235, 0.08);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 /* Mobile hero overrides */
@@ -3907,8 +4034,10 @@ html {
     place-items: center;
     cursor: pointer;
     color: var(--color-text-secondary);
-    transition: color 0.3s ease, border-color 0.3s ease;
+    transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, transform 0.15s ease;
     padding: 0;
+    position: relative;
+    margin-left: 1rem;
 }
 
 .theme-toggle:hover {
@@ -3916,17 +4045,37 @@ html {
     border-color: var(--color-accent);
 }
 
-/* Dark mode: show sun icon (switch to light), hide moon */
-.theme-icon-moon {
-    display: none;
+.theme-toggle:active {
+    transform: scale(0.9);
 }
 
+/* Theme toggle — animated icon swap */
+.theme-icon-sun,
+.theme-icon-moon {
+    position: absolute;
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Dark mode (default): show sun, hide moon */
+.theme-icon-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+.theme-icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+/* Light mode: show moon, hide sun */
 [data-theme="light"] .theme-icon-sun {
-    display: none;
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
 }
 
 [data-theme="light"] .theme-icon-moon {
-    display: block;
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
 }
 
 /* ========== VISUALLY HIDDEN (SEO / A11Y) ========== */
