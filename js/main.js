@@ -649,7 +649,7 @@ function initScrollAnimations() {
     // but we re-apply here to sync meta theme-color)
     var stored = localStorage.getItem('theme');
     if (!stored) {
-        stored = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        stored = 'dark';
     }
     applyTheme(stored);
 
