@@ -643,6 +643,17 @@ function initScrollAnimations() {
     function applyTheme(theme) {
         root.setAttribute('data-theme', theme);
         if (meta) meta.setAttribute('content', theme === 'light' ? '#ebedf2' : '#06080f');
+
+        // Swap logo images (dark version for light theme, original for dark)
+        var suffix = theme === 'light' ? '-dark' : '';
+        var logos = document.querySelectorAll('.header-logo-img, .footer-logo-img');
+        for (var i = 0; i < logos.length; i++) {
+            var img = logos[i];
+            var pic = img.closest('picture');
+            var src = pic ? pic.querySelector('source[type="image/webp"]') : null;
+            img.src = img.src.replace(/logo-andres-botta(-dark)?\.png/, 'logo-andres-botta' + suffix + '.png');
+            if (src) src.srcset = src.srcset.replace(/logo-andres-botta(-dark)?\.webp/, 'logo-andres-botta' + suffix + '.webp');
+        }
     }
 
     // Read stored or OS preference (anti-FOUC script already set data-theme,

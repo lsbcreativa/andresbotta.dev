@@ -3776,11 +3776,7 @@ html.theme-transitioning *::after {
     color: #fff;
 }
 
-/* Logo — invert white text to black, hue-rotate preserves icon colours */
-[data-theme="light"] .header-logo-img,
-[data-theme="light"] .footer-logo-img {
-    filter: invert(1) hue-rotate(180deg);
-}
+/* Logo — JS swaps to dark variant; no CSS filter needed */
 
 /* Nav — disable difference blend in light mode */
 [data-theme="light"] .header-nav {
