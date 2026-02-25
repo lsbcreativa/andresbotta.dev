@@ -251,6 +251,7 @@ img {
     width: auto;
     object-fit: contain;
     mix-blend-mode: normal;
+    transition: opacity 0.15s ease;
 }
 
 .header-nav {
@@ -2143,6 +2144,7 @@ input, select, textarea {
     height: 50px;
     width: auto;
     object-fit: contain;
+    transition: opacity 0.15s ease;
 }
 
 .footer-tagline {

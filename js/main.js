@@ -671,8 +671,15 @@ function initScrollAnimations() {
         // Enable coordinated transition on ALL elements
         root.classList.add('theme-transitioning');
 
-        applyTheme(next);
-        localStorage.setItem('theme', next);
+        // Fade out logos before swap, then fade in after
+        var logos = document.querySelectorAll('.header-logo-img, .footer-logo-img');
+        for (var i = 0; i < logos.length; i++) logos[i].style.opacity = '0';
+
+        setTimeout(function() {
+            applyTheme(next);
+            localStorage.setItem('theme', next);
+            for (var i = 0; i < logos.length; i++) logos[i].style.opacity = '';
+        }, 150);
 
         // Remove transition class after animation completes
         setTimeout(function() {
