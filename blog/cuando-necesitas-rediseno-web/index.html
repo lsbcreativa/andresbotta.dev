@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){var t=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",t)})()</script>
+
+    <!-- ========== SEO PRIMARY ========== -->
+    <title>¿Cuándo Necesitas Rediseñar tu Web? 8 Señales Claras | Andrés Botta</title>
+    <meta name="description" content="8 señales técnicas y visuales que indican que tu web necesita un rediseño: sin HTTPS, sin mobile-first, Core Web Vitals, diseño de más de 5 años. Datos reales.">
+    <meta name="author" content="Andrés Sánchez Botta">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://andresbotta.dev/blog/cuando-necesitas-rediseno-web/">
+
+    <!-- ========== LANGUAGE & REGION ========== -->
+    <meta name="content-language" content="es-PE">
+    <link rel="alternate" hreflang="es-pe" href="https://andresbotta.dev/blog/cuando-necesitas-rediseno-web/">
+    <link rel="alternate" hreflang="es" href="https://andresbotta.dev/blog/cuando-necesitas-rediseno-web/">
+    <link rel="alternate" hreflang="x-default" href="https://andresbotta.dev/blog/cuando-necesitas-rediseno-web/">
+
+    <!-- ========== GEO TAGS ========== -->
+    <meta name="geo.region" content="PE-LIM">
+    <meta name="geo.placename" content="Lima, Perú">
+
+    <!-- ========== OPEN GRAPH ========== -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="¿Cuándo Necesitas Rediseñar tu Web? 8 Señales Claras | Andrés Botta">
+    <meta property="og:description" content="8 señales técnicas y visuales que indican que tu web necesita un rediseño. Sin HTTPS, sin mobile-first, Core Web Vitals y más.">
+    <meta property="og:url" content="https://andresbotta.dev/blog/cuando-necesitas-rediseno-web/">
+    <meta property="og:site_name" content="Andrés Botta | Desarrollo Web">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:image" content="https://andresbotta.dev/imagenes/logo-compartir.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="article:published_time" content="2026-02-27">
+    <meta property="article:author" content="Andrés Sánchez Botta">
+
+    <!-- ========== TWITTER CARD ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="¿Cuándo Necesitas Rediseñar tu Web? 8 Señales Claras | Andrés Botta">
+    <meta name="twitter:description" content="8 señales técnicas y visuales que indican que tu web necesita un rediseño. Sin HTTPS, sin mobile-first, Core Web Vitals y más.">
+    <meta name="twitter:image" content="https://andresbotta.dev/imagenes/logo-compartir.png">
+
+    <!-- ========== STRUCTURED DATA: Article ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "¿Cuándo Necesitas Rediseñar tu Web? 8 Señales Claras",
+        "description": "8 señales técnicas y visuales que indican que tu web necesita un rediseño: sin HTTPS, sin mobile-first, Core Web Vitals, diseño de más de 5 años.",
+        "image": "https://andresbotta.dev/imagenes/logo-compartir.webp",
+        "datePublished": "2026-02-27",
+        "dateModified": "2026-02-27",
+        "wordCount": 1900,
+        "articleSection": "Rediseño Web",
+        "author": {
+            "@type": "Person",
+            "name": "Andrés Sánchez Botta",
+            "url": "https://andresbotta.dev/",
+            "jobTitle": "Desarrollador Web",
+            "sameAs": ["https://linkedin.com/in/andressbotta", "https://github.com/lsbcreativa"]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Andrés Botta — Desarrollo Web",
+            "url": "https://andresbotta.dev/"
+        },
+        "mainEntityOfPage": "https://andresbotta.dev/blog/cuando-necesitas-rediseno-web/",
+        "inLanguage": "es-PE"
+    }
+    </script>
+
+    <!-- ========== STRUCTURED DATA: FAQPage ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cuánto cuesta un rediseño web en Perú?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "El rango en el mercado peruano va de S/1,500 a S/8,000 dependiendo del tamaño del sitio, la complejidad y si incluye migración de contenido. Un rediseño de web corporativa de 5-8 páginas está típicamente entre S/2,000-4,000. Un rediseño de e-commerce con migración de productos puede superar los S/6,000. El precio también depende de si se trabaja sobre una plataforma existente (WordPress, por ejemplo) o si se rediseña con código a medida."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuánto tiempo dura un rediseño web?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Un rediseño completo de una web corporativa de tamaño mediano tarda entre 4 y 8 semanas. La duración depende de cuánto contenido hay que migrar, si hay que crear contenido nuevo, la velocidad de aprobación del cliente en cada etapa y la complejidad de las funcionalidades. Los proyectos se alargan principalmente por demoras en proporcionar contenido (textos, imágenes, logos en alta resolución) o por cambios de dirección a mitad del proceso."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Pierdo posicionamiento SEO al hacer un rediseño?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Un rediseño mal ejecutado puede destruir años de posicionamiento SEO. Los riesgos incluyen cambiar URLs sin redirecciones 301, perder etiquetas meta importantes, modificar la estructura de encabezados y eliminar contenido indexado. Un rediseño profesional incluye una auditoría SEO previa para identificar las URLs y páginas que tienen tráfico orgánico, y garantiza que esas páginas sean redirigidas correctamente o mantenidas sin cambios en sus URLs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Rediseño total o solo actualizar el diseño visual?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Depende de los problemas. Si los problemas son solo visuales (diseño desactualizado, colores que no representan la marca), un restyling — que mantiene la estructura y el código base pero actualiza el diseño — puede ser suficiente y es más económico. Si los problemas son técnicos (código desactualizado, sin mobile-first, CMS desactualizado, URLs mal estructuradas), un rediseño completo es necesario. Un buen diagnóstico técnico previo evita gastar en la solución equivocada."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- ========== STRUCTURED DATA: BreadcrumbList ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://andresbotta.dev/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://andresbotta.dev/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Cuándo Necesitas Rediseñar tu Web", "item": "https://andresbotta.dev/blog/cuando-necesitas-rediseno-web/" }
+        ]
+    }
+    </script>
+
+    <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ========== FONTS ========== -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap"></noscript>
+
+    <!-- ========== FAVICON ========== -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imagenes/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/imagenes/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#06080f">
+
+    <!-- ========== STYLESHEET ========== -->
+    <link rel="stylesheet" href="../../css/styles.min.css?v=1.0.0">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Ir al contenido</a>
+    <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="header" role="banner">
+        <a href="../../" class="header-logo" aria-label="Andrés Botta - Inicio">
+            <picture class="logo-for-dark">
+                <source srcset="../../imagenes/logo-andres-botta.webp" type="image/webp">
+                <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
+            </picture>
+            <picture class="logo-for-light">
+                <source srcset="../../imagenes/logo-andres-botta-dark.webp" type="image/webp">
+                <img src="../../imagenes/logo-andres-botta-dark.png" alt="" class="header-logo-img" width="200" height="60">
+            </picture>
+        </a>
+        <nav class="header-nav" aria-label="Navegación principal">
+            <a href="../../#servicios" class="nav-link">Servicios</a>
+            <a href="../../#proyectos" class="nav-link">Proyectos</a>
+            <a href="../../#sobre-mi" class="nav-link">Sobre mí</a>
+            <a href="../../#faq" class="nav-link">FAQ</a>
+            <a href="../../contacto/" class="nav-link">Contacto</a>
+            <a href="../../blog/" class="nav-link">Blog</a>
+            <a href="https://wa.me/51968672704?text=Hola%20Andrés,%20quiero%20cotizar%20una%20página%20web%20profesional" target="_blank" rel="noopener noreferrer" class="magnetic-btn"><span>Hablemos</span></a>
+        </nav>
+        <button class="theme-toggle" aria-label="Cambiar tema"><svg class="theme-icon-sun" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="theme-icon-moon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+        <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Menú móvil" role="navigation">
+        <button class="mobile-nav-close" aria-label="Cerrar menú"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+        <div class="mobile-nav-links">
+            <a href="../../#servicios"><span class="mobile-nav-number">01</span>Servicios</a>
+            <a href="../../#proyectos"><span class="mobile-nav-number">02</span>Proyectos</a>
+            <a href="../../#sobre-mi"><span class="mobile-nav-number">03</span>Sobre mí</a>
+            <a href="../../#faq"><span class="mobile-nav-number">04</span>FAQ</a>
+            <a href="../../contacto/"><span class="mobile-nav-number">05</span>Contacto</a>
+            <a href="../../blog/"><span class="mobile-nav-number">06</span>Blog</a>
+        </div>
+        <div class="mobile-nav-footer">
+            <a href="https://wa.me/51968672704?text=Hola%20Andr%C3%A9s,%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20profesional" target="_blank" rel="noopener noreferrer" class="mobile-nav-cta">Hablemos</a>
+            <div class="mobile-nav-social">
+                <a href="mailto:contacto@andresbotta.dev" class="mobile-nav-email">contacto@andresbotta.dev</a>
+                <div class="mobile-nav-social-links">
+                    <a href="https://linkedin.com/in/andressbotta" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/lsbcreativa" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../">Inicio</a>
+            <span class="breadcrumb-separator">></span>
+            <a href="../../blog/">Blog</a>
+            <span class="breadcrumb-separator">></span>
+            <span aria-current="page">Rediseño Web</span>
+        </nav>
+
+        <section class="hero hero--landing" aria-label="Artículo sobre cuándo rediseñar tu página web">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-gradient hero-gradient-1"></div>
+                <div class="hero-gradient hero-gradient-2"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span class="hero-eyebrow-line" aria-hidden="true"></span>
+                    <span>Blog — Rediseño Web</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-line"><span>¿Cuándo necesitas</span></span>
+                    <span class="hero-title-line"><span>rediseñar tu web?</span></span>
+                    <span class="hero-title-line"><span>8 señales </span><span class="outline">claras</span></span>
+                </h1>
+                <div class="article-meta">
+                    <span>Por Andrés Sánchez Botta</span>
+                    <span>Febrero 2026</span>
+                    <span>9 min de lectura</span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article-content">
+
+            <p>Tu página web tiene fecha de caducidad — no en el sentido de que deje de funcionar, sino en el sentido de que el estándar de lo que es "profesional", "rápido" y "confiable" cambia constantemente. Un sitio diseñado en 2018 puede lucir perfectamente funcional a tus ojos mientras un visitante de 2026 lo percibe como desactualizado en los primeros 50 milisegundos.</p>
+
+            <p>Investigadores de la Universidad de Carleton midieron experimentalmente el tiempo que tarda un usuario en formarse una impresión estética de una interfaz digital: 50 milisegundos. Ese juicio instantáneo influye en si el visitante confía en el sitio o no. El diseño visual no es un detalle superficial — es la primera señal de credibilidad que recibe un cliente potencial.</p>
+
+            <p>Esta guía identifica las señales técnicas, visuales y de métricas que indican que ha llegado el momento de un rediseño, con criterios objetivos y verificables.</p>
+
+            <h2>¿Cuánto tiempo dura un diseño web?</h2>
+
+            <p>No existe un plazo universal, pero la práctica del sector converge en que un diseño web tiene una vida útil efectiva de entre 3 y 5 años. Después de ese período, varias cosas habrán cambiado: los estándares técnicos (nuevas versiones de HTML/CSS, cambios en los algoritmos de Google), las tendencias de diseño (lo que se ve moderno cambia), y probablemente la identidad o el posicionamiento del propio negocio.</p>
+
+            <p>Hay sitios que resisten bien el paso del tiempo por su diseño minimalista y atemporal. Hay otros que a los 2 años ya lucen como una reliquia. El criterio no es el calendario — es el conjunto de señales que se describen a continuación.</p>
+
+            <h2>Señal 1: Tu sitio no tiene HTTPS</h2>
+
+            <p>Si la URL de tu sitio empieza por <code>http://</code> en lugar de <code>https://</code>, es una señal de alarma que va más allá del diseño. Chrome, Firefox, Safari y Edge muestran el aviso "No es seguro" en la barra de direcciones para todos los sitios sin certificado SSL. Google confirmó el HTTPS como factor de ranking en 2014 y lo ha reforzado progresivamente.</p>
+
+            <p>Un sitio sin HTTPS en 2026 no solo parece desactualizado — activamente desalienta a los visitantes y penaliza el posicionamiento en Google. Si tu proveedor web original no configuró esto, es una señal de que el desarrollo original fue deficiente en aspectos técnicos fundamentales.</p>
+
+            <h2>Señal 2: Tu sitio no se ve bien en móvil</h2>
+
+            <p>Google implementó Mobile-First Indexing de forma progresiva desde 2018 y lo estableció como indexación predeterminada para todos los sitios nuevos desde 2019. Esto significa que Google evalúa y posiciona tu sitio basándose principalmente en cómo se ve en versión móvil, no en escritorio.</p>
+
+            <p>Si tu sitio fue diseñado antes de 2015 con un enfoque "desktop first" — es decir, la versión escritorio es la real y la móvil es una adaptación deficiente — estás siendo penalizado en los resultados de búsqueda y ofreciendo una experiencia deficiente al grueso de tu audiencia. En Perú, más del 65% del tráfico web llega desde dispositivos móviles, según datos del mercado local consistentes con tendencias regionales.</p>
+
+            <p>La prueba más rápida: abre tu web desde tu celular. ¿Tienes que hacer zoom para leer el texto? ¿Los botones son demasiado pequeños para tocar cómodamente? ¿El menú es difícil de usar? Si la respuesta a cualquiera de estas preguntas es sí, tienes un problema de mobile-first.</p>
+
+            <h2>Señal 3: Fallas en los Core Web Vitals</h2>
+
+            <p>Google introdujo los Core Web Vitals como factores de ranking en mayo de 2021. Son tres métricas técnicas que miden la experiencia real del usuario:</p>
+
+            <ul>
+                <li><strong>LCP (Largest Contentful Paint):</strong> tiempo hasta que el elemento más grande visible carga. El umbral "bueno" es bajo 2.5 segundos. Malo: más de 4 segundos</li>
+                <li><strong>INP (Interaction to Next Paint):</strong> qué tan rápido responde la página cuando el usuario interactúa. Bueno: bajo 200ms. Malo: más de 500ms</li>
+                <li><strong>CLS (Cumulative Layout Shift):</strong> cuánto se mueven visualmente los elementos mientras carga la página. Bueno: bajo 0.1. Malo: más de 0.25</li>
+            </ul>
+
+            <p>Puedes verificar tus métricas gratuitamente en PageSpeed Insights (pagespeed.web.dev) ingresando tu URL. Si tu sitio aparece en rojo o amarillo en estas métricas, estás siendo penalizado en los rankings de búsqueda y ofreciendo una experiencia de usuario deficiente. Muchos sitios construidos antes de 2019 fallan estas métricas por cuestiones estructurales que requieren rediseño, no solo ajustes.</p>
+
+            <h2>Señal 4: El diseño visual está desactualizado</h2>
+
+            <p>El diseño web sigue ciclos de tendencias. Elementos visuales que definían una web "moderna" en 2016 — sliders automáticos con múltiples slides, fondos de textura, menús mega-dropdown, ilustraciones planas de estilo clip art — hoy señalizan antigüedad inmediatamente a cualquier visitante.</p>
+
+            <p>La señal más reveladora no es que tu web "se vea vieja" de forma abstracta — es si, al comparar tu web con las de tus competidores directos o con referencias internacionales de tu industria, la diferencia visual es notable. Los visitantes hacen comparaciones inconscientes constantemente. Si tu web luce significativamente inferior, transmite que el negocio también podría serlo.</p>
+
+            <p>Elementos concretos a evaluar: tipografía (¿es legible y moderna o usa fuentes genéricas del sistema?), espaciado (¿tiene suficiente aire o es apretado?), paleta de colores (¿representa bien la identidad actual del negocio?), fotografía (¿son fotos propias o stock genérico que aparece en cientos de otras webs?).</p>
+
+            <h2>Señal 5: Tu web no refleja el negocio actual</h2>
+
+            <p>Los negocios evolucionan. Cambian de servicios, de mercado objetivo, de posicionamiento, de identidad visual. Un sitio web construido hace 4 años para una clínica que ofrecía medicina general y ahora se especializa en dermatología estética es un activo que trabaja en contra del negocio — está comunicando lo que eras, no lo que eres.</p>
+
+            <p>Preguntas de diagnóstico: ¿Los servicios que muestra tu web son exactamente los que ofreces hoy? ¿El tono de comunicación (formal, cercano, técnico) representa cómo quieres que te perciban? ¿Los testimonios y casos de éxito son relevantes para el tipo de cliente que quieres atraer ahora? Si la respuesta a alguna de estas es no, la web está enviando el mensaje equivocado.</p>
+
+            <h2>Señal 6: El CMS o la tecnología ya no tiene soporte</h2>
+
+            <p>Si tu sitio fue construido en Joomla! 1.x, Drupal 6, WordPress sin actualizar desde hace años, o en un CMS propietario cuyo proveedor ya no existe, estás en terreno de riesgo. Las plataformas sin soporte activo no reciben parches de seguridad — y como se explicó en el artículo sobre <a href="../mantenimiento-web-peru/">mantenimiento web</a>, las vulnerabilidades sin parchear son puertas abiertas para atacantes automatizados.</p>
+
+            <p>El problema con el software desactualizado es que en algún momento la brecha entre la versión que tienes y la versión actual es tan grande que "actualizar" implica prácticamente reconstruir. Más vale planificar el rediseño en términos favorables que verse obligado a hacerlo de emergencia después de un ataque.</p>
+
+            <h2>Señal 7: Tu tasa de rebote es alta y las conversiones son bajas</h2>
+
+            <p>Si tienes acceso a Google Analytics (o cualquier herramienta de analítica web), estas métricas son objetivas:</p>
+
+            <ul>
+                <li><strong>Tasa de rebote alta (más del 70-80% para páginas de servicios):</strong> los visitantes llegan y se van sin interactuar. Puede indicar que el contenido no es relevante, que la página carga muy lento, o que el diseño no genera confianza</li>
+                <li><strong>Tiempo en página bajo:</strong> si los visitantes permanecen menos de 30 segundos en páginas que deberían consumir más tiempo, el contenido no está generando engagement</li>
+                <li><strong>Conversiones cercanas a cero:</strong> si tienes formulario de contacto o un CTA claro y nadie lo usa, hay un problema de diseño, de mensaje o de velocidad</li>
+            </ul>
+
+            <p>Antes de atribuir el problema al diseño, verifica otras causas posibles: ¿el tráfico que llega es relevante? ¿Hay problemas técnicos que impidan que el formulario funcione? Si el tráfico es cualificado y las métricas siguen siendo malas, el sitio es el problema.</p>
+
+            <h2>Señal 8: Tu web no aparece en Google para búsquedas relevantes</h2>
+
+            <p>Si buscas en Google "[tu servicio] + [tu ciudad]" y no apareces en los primeros resultados, hay varias causas posibles. Algunas tienen que ver con el SEO de contenido (puedes escribir artículos). Pero otras son estructurales y requieren rediseño: URLs mal estructuradas, ausencia de datos estructurados (schema.org), arquitectura de información confusa, o un sitio tan lento que Google lo penaliza en rankings.</p>
+
+            <p>Un <a href="../seo-para-negocios-peru/">diagnóstico SEO técnico</a> puede distinguir qué problemas son de contenido y cuáles son de estructura. Si los problemas son estructurales, un rediseño que corrija la arquitectura técnica es la solución correcta.</p>
+
+            <h2>Rediseño total vs rediseño parcial: cuándo aplica cada uno</h2>
+
+            <p>No todo problema requiere reconstruir desde cero:</p>
+
+            <ul>
+                <li><strong>Restyling (solo visual):</strong> mantiene la estructura y el código, actualiza colores, tipografía, imágenes y algunos elementos de diseño. Aplica cuando los problemas son solo estéticos y la base técnica es sólida. Es más económico y rápido</li>
+                <li><strong>Rediseño de contenido:</strong> mantiene la estructura técnica pero reorganiza y reescribe el contenido para representar mejor el negocio actual. Aplica cuando el negocio ha evolucionado pero el código base es moderno</li>
+                <li><strong>Rediseño completo:</strong> nueva arquitectura, nuevo diseño, nuevo código. Necesario cuando hay problemas técnicos estructurales (sin mobile-first, CMS desactualizado, Core Web Vitals muy bajos, arquitectura SEO incorrecta). Es la opción más costosa pero la única que resuelve problemas de raíz</li>
+            </ul>
+
+            <h2>Qué debe incluir un rediseño profesional</h2>
+
+            <p>Un rediseño web profesional no es solo "hacer que se vea mejor". Los componentes que no pueden faltar:</p>
+
+            <ul>
+                <li><strong>Auditoría SEO previa:</strong> identificar qué URLs tienen tráfico orgánico o backlinks para protegerlas con redirecciones 301. Sin esto, el rediseño puede destruir el posicionamiento existente</li>
+                <li><strong>Arquitectura de información:</strong> definir qué páginas necesita el sitio, cómo se organizan y qué jerarquía tienen antes de diseñar</li>
+                <li><strong>Diseño mobile-first:</strong> diseñar primero para móvil y después escalar a escritorio, no al revés</li>
+                <li><strong>Optimización de velocidad:</strong> Core Web Vitals como objetivo desde el inicio del desarrollo, no como corrección posterior</li>
+                <li><strong>Datos estructurados (schema.org):</strong> marcar correctamente el contenido para que Google lo entienda y pueda mostrar rich results</li>
+                <li><strong>Pruebas antes de publicar:</strong> verificar en múltiples dispositivos y navegadores, testear formularios y funcionalidades, confirmar que Analytics y píxeles de conversión están correctamente instalados</li>
+            </ul>
+
+            <h2>Costos de rediseño web en Perú</h2>
+
+            <p>El rango de precios para rediseños en el mercado limeño:</p>
+
+            <ul>
+                <li><strong>Web corporativa 5-8 páginas (rediseño completo):</strong> S/2,000-5,000. Incluye diseño personalizado, migración de contenido, optimización técnica básica y configuración de Analytics</li>
+                <li><strong>Web con blog o contenido extenso:</strong> S/3,500-7,000. El volumen de contenido a migrar y revisar incrementa el tiempo de trabajo</li>
+                <li><strong>E-commerce (rediseño de tienda online):</strong> S/5,000-12,000. Implica migración de catálogo de productos, configuración de pasarelas de pago, pruebas exhaustivas del proceso de compra</li>
+            </ul>
+
+            <p>Estos precios varían según el proveedor. Un freelance especializado y un agencia tienen modelos de precio distintos. Lo importante es que el rediseño incluya los componentes técnicos y de SEO necesarios — un rediseño barato que destruye el posicionamiento existente es más caro en el largo plazo.</p>
+
+            <h2>Cómo prepararte para el rediseño sin perder clientes</h2>
+
+            <p>Durante el proceso de rediseño, tu sitio actual sigue funcionando. El nuevo sitio se desarrolla en un entorno de staging (un servidor separado o un subdominio de prueba) y solo se publica cuando está completamente listo. Los puntos críticos a gestionar:</p>
+
+            <ul>
+                <li>Guardar una copia completa del sitio actual antes de cualquier cambio</li>
+                <li>Documentar todas las URLs del sitio actual con sus posiciones en Google (capturas de Google Search Console)</li>
+                <li>Preparar las redirecciones 301 para cualquier URL que cambie de slug</li>
+                <li>Planificar la migración en un día/hora de bajo tráfico (típicamente domingo por la mañana)</li>
+                <li>Monitorear Google Search Console durante las 2-4 semanas post-lanzamiento para detectar errores de crawl</li>
+            </ul>
+
+            <h2>Preguntas frecuentes</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                        ¿Cuánto cuesta un rediseño web en Perú?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-1" role="region">
+                        <p>El rango en el mercado peruano va de S/1,500 a S/8,000 dependiendo del tamaño del sitio, la complejidad y si incluye migración de contenido. Un rediseño de web corporativa de 5-8 páginas está típicamente entre S/2,000-4,000. Un rediseño de e-commerce con migración de productos puede superar los S/6,000. El precio también depende de si se trabaja sobre una plataforma existente (WordPress, por ejemplo) o si se rediseña con código a medida.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                        ¿Cuánto tiempo dura un rediseño web?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-2" role="region">
+                        <p>Un rediseño completo de una web corporativa de tamaño mediano tarda entre 4 y 8 semanas. La duración depende de cuánto contenido hay que migrar, si hay que crear contenido nuevo, la velocidad de aprobación del cliente en cada etapa y la complejidad de las funcionalidades. Los proyectos se alargan principalmente por demoras en proporcionar contenido (textos, imágenes, logos en alta resolución) o por cambios de dirección a mitad del proceso.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                        ¿Pierdo posicionamiento SEO al hacer un rediseño?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-3" role="region">
+                        <p>Un rediseño mal ejecutado puede destruir años de posicionamiento SEO. Los riesgos incluyen cambiar URLs sin redirecciones 301, perder etiquetas meta importantes, modificar la estructura de encabezados y eliminar contenido indexado. Un rediseño profesional incluye una auditoría SEO previa para identificar las URLs y páginas que tienen tráfico orgánico, y garantiza que esas páginas sean redirigidas correctamente o mantenidas sin cambios en sus URLs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                        ¿Rediseño total o solo actualizar el diseño visual?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-4" role="region">
+                        <p>Depende de los problemas. Si los problemas son solo visuales (diseño desactualizado, colores que no representan la marca), un restyling — que mantiene la estructura y el código base pero actualiza el diseño — puede ser suficiente y es más económico. Si los problemas son técnicos (código desactualizado, sin mobile-first, CMS desactualizado, URLs mal estructuradas), un rediseño completo es necesario. Un buen diagnóstico técnico previo evita gastar en la solución equivocada.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <aside class="author-box">
+            <div class="author-avatar">AB</div>
+            <div class="author-info">
+                <div class="author-name">Andrés Sánchez Botta</div>
+                <div class="author-role">Desarrollador Web Freelance</div>
+                <p class="author-bio">+50 proyectos entregados para negocios en Lima y todo Perú. Código a medida, SEO optimizado y diseño que convierte.</p>
+                <div class="author-links">
+                    <a href="https://linkedin.com/in/andressbotta" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/lsbcreativa" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </aside>
+
+        <section class="related-articles">
+            <h2 class="related-articles-title">Artículos relacionados</h2>
+            <div class="related-grid">
+                <a href="../diseno-web-que-vende/" class="related-card">
+                    <span class="related-tag">Diseño</span>
+                    <h3>Diseño Web que Vende: Los Principios que Separan una Web Bonita de una que Convierte</h3>
+                    <span class="related-read">9 min</span>
+                </a>
+                <a href="../velocidad-web-peru/" class="related-card">
+                    <span class="related-tag">Rendimiento</span>
+                    <h3>Velocidad Web: Cómo una Página Lenta Te Hace Perder Clientes</h3>
+                    <span class="related-read">9 min</span>
+                </a>
+                <a href="../wordpress-vs-codigo-a-medida/" class="related-card">
+                    <span class="related-tag">Tecnología</span>
+                    <h3>WordPress vs Código a Medida: Cuál Elegir para tu Negocio</h3>
+                    <span class="related-read">9 min</span>
+                </a>
+            </div>
+        </section>
+
+        <nav class="article-nav" aria-label="Navegación entre artículos">
+            <a href="../landing-page-lima-negocio/" class="article-nav-link article-nav-prev">
+                <span class="article-nav-label">← Anterior</span>
+                <span class="article-nav-title">Landing Page para Negocios en Lima</span>
+            </a>
+            <a href="../pagina-web-restaurantes-lima/" class="article-nav-link article-nav-next">
+                <span class="article-nav-label">Siguiente →</span>
+                <span class="article-nav-title">Página Web para Restaurantes en Lima</span>
+            </a>
+        </nav>
+
+        <section class="cta glow-divider" aria-labelledby="contacto-title">
+            <h2 class="cta-title" id="contacto-title">¿Tu web necesita<br>un rediseño profesional?</h2>
+            <p class="cta-description">Rediseño webs en Lima con enfoque en velocidad, SEO y conversión. Auditoría técnica previa incluida para no perder tu posicionamiento actual. Cuéntame sobre tu proyecto.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/51968672704?text=Hola%20Andrés,%20vi%20tu%20artículo%20sobre%20rediseño%20web%20y%20me%20gustaría%20cotizar%20un%20rediseño" class="magnetic-btn btn-primary-fill btn-large" target="_blank" rel="noopener noreferrer">
+                    <span>Escríbeme por WhatsApp</span>
+                </a>
+                <a href="mailto:contacto@andresbotta.dev" class="magnetic-btn btn-large">
+                    <span>contacto@andresbotta.dev</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <a href="../../" class="footer-logo" aria-label="Andrés Botta - Inicio">
+                <picture class="logo-for-dark">
+                    <source srcset="../../imagenes/logo-andres-botta.webp" type="image/webp">
+                    <img src="../../imagenes/logo-andres-botta.png" alt="Andrés Botta - Desarrollador Web" class="footer-logo-img" loading="lazy" width="192" height="93">
+                </picture>
+                <picture class="logo-for-light">
+                    <source srcset="../../imagenes/logo-andres-botta-dark.webp" type="image/webp">
+                    <img src="../../imagenes/logo-andres-botta-dark.png" alt="" class="footer-logo-img" loading="lazy" width="192" height="93">
+                </picture>
+            </a>
+            <p class="footer-tagline">Desarrollador Web Full Stack & Diseñador UI/UX en Lima, Perú. Creo sitios web que convierten visitantes en clientes.</p>
+            <nav class="footer-links" aria-label="Enlaces del footer">
+                <a href="https://linkedin.com/in/andressbotta" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/lsbcreativa" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:contacto@andresbotta.dev" class="footer-link">Email</a>
+                <a href="../../blog/" class="footer-link">Blog</a>
+            </nav>
+            <div class="footer-sitemap" role="navigation" aria-label="Mapa del sitio">
+                <div class="footer-sitemap-col">
+                    <div class="footer-sitemap-title">Servicios</div>
+                    <ul class="footer-sitemap-links">
+                        <li><a href="../../diseno-web-lima/">Diseño Web Lima</a></li>
+                        <li><a href="../../diseno-web-peru/">Diseño Web Perú</a></li>
+                        <li><a href="../../crear-pagina-web-lima/">Crear Página Web</a></li>
+                        <li><a href="../../tienda-online-peru/">Tienda Online</a></li>
+                        <li><a href="../../landing-page-lima/">Landing Pages</a></li>
+                        <li><a href="../../seo-tecnico-peru/">SEO Técnico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-sitemap-col">
+                    <div class="footer-sitemap-title">Ciudades</div>
+                    <ul class="footer-sitemap-links">
+                        <li><a href="../../diseno-web-lima/">Lima</a></li>
+                        <li><a href="../../diseno-web-cusco/">Cusco</a></li>
+                        <li><a href="../../diseno-web-arequipa/">Arequipa</a></li>
+                        <li><a href="../../diseno-web-trujillo/">Trujillo</a></li>
+                        <li><a href="../../diseno-web-chiclayo/">Chiclayo</a></li>
+                        <li><a href="../../diseno-web-piura/">Piura</a></li>
+                    </ul>
+                </div>
+                <div class="footer-sitemap-col">
+                    <div class="footer-sitemap-title">Contacto</div>
+                    <ul class="footer-sitemap-links">
+                        <li><a href="https://wa.me/51968672704" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><a href="mailto:contacto@andresbotta.dev">contacto@andresbotta.dev</a></li>
+                        <li><a href="https://linkedin.com/in/andressbotta" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/lsbcreativa" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copy">© <span id="footer-year"></span> Andrés Sánchez Botta · <a href="../../politica-privacidad/" class="footer-legal-link">Privacidad</a></div>
+            <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+        </div>
+    </footer>
+
+    <script src="../../js/main.min.js?v=1.0.0" defer></script>
+    <a href="https://wa.me/51968672704?text=Hola%20Andr%C3%A9s,%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20profesional" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="whatsapp-float-tooltip">Hablemos</span>
+    </a>
+    <button class="back-to-top" aria-label="Volver arriba">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+    </button>
+</body>
+</html>
