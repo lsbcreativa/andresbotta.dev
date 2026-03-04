@@ -2070,6 +2070,10 @@ section[id] {
     max-height: 300px;
 }
 
+.faq-item.active .faq-question {
+    color: var(--color-accent);
+}
+
 .faq-answer p {
     padding-bottom: 2rem;
     font-size: 1rem;
@@ -3030,6 +3034,16 @@ input, select, textarea {
     }
 }
 
+@media (max-width: 600px) {
+    .article-content {
+        padding: 0 1rem 2.5rem;
+    }
+
+    .breadcrumb {
+        padding: 4.5rem 1rem 0.5rem;
+    }
+}
+
 @media (max-width: 768px) {
     .breadcrumb {
         padding: 4.5rem 1.25rem 0.5rem;
@@ -3407,6 +3421,18 @@ input, select, textarea {
 
 .article-toc-list a:hover::before {
     background: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .article-toc {
+        padding: 1.25rem 1.25rem;
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
+    }
+
+    .article-toc-list a {
+        font-size: 0.9rem;
+    }
 }
 
 /* ========== SHARE BUTTONS ========== */
