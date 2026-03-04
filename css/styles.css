@@ -2293,11 +2293,8 @@ input, select, textarea {
     }
 
     .theme-toggle {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        margin-left: 0;
-        margin-right: 0;
+        margin-left: auto;
+        margin-right: 0.5rem;
     }
 
     .menu-toggle {
@@ -4483,6 +4480,15 @@ html.theme-transitioning *::after {
 
 .theme-toggle:active {
     transform: scale(0.9);
+}
+
+@media (max-width: 1024px) {
+    .theme-toggle {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-left: 0;
+    }
 }
 
 /* Theme toggle — animated icon swap */
