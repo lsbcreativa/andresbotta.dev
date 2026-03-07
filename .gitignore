@@ -3,3 +3,4 @@ deploy.sh
 rollback.sh
 contacto/config.php
 contacto/rate_logs/
+google-service-account.json
