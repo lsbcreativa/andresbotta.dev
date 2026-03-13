@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>(function(){var t=localStorage.getItem("theme")||"dark";document.documentElement.setAttribute("data-theme",t)})()</script>
+
+    <!-- ========== SEO PRIMARY ========== -->
+    <title>Diseno Web Responsive en Peru: Guia Mobile First para tu Negocio | Andres Botta</title>
+    <meta name="description" content="Guia de diseno web responsive en Peru: que es mobile first, como Google evalua tu web en celular, 7 elementos clave, errores comunes y costos reales en 2026.">
+    <meta name="author" content="Andres Sanchez Botta">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="canonical" href="https://andresbotta.dev/blog/diseno-web-responsive-peru/">
+
+    <!-- ========== LANGUAGE & REGION ========== -->
+    <meta name="content-language" content="es-PE">
+    <link rel="alternate" hreflang="es-pe" href="https://andresbotta.dev/blog/diseno-web-responsive-peru/">
+    <link rel="alternate" hreflang="es" href="https://andresbotta.dev/blog/diseno-web-responsive-peru/">
+    <link rel="alternate" hreflang="x-default" href="https://andresbotta.dev/blog/diseno-web-responsive-peru/">
+
+    <!-- ========== GEO TAGS ========== -->
+    <meta name="geo.region" content="PE-LIM">
+    <meta name="geo.placename" content="Lima, Peru">
+
+    <!-- ========== OPEN GRAPH ========== -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Diseno Web Responsive en Peru: Guia Mobile First para tu Negocio | Andres Botta">
+    <meta property="og:description" content="Mobile first, responsive design, errores que ahuyentan clientes en celular y cuanto cuesta un diseno responsive en Peru.">
+    <meta property="og:url" content="https://andresbotta.dev/blog/diseno-web-responsive-peru/">
+    <meta property="og:site_name" content="Andres Botta | Desarrollo Web">
+    <meta property="og:locale" content="es_PE">
+    <meta property="og:image" content="https://andresbotta.dev/imagenes/logo-compartir.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="article:published_time" content="2026-03-13">
+    <meta property="article:author" content="Andres Sanchez Botta">
+
+    <!-- ========== TWITTER CARD ========== -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Diseno Web Responsive en Peru: Guia Mobile First para tu Negocio | Andres Botta">
+    <meta name="twitter:description" content="Diseno responsive: mobile first, elementos clave y costos reales en Peru 2026.">
+    <meta name="twitter:image" content="https://andresbotta.dev/imagenes/logo-compartir.png">
+
+    <!-- ========== STRUCTURED DATA: Article ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Diseno Web Responsive en Peru: Guia Mobile First para tu Negocio",
+        "description": "Guia de diseno web responsive en Peru: que es mobile first, como Google evalua tu web en celular, 7 elementos clave, errores comunes y costos reales en 2026.",
+        "image": "https://andresbotta.dev/imagenes/logo-compartir.webp",
+        "datePublished": "2026-03-13",
+        "dateModified": "2026-03-13",
+        "wordCount": 2000,
+        "articleSection": "Diseno Web",
+        "author": {
+            "@type": "Person",
+            "name": "Andres Sanchez Botta",
+            "url": "https://andresbotta.dev/",
+            "jobTitle": "Desarrollador Web",
+            "sameAs": ["https://linkedin.com/in/andressbotta", "https://github.com/lsbcreativa"]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Andres Botta — Desarrollo Web",
+            "url": "https://andresbotta.dev/"
+        },
+        "mainEntityOfPage": "https://andresbotta.dev/blog/diseno-web-responsive-peru/",
+        "inLanguage": "es-PE"
+    }
+    </script>
+
+    <!-- ========== STRUCTURED DATA: FAQPage ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "¿Cual es la diferencia entre responsive y mobile first?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Responsive design adapta una web de escritorio para que funcione en pantallas mas pequeñas — el diseño parte de la version de PC y se ajusta hacia abajo. Mobile first es lo contrario: se diseña primero para celular y luego se escala hacia pantallas mas grandes. Google recomienda mobile first porque el 75% del trafico web en Peru viene de celulares. En la practica, mobile first produce sitios mas rapidos y mejor optimizados porque obliga a priorizar el contenido esencial desde el inicio."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Mi web se ve bien en PC pero mal en celular, que hago?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Si tu web se ve bien en escritorio pero se rompe en celular, probablemente fue diseñada con anchos fijos en pixeles en lugar de unidades responsivas. La solucion depende de la gravedad: si solo hay problemas menores (textos que se salen, imagenes que no se redimensionan), se pueden corregir con CSS media queries. Si la estructura completa falla en movil, lo mas eficiente es un rediseño responsive desde cero con enfoque mobile first. Un desarrollador puede evaluar tu caso en minutos revisando el codigo fuente."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Tener una web responsive mejora mi posicionamiento en Google?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Si, directamente. Desde 2019 Google usa Mobile First Indexing: evalua la version movil de tu web para determinar tu posicion en los resultados de busqueda. Si tu web no es responsive, Google la rastrea con la experiencia movil — que probablemente sea mala — y te posiciona en consecuencia. Ademas, Core Web Vitals (LCP, INP, CLS) se miden en movil, y un diseño no responsive genera puntuaciones de CLS muy altas por elementos que se desplazan al redimensionarse."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "¿Cuanto tarda hacer un diseno web responsive desde cero?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Una web responsive de 5-8 paginas con diseño personalizado tarda entre 2 y 4 semanas de desarrollo. Esto incluye diseño UI, maquetacion HTML/CSS responsive, programacion de interacciones en JavaScript, optimizacion de imagenes para multiples resoluciones y pruebas en dispositivos reales. Si se parte de una plantilla o framework CSS, el tiempo se reduce a 1-2 semanas. La complejidad del proyecto (funcionalidades especiales, integraciones, numero de paginas) es el factor que mas influye en los plazos."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- ========== STRUCTURED DATA: BreadcrumbList ========== -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://andresbotta.dev/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://andresbotta.dev/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Diseno Web Responsive", "item": "https://andresbotta.dev/blog/diseno-web-responsive-peru/" }
+        ]
+    }
+    </script>
+
+    <!-- ========== DNS PREFETCH & PRECONNECT ========== -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- ========== FONTS ========== -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400&display=swap"></noscript>
+
+    <!-- ========== FAVICON ========== -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/imagenes/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/imagenes/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/imagenes/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#06080f">
+
+    <!-- ========== STYLESHEET ========== -->
+    <link rel="stylesheet" href="../../css/styles.min.css?v=1.0.0">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Ir al contenido</a>
+    <div class="scroll-progress" aria-hidden="true"><div class="scroll-progress-bar"></div></div>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="header" role="banner">
+        <a href="../../" class="header-logo" aria-label="Andres Botta - Inicio">
+            <picture class="logo-for-dark">
+                <source srcset="../../imagenes/logo-andres-botta.webp" type="image/webp">
+                <img src="../../imagenes/logo-andres-botta.png" alt="Andres Botta - Desarrollador Web" class="header-logo-img" width="200" height="60" fetchpriority="high">
+            </picture>
+            <picture class="logo-for-light">
+                <source srcset="../../imagenes/logo-andres-botta-dark.webp" type="image/webp">
+                <img src="../../imagenes/logo-andres-botta-dark.png" alt="" class="header-logo-img" width="200" height="60">
+            </picture>
+        </a>
+        <nav class="header-nav" aria-label="Navegacion principal">
+            <a href="../../#servicios" class="nav-link">Servicios</a>
+            <a href="../../#proyectos" class="nav-link">Proyectos</a>
+            <a href="../../#sobre-mi" class="nav-link">Sobre mi</a>
+            <a href="../../#faq" class="nav-link">FAQ</a>
+            <a href="../../contacto/" class="nav-link">Contacto</a>
+            <a href="../../blog/" class="nav-link">Blog</a>
+            <a href="https://wa.me/51968672704?text=Hola%20Andres,%20quiero%20cotizar%20una%20pagina%20web%20profesional" target="_blank" rel="noopener noreferrer" class="magnetic-btn"><span>Hablemos</span></a>
+        </nav>
+        <button class="theme-toggle" aria-label="Cambiar tema"><svg class="theme-icon-sun" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" stroke-width="2"/><path stroke-linecap="round" stroke-width="2" d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><svg class="theme-icon-moon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg></button>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </header>
+
+    <nav class="mobile-nav" aria-label="Menu movil" role="navigation">
+        <button class="mobile-nav-close" aria-label="Cerrar menu"><svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+        <div class="mobile-nav-links">
+            <a href="../../#servicios"><span class="mobile-nav-number">01</span>Servicios</a>
+            <a href="../../#proyectos"><span class="mobile-nav-number">02</span>Proyectos</a>
+            <a href="../../#sobre-mi"><span class="mobile-nav-number">03</span>Sobre mi</a>
+            <a href="../../#faq"><span class="mobile-nav-number">04</span>FAQ</a>
+            <a href="../../contacto/"><span class="mobile-nav-number">05</span>Contacto</a>
+            <a href="../../blog/"><span class="mobile-nav-number">06</span>Blog</a>
+        </div>
+        <div class="mobile-nav-footer">
+            <a href="https://wa.me/51968672704?text=Hola%20Andr%C3%A9s,%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20profesional" target="_blank" rel="noopener noreferrer" class="mobile-nav-cta">Hablemos</a>
+            <div class="mobile-nav-social">
+                <a href="mailto:contacto@andresbotta.dev" class="mobile-nav-email">contacto@andresbotta.dev</a>
+                <div class="mobile-nav-social-links">
+                    <a href="https://linkedin.com/in/andressbotta" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/lsbcreativa" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../../">Inicio</a>
+            <span class="breadcrumb-separator">></span>
+            <a href="../../blog/">Blog</a>
+            <span class="breadcrumb-separator">></span>
+            <span aria-current="page">Diseno Web Responsive</span>
+        </nav>
+
+        <section class="hero hero--landing" aria-label="Articulo sobre diseno web responsive en Peru">
+            <div class="hero-bg" aria-hidden="true">
+                <div class="hero-gradient hero-gradient-1"></div>
+                <div class="hero-gradient hero-gradient-2"></div>
+            </div>
+            <div class="hero-content">
+                <div class="hero-eyebrow">
+                    <span class="hero-eyebrow-line" aria-hidden="true"></span>
+                    <span>Blog — Diseno Web</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="hero-title-line"><span>Diseno web responsive:</span></span>
+                    <span class="hero-title-line"><span>guia mobile first</span></span>
+                    <span class="hero-title-line"><span>para tu </span><span class="outline">negocio</span></span>
+                </h1>
+                <div class="article-meta">
+                    <span>Por Andres Sanchez Botta</span>
+                    <span>Marzo 2026</span>
+                    <span>10 min de lectura</span>
+                </div>
+            </div>
+        </section>
+
+        <article class="article-content">
+
+            <p>El 75% del trafico web en Peru viene de celulares. Si tu pagina no se adapta a una pantalla de 6 pulgadas, estas perdiendo tres de cada cuatro visitantes antes de que lean una sola palabra. Y no es solo un problema de usabilidad — Google evalua tu web desde su version movil para decidir tu posicion en los resultados de busqueda. Si la experiencia movil es mala, tu posicionamiento cae sin importar lo bien que se vea tu web en escritorio.</p>
+
+            <p>El diseno web responsive resuelve esto: una sola web que se adapta automaticamente a cualquier pantalla — celular, tablet, laptop o monitor. Esta guia explica como funciona, que exige Google, como verificar si tu web es responsive y cuanto cuesta en Peru.</p>
+
+            <h2>Que es el diseno responsive y por que Google lo exige en 2026</h2>
+
+            <p>El diseno web responsive es una tecnica de desarrollo donde el layout, las imagenes, la tipografia y los elementos interactivos se adaptan automaticamente al tamaño de la pantalla del dispositivo. No es una version separada para movil — es la misma web con reglas CSS que reorganizan el contenido segun el espacio disponible.</p>
+
+            <p>Google lo exige por una razon simple: la mayoria de busquedas se hacen desde celulares. En Peru, segun OSIPTEL, la penetracion de smartphones supera el 85% y el trafico movil representa el 75% del total. Google no puede ofrecer resultados que se ven rotos en el dispositivo que la mayoria de usuarios utiliza.</p>
+
+            <p>Desde marzo de 2021, Google completo la transicion a <strong>Mobile First Indexing</strong>: el crawler de Google (Googlebot) rastrea e indexa la version movil de todas las webs, no la de escritorio. Esto significa que si tu web tiene contenido que solo se muestra en escritorio, Google no lo ve. Si tu web se rompe en movil, Google la evalua con esa experiencia rota.</p>
+
+            <h2>Mobile First Indexing: como Google evalua tu web desde el celular</h2>
+
+            <p>Mobile First Indexing no es una penalizacion — es el metodo de rastreo predeterminado. Google analiza tu web tal como la veria un usuario en un celular con pantalla de aproximadamente 412px de ancho. Lo que importa:</p>
+
+            <ul>
+                <li><strong>Contenido identico:</strong> el texto, las imagenes y los enlaces de la version movil deben ser los mismos que en escritorio. Si ocultas secciones enteras en movil con <code>display: none</code>, Google las ignora</li>
+                <li><strong>Datos estructurados:</strong> el schema markup (JSON-LD) debe estar presente en la version movil. Si solo lo incluyes en la version de escritorio, Google no lo procesa</li>
+                <li><strong>Meta tags:</strong> titles, descriptions y robots tags deben ser identicos en ambas versiones</li>
+                <li><strong>Core Web Vitals en movil:</strong> las metricas <a href="../velocidad-web-peru/">LCP, INP y CLS</a> se miden en la version movil. Un CLS alto (elementos que se mueven al cargar) es el problema mas comun en webs no responsive</li>
+                <li><strong>Interactividad tactil:</strong> botones y enlaces deben tener un area de toque minima de 48x48 pixeles. Los menus deben funcionar con toque, no solo con hover del mouse</li>
+            </ul>
+
+            <p>Puedes verificar como Google ve tu web en movil usando la herramienta "Inspeccion de URL" en Google Search Console. Muestra exactamente la version que Googlebot rastrea e indexa.</p>
+
+            <h2>Responsive vs adaptativo vs app movil: cual conviene para tu negocio</h2>
+
+            <p>Antes de invertir, entiende las tres opciones:</p>
+
+            <ul>
+                <li><strong>Diseno responsive:</strong> una sola web que se adapta con CSS media queries. Una URL, un codigo, todos los dispositivos. Es el estandar recomendado por Google y la opcion mas eficiente para el 90% de negocios</li>
+                <li><strong>Diseno adaptativo:</strong> multiples versiones fijas (320px, 768px, 1024px, etc.) que se cargan segun el dispositivo. Mas control visual pero mas costoso de mantener. Se usa en proyectos muy especificos con requerimientos de diseño extremos</li>
+                <li><strong>App movil nativa:</strong> aplicacion descargable desde App Store o Play Store. Solo tiene sentido si tu negocio necesita funcionalidades que la web no ofrece: notificaciones push, acceso a camara/GPS, uso offline. Para la mayoria de negocios en Peru, una web responsive reemplaza la necesidad de una app</li>
+            </ul>
+
+            <p>La recomendacion: si eres un negocio que necesita presencia digital, visibilidad en Google y un canal de captacion de clientes, el <a href="../../diseno-web-peru/">diseno web responsive</a> es la opcion correcta. Menor costo, menor mantenimiento, mejor SEO.</p>
+
+            <h2>Los 7 elementos clave de un diseno responsive profesional</h2>
+
+            <p>Un diseno responsive no es solo "que se vea en celular". Estos son los componentes tecnicos que diferencian un responsive profesional de uno improvisado:</p>
+
+            <ul>
+                <li><strong>1. Grid fluido:</strong> el layout usa porcentajes o unidades relativas (<code>fr</code>, <code>%</code>, <code>vw</code>) en lugar de pixeles fijos. CSS Grid y Flexbox son las herramientas estandar para grids responsivos en 2026</li>
+                <li><strong>2. Imagenes responsivas:</strong> el elemento <code>&lt;picture&gt;</code> con <code>srcset</code> sirve diferentes tamaños de imagen segun la pantalla. No tiene sentido cargar una imagen de 1920px en un celular de 412px — desperdicia datos y velocidad</li>
+                <li><strong>3. Tipografia fluida:</strong> el tamaño del texto se calcula con <code>clamp()</code> para escalar suavemente entre un minimo y maximo. Ejemplo: <code>clamp(1rem, 2.5vw, 1.5rem)</code> hace que el texto crezca proporcionalmente sin saltos bruscos</li>
+                <li><strong>4. Navegacion adaptable:</strong> el menu de escritorio se transforma en un menu hamburguesa o drawer en movil. Debe ser accesible con teclado y lector de pantalla, no solo con toque</li>
+                <li><strong>5. Formularios tactiles:</strong> inputs con tamaño minimo de 48px de alto, teclado numerico para campos de telefono (<code>inputmode="tel"</code>), autocompletado habilitado. Un formulario frustante en movil mata las conversiones</li>
+                <li><strong>6. Tablas y datos:</strong> las tablas son el elemento mas dificil de hacer responsive. Las soluciones incluyen scroll horizontal con indicador visual, reorganizacion vertical (cada fila se convierte en una card), o mostrar solo las columnas esenciales</li>
+                <li><strong>7. CTAs prominentes:</strong> los botones de accion (WhatsApp, llamar, comprar) deben ser grandes, contrastados y facilmente accesibles con el pulgar. En movil, el area inferior de la pantalla es la zona de mayor alcance</li>
+            </ul>
+
+            <h2>Como saber si tu web actual es responsive</h2>
+
+            <p>No necesitas ser programador para verificarlo. Estas herramientas gratuitas te dan un diagnostico completo:</p>
+
+            <ul>
+                <li><strong>Prueba manual:</strong> abre tu web en el celular. Navega por todas las paginas. Si necesitas hacer zoom para leer, si el menu no funciona, si las imagenes se salen de la pantalla o si los botones son demasiado pequeños para tocar — tu web no es responsive</li>
+                <li><strong>Chrome DevTools:</strong> en tu PC, presiona F12 y haz clic en el icono de celular (Toggle Device Toolbar). Puedes simular cualquier resolucion de pantalla y ver como se comporta tu web</li>
+                <li><strong>Google Search Console:</strong> en el informe de "Experiencia de pagina" puedes ver si Google detecta problemas de usabilidad movil en tu sitio. Tambien muestra problemas especificos como "contenido mas ancho que la pantalla" o "elementos tactiles demasiado cercanos"</li>
+                <li><strong>PageSpeed Insights:</strong> ademas de la velocidad, muestra las metricas Core Web Vitals en movil. Un CLS alto (mayor a 0.1) es señal clara de problemas responsive</li>
+                <li><strong>BrowserStack / Responsively:</strong> herramientas que muestran tu web en multiples dispositivos simultaneamente. Responsively es gratuita y open source</li>
+            </ul>
+
+            <h2>Errores responsive que ahuyentan clientes en celular</h2>
+
+            <p>Estos son los errores mas comunes que encuentro al auditar webs de negocios peruanos:</p>
+
+            <ul>
+                <li><strong>Texto ilegible sin zoom:</strong> fuente menor a 16px en movil obliga al usuario a hacer zoom. Google lo detecta como problema de usabilidad. El tamaño minimo recomendado para cuerpo de texto en movil es 16px</li>
+                <li><strong>Botones imposibles de tocar:</strong> enlaces y botones menores a 48x48px generan toques accidentales. Si el usuario toca "Contacto" y termina en "Politica de privacidad", se va</li>
+                <li><strong>Imagenes que se salen:</strong> imagenes con ancho fijo en pixeles desbordan la pantalla y generan scroll horizontal. La solucion es simple: <code>img { max-width: 100%; height: auto; }</code></li>
+                <li><strong>Pop-ups que bloquean:</strong> Google penaliza los pop-ups intrusivos en movil (intersticiales). Si tu pop-up cubre mas del 50% de la pantalla en movil, Google puede reducir tu posicionamiento</li>
+                <li><strong>Videos que no se redimensionan:</strong> iframes de YouTube con ancho fijo se salen del viewport. La solucion es un contenedor responsive con <code>aspect-ratio: 16/9</code></li>
+                <li><strong>Hover que no funciona:</strong> los efectos hover (mostrar menu, tooltip, preview) no existen en pantallas tactiles. Si tu navegacion depende de hover, en movil es inutilizable</li>
+                <li><strong>Fuentes que tardan en cargar:</strong> las web fonts bloquean el renderizado. En movil, con conexion 4G, esto puede hacer que el texto sea invisible por 2-3 segundos (FOIT). Usa <code>font-display: swap</code> para mostrar texto de sistema mientras carga la fuente</li>
+            </ul>
+
+            <h2>Cuanto cuesta un diseno web responsive en Peru</h2>
+
+            <p>Los costos varian segun el tipo de proyecto:</p>
+
+            <ul>
+                <li><strong>Landing page responsive (1 pagina):</strong> S/800-2,000. Incluye: diseño personalizado, maquetacion responsive, formulario de contacto, integracion WhatsApp. Tiempo: 1-2 semanas</li>
+                <li><strong>Web corporativa responsive (5-8 paginas):</strong> S/2,500-5,000. Incluye: diseño UI personalizado, maquetacion responsive mobile first, SEO basico, formularios, mapa, galeria. Tiempo: 2-4 semanas</li>
+                <li><strong>Tienda online responsive:</strong> S/4,000-8,000+. Incluye: catalogo de productos, carrito, pasarela de pagos, fichas de producto responsive, filtros adaptables. Tiempo: 4-6 semanas</li>
+                <li><strong>Rediseño responsive de web existente:</strong> S/1,500-4,000. Depende de cuantas paginas tiene tu web actual y que tan lejos esta del estandar responsive. A veces es mas eficiente rehacer desde cero que parchar</li>
+            </ul>
+
+            <p>El costo de NO ser responsive es mayor: perdida de visitantes, peor posicionamiento en Google, menor tasa de conversion en movil. Una web que pierde el 75% de su trafico potencial por no adaptarse a celulares esta dejando dinero sobre la mesa cada dia. Invertir en responsive <a href="../cuanto-cuesta-pagina-web-peru/">se paga solo</a> en semanas con el incremento de clientes.</p>
+
+            <h2>Preguntas frecuentes</h2>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-1">
+                        ¿Cual es la diferencia entre responsive y mobile first?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-1" role="region">
+                        <p>Responsive adapta una web de escritorio a pantallas mas pequeñas. Mobile first diseña primero para celular y escala hacia arriba. Google recomienda mobile first porque el 75% del trafico en Peru es movil y produce sitios mas rapidos por defecto.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-2">
+                        ¿Mi web se ve bien en PC pero mal en celular, que hago?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-2" role="region">
+                        <p>Si los problemas son menores (textos, imagenes), se corrigen con CSS media queries. Si la estructura completa falla en movil, un rediseño responsive desde cero suele ser mas eficiente que parchar. Un desarrollador puede evaluarlo en minutos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-3">
+                        ¿Tener una web responsive mejora mi posicionamiento en Google?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-3" role="region">
+                        <p>Si, directamente. Google usa Mobile First Indexing: evalua la version movil de tu web para tu posicion en resultados. Ademas, Core Web Vitals se miden en movil — un diseño no responsive genera puntuaciones de CLS altas que afectan el ranking.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq-4">
+                        ¿Cuanto tarda hacer un diseno responsive desde cero?
+                        <svg class="faq-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </button>
+                    <div class="faq-answer" id="faq-4" role="region">
+                        <p>Una web de 5-8 paginas con diseño personalizado tarda 2-4 semanas. Partiendo de plantilla o framework, 1-2 semanas. La complejidad (funcionalidades, integraciones, cantidad de paginas) es lo que mas influye en los plazos.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <aside class="author-box">
+            <div class="author-avatar">AB</div>
+            <div class="author-info">
+                <div class="author-name">Andres Sanchez Botta</div>
+                <div class="author-role">Desarrollador Web Freelance</div>
+                <p class="author-bio">+50 proyectos entregados para negocios en Lima y todo Peru. Codigo a medida, SEO optimizado y diseño que convierte.</p>
+                <div class="author-links">
+                    <a href="https://linkedin.com/in/andressbotta" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                    <a href="https://github.com/lsbcreativa" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </aside>
+
+        <section class="related-articles">
+            <h2 class="related-articles-title">Articulos relacionados</h2>
+            <div class="related-grid">
+                <a href="../diseno-web-que-vende/" class="related-card">
+                    <span class="related-tag">Diseno</span>
+                    <h3>Diseño Web que Vende: Principios que Convierten Visitantes en Clientes</h3>
+                    <span class="related-read">8 min</span>
+                </a>
+                <a href="../velocidad-web-peru/" class="related-card">
+                    <span class="related-tag">Rendimiento</span>
+                    <h3>Velocidad Web: Como una Pagina Lenta Te Hace Perder Clientes</h3>
+                    <span class="related-read">9 min</span>
+                </a>
+                <a href="../cuando-necesitas-rediseno-web/" class="related-card">
+                    <span class="related-tag">Rediseno</span>
+                    <h3>¿Cuando Necesitas un Rediseno Web?</h3>
+                    <span class="related-read">8 min</span>
+                </a>
+            </div>
+        </section>
+
+        <nav class="article-nav" aria-label="Navegacion entre articulos">
+            <a href="../certificado-ssl-peru/" class="article-nav-link article-nav-prev">
+                <span class="article-nav-label">← Anterior</span>
+                <span class="article-nav-title">Certificado SSL: Por Que Tu Web Lo Necesita</span>
+            </a>
+            <a href="../inteligencia-artificial-diseno-web-peru/" class="article-nav-link article-nav-next">
+                <span class="article-nav-label">Siguiente →</span>
+                <span class="article-nav-title">Inteligencia Artificial y Diseno Web en 2026</span>
+            </a>
+        </nav>
+
+        <section class="cta glow-divider" aria-labelledby="contacto-title">
+            <h2 class="cta-title" id="contacto-title">¿Tu web no se ve bien<br>en celular?</h2>
+            <p class="cta-description">Desarrollo webs responsive a medida con enfoque mobile first: se ven perfectas en celular, tablet y escritorio. Codigo propio, sin plantillas, optimizadas para Google.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/51968672704?text=Hola%20Andr%C3%A9s,%20vi%20tu%20art%C3%ADculo%20sobre%20dise%C3%B1o%20responsive%20y%20necesito%20que%20mi%20web%20se%20vea%20bien%20en%20celular" class="magnetic-btn btn-primary-fill btn-large" target="_blank" rel="noopener noreferrer">
+                    <span>Escribeme por WhatsApp</span>
+                </a>
+                <a href="mailto:contacto@andresbotta.dev" class="magnetic-btn btn-large">
+                    <span>contacto@andresbotta.dev</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <a href="../../" class="footer-logo" aria-label="Andres Botta - Inicio">
+                <picture class="logo-for-dark">
+                    <source srcset="../../imagenes/logo-andres-botta.webp" type="image/webp">
+                    <img src="../../imagenes/logo-andres-botta.png" alt="Andres Botta - Desarrollador Web" class="footer-logo-img" loading="lazy" width="192" height="93">
+                </picture>
+                <picture class="logo-for-light">
+                    <source srcset="../../imagenes/logo-andres-botta-dark.webp" type="image/webp">
+                    <img src="../../imagenes/logo-andres-botta-dark.png" alt="" class="footer-logo-img" loading="lazy" width="192" height="93">
+                </picture>
+            </a>
+            <p class="footer-tagline">Desarrollador Web Full Stack & Diseñador UI/UX en Lima, Peru. Creo sitios web que convierten visitantes en clientes.</p>
+            <nav class="footer-links" aria-label="Enlaces del footer">
+                <a href="https://linkedin.com/in/andressbotta" class="footer-link" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/lsbcreativa" class="footer-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="mailto:contacto@andresbotta.dev" class="footer-link">Email</a>
+                <a href="../../blog/" class="footer-link">Blog</a>
+            </nav>
+            <div class="footer-sitemap" role="navigation" aria-label="Mapa del sitio">
+                <div class="footer-sitemap-col">
+                    <div class="footer-sitemap-title">Servicios</div>
+                    <ul class="footer-sitemap-links">
+                        <li><a href="../../diseno-web-lima/">Diseño Web Lima</a></li>
+                        <li><a href="../../diseno-web-peru/">Diseño Web Peru</a></li>
+                        <li><a href="../../crear-pagina-web-lima/">Crear Pagina Web</a></li>
+                        <li><a href="../../tienda-online-peru/">Tienda Online</a></li>
+                        <li><a href="../../landing-page-lima/">Landing Pages</a></li>
+                        <li><a href="../../seo-tecnico-peru/">SEO Tecnico</a></li>
+                    </ul>
+                </div>
+                <div class="footer-sitemap-col">
+                    <div class="footer-sitemap-title">Ciudades</div>
+                    <ul class="footer-sitemap-links">
+                        <li><a href="../../diseno-web-lima/">Lima</a></li>
+                        <li><a href="../../diseno-web-cusco/">Cusco</a></li>
+                        <li><a href="../../diseno-web-arequipa/">Arequipa</a></li>
+                        <li><a href="../../diseno-web-trujillo/">Trujillo</a></li>
+                        <li><a href="../../diseno-web-chiclayo/">Chiclayo</a></li>
+                        <li><a href="../../diseno-web-piura/">Piura</a></li>
+                    </ul>
+                </div>
+                <div class="footer-sitemap-col">
+                    <div class="footer-sitemap-title">Contacto</div>
+                    <ul class="footer-sitemap-links">
+                        <li><a href="https://wa.me/51968672704" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><a href="mailto:contacto@andresbotta.dev">contacto@andresbotta.dev</a></li>
+                        <li><a href="https://linkedin.com/in/andressbotta" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/lsbcreativa" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copy">© <span id="footer-year"></span> Andres Sanchez Botta · <a href="../../politica-privacidad/" class="footer-legal-link">Privacidad</a></div>
+            <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+        </div>
+    </footer>
+
+    <script src="../../js/main.min.js?v=1.0.0" defer></script>
+    <a href="https://wa.me/51968672704?text=Hola%20Andr%C3%A9s,%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20profesional" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="whatsapp-float-tooltip">Hablemos</span>
+    </a>
+    <button class="back-to-top" aria-label="Volver arriba">
+        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/></svg>
+    </button>
+</body>
+</html>
